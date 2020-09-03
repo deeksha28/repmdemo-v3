@@ -1,0 +1,19 @@
+dcf {
+    .kpi-panel .heading {
+      font-size: $font-size-md;
+    }
+    
+    .kpi-panel .value {
+      font-size: $font-size-big;
+    } 
+    
+    .fa-exclamation-triangle {
+      color: $fore-color-error;
+      font-size: $font-size-md;
+    }
+
+    .hidePanel span, .showPanel span {
+      font-size: $font-size-xl;
+      color: $theme-color;
+    }
+  }

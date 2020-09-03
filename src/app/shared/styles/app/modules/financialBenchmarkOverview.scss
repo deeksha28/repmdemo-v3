@@ -1,0 +1,12 @@
+app-financialBenchmark-overview {
+    thead th {
+      background-color: $theme-color; 
+      color: $fore-color-table-header;
+    }
+  
+    div.panel-default > div.panel-heading {
+      background-color:  $theme-background-color-standard;
+      font-size: $font-size-xl;
+    }
+  
+  }

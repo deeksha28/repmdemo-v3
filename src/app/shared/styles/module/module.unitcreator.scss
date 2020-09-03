@@ -1,0 +1,33 @@
+iazi-unitcreator {
+    .readOnly{
+        color: $font-color-read-only !important;
+    }
+
+    .glyphicon{
+        color: $theme-color !important;
+    }
+
+    .row-color{
+        color: $theme-color !important;
+    }
+    .deleteIcon-2{
+        fill: $fore-color-delete-icon !important;
+    }
+
+    .fill-blue{
+        fill: $theme-color !important;
+    }
+
+    .property-select-input {  
+        color: $theme-color !important;
+        font-weight: $font-weight-heavy;	
+    }
+
+    .separation-line{
+        border-top:1px solid $theme-color !important;
+    }
+
+    .house-select-input {
+        color: $theme-color;
+    }
+}

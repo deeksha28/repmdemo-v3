@@ -1,0 +1,50 @@
+.modal{
+    margin-top: 30px !important;
+}
+.modal-content {
+    border-radius: 0px;
+
+}
+.modal-title {
+    color: $fore-color-modal-header !important;
+    font-size: $font-size-lg;
+}
+
+h4 .modal-title {
+    color: $fore-color-modal-header !important;
+    font-size: $font-size-lg;
+}
+
+.modal-header, iazi-documents-manager .ui-dialog .ui-dialog-titlebar {
+    background-color: $back-color-modal-header;
+    color :  $fore-color-modal-header !important;
+    font-family: $font-family-standard;
+    font-size: $font-size-lg;
+    .close {
+        color:$fore-color-modal-header !important;
+        opacity: .7 !important;
+        font-weight: normal !important;
+    }  
+    .fa {
+        color: $fore-color-modal-header !important;
+    }
+}
+
+.modal-footer {
+    .btn-IAZIBlue-1{
+        margin-top:0px !important;
+        margin-bottom:0px !important;
+    }
+
+    .btn-primary {
+        background-color: $back-color-modal-header;
+        color :  $fore-color-modal-header !important;
+        border-color: $back-color-modal-header;
+    }
+
+    .btn-success {
+        background-color: $theme-color-success;
+        color :  $fore-color-modal-header !important;
+        border-color: $theme-color-success;
+    }
+}

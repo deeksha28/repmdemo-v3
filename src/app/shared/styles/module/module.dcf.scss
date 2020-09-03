@@ -1,0 +1,407 @@
+iazi-workbook {
+  .tab-selected {
+    border-bottom-color: $back-color-table-header!important;
+    background-color: $back-color-table-header!important;
+    color: $theme-secondary-standard!important;
+  }
+
+  .control-buttons {
+    background-color: $back-color-table-header!important;
+    border-color: $back-color-table-header;
+    color: $fore-color-table-header!important;
+  }
+
+  .glyphicon {
+    color: $back-color-icon;
+  }
+}
+
+iazi-input-field .row {
+	margin: 0;
+}
+
+iazi-summary {
+  .summary {
+    background-color: $theme-background-color-standard;
+    color: $theme-secondary-standard;
+    width: inherit;
+  }
+  
+  .cell {
+    position: relative;
+    display: table-cell;
+    padding: 0px 10px!important;
+    max-width: 700px;
+    width: 430px;
+    overflow: hidden;
+    border-top: none !important;
+    border-bottom: none !important;
+  }
+  
+  iazi-input {
+    .input-box {
+      border: none!important;
+      min-width: 100px!important;
+    }
+  }
+  .header {
+    background-color: $back-color-table-header!important;
+    border: none;
+  }
+
+  c-input {
+    .custom-input {
+      padding: 2px!important;
+      padding-left: 10px;
+      height: inherit!important;
+      border: none!important;
+      min-width: 80px!important;
+    }
+  }
+}
+
+dcf-scenario {
+  #listgroupheading .no-border {
+    color: $fore-color-table-header!important;
+    background-color: $back-color-table-header!important;
+    padding: 12px 10px !important;
+    line-height: 11px !important;
+  }
+
+  #listgroupcontent .no-border {
+    border-top: 3px solid #eee!important;
+    border-bottom: 1px solid #eee!important;
+    padding: 6px 10px!important;
+  }
+
+  .iconOpen .btn-calc-open-fill{
+    fill: $fore-color-open-icon;
+  }
+
+  .iconClose .btn-calc-close-fill{
+    fill: $fore-color-close-icon;
+  }
+
+  .iconClone .btn-clone-fill{
+    fill: $fore-color-clone-icon;
+  }
+
+  .iconDelete .btn-delete-fill{
+    fill: $fore-color-delete-icon;
+  }
+
+  .plusMinusIcon{
+    color: $theme-color!important;
+  }
+
+  .liClickFormat {
+    background-color:  $theme-background-color-secondary!important;
+  }
+  .text {
+    text-align: left;
+  }
+  .number {
+    text-align: right;
+  }
+  .filter-menu {
+    overflow: auto;
+    max-height: 200px !important;
+    max-width: auto;
+  }
+  .selected td{
+    background-color: $row-selection!important;
+  }
+  .scenario-list-container td, .scenario-list-container th {
+    overflow: inherit;
+  }
+
+  .selectPaddingRight, .clonePaddingRight {
+    padding-right: 0px!important;
+  }
+
+  .background-color-red {
+    .fa-refresh {
+      color: #fff!important;
+    }
+  }
+  .background-color-red:focus, .background-color-red:active {
+    box-shadow: 0 0 0 0!important;
+  }
+
+  .icon .dropdown-toggle::after{
+    color: $theme-color;
+  }
+  th {
+    position: sticky!important;
+    top: -1px;
+    z-index: 100;
+  }
+}
+
+iazi-market-value-selection {
+  .table-header {
+    background-color: $back-color-table-header!important;
+    color: $fore-color-table-header!important;
+    font-weight: $font-weight-default!important;
+    
+    .table-row {
+      font-weight: 400!important;
+    }
+  }
+
+  .selected {
+    background-color: $back-color-table-header-1!important;
+    color: $fore-color-table-header-1!important;
+  }
+
+  .standard {
+    background-color: $back-color-table-header-2!important;
+    color: $fore-color-table-header-2!important;
+  }
+
+  .variant-1 {
+    background-color: $back-color-table-header-3!important;
+    color: $fore-color-table-header-3!important;
+  }
+
+  .variant-2 {
+    background-color: $back-color-table-header-4!important;
+    color: $fore-color-table-header-4!important;
+  }
+
+  .variant-3 {
+    background-color: $back-color-table-header-5!important;
+    color: $fore-color-table-header-5!important;
+  }
+  .text {
+    text-align: left;
+  }
+  .number {
+    text-align: right;
+  }
+  .marketValueContainer {
+    height: calc(100vh - 180px) !important;
+    overflow: auto !important;
+    min-width: 100%;
+  }
+}
+
+discount-rate {
+  .cls-1 {
+    fill:$fore-color-icon-standard!important;
+  }
+  .header {
+    color: $theme-secondary-standard !important;
+  }
+  .discount-rate, .discount-rate label {
+    color: $theme-color!important;
+  }
+}
+.input-group-btn{
+border-left: 0!important;
+}
+.tooltip-arrow{
+    position:absolute;
+    width:0;
+    height:0;
+    border-color:transparent;
+    border-style:solid;
+}
+.tooltip.in {
+    filter: alpha(opacity=90);
+    opacity: .9;
+}
+.tooltip.bottom {
+    padding: 5px 0;
+    margin-top: 3px;
+}
+.tooltip.bottom.fade {
+    top: calc(100% - 10px)!important;
+}
+.tooltip.bottom .tooltip-arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000;
+}
+.input-label.input-border{
+  border-left: 0!important;
+}
+.input.input-border{
+    width: 87%;
+    height: 100%;
+    border-right: none;
+    border: 1px solid #AAAAAA !important;
+    margin: 0 !important;
+    font-family: $font-family-standard !important;
+    border-radius: 2px !important;
+    padding-left: 11px !important;
+    padding-right: 11px !important;
+}
+.input-group-addon.input-border{
+  border-left: 0!important;
+}
+.colapseIcon{
+    transform: rotate(-90deg);
+    cursor: pointer;
+    font-size: calc(100% + 10px)!important;
+}
+.hidePanel{
+    max-width: fit-content!important;
+    float: right!important;
+}
+.expandIcon{
+    transform: rotate(90deg);
+    cursor: pointer;
+    font-size: calc(100% + 10px)!important;
+    top:-10px;
+    position: relative;
+    right: 20px;
+}
+.showPanel{
+    max-width: fit-content!important;
+    float: right!important;
+}
+.containerAutoWidth{
+  width:auto!important;
+}
+.btn-primary.btnStatus{
+    background-color: transparent!important;
+    color: #4a494a;
+    border: none;
+    padding: 1px 0;
+    font-weight: 700;
+}
+.container.customH4.cokpitSubHeadingWidth{
+  margin-left: 0;
+  padding-left: 0;
+  margin-right: 0!important;
+  padding-right: 0!important;
+}
+
+.minColHeight{
+      min-height: 1px;
+}
+
+.minRowHeight {
+  min-height: 11px;
+}
+
+.deletePopupDialog .modal-header, .deletePopupDialog .modal-footer {
+    align-items: center;
+    justify-content: center;
+}
+.fa.fa-refresh.fa-spin.saveSpinnerIcon{
+  color:white!important;
+}
+.row.dcfBorder.repm5-box-shadow.rounded{
+  margin-left: 0;
+  margin-right: 0;
+}
+.divHeadSpace{
+  margin-top: 0!important;
+  //margin-bottom: 0!important;
+}
+.showPanelOuter{
+    min-width: fit-content;
+    min-height: 1px;
+    margin-left: 0;
+    margin-right: 0;
+    //padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ffffff !important;
+}
+.mb-0{
+  margin-bottom: 0%!important;
+}
+.pt-0{
+  margin-top: 0%!important;
+}
+
+.dcfModuleDivStyle{
+  height: calc(100vh - 117px);
+  iazi-dcf iazi-workbook div.workBook-container {
+      height: 95%!important;
+  }
+}
+
+.dcfModuleDivStyle-panel {
+  height: calc(100vh - 214px); 
+}
+
+app-process-stepper {
+  .dcfModuleDivStyle-panel {
+      height: calc(100vh - 293px);
+  }
+  .scenario-list-container {
+    max-height: 66vh;
+    margin-bottom: 0!important;
+  }
+}
+
+app-dcf .dcfModuleDivStyle-panel {
+  iazi-dcf iazi-workbook div.workBook-container {
+      height: 100%!important;
+  }
+}
+// .marketValueContainer{
+//     height: 75vh!important;
+// }
+.full-height {
+  height: 100%;
+}
+.leftAutoClass{
+  left: 20%!important;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+  cockpit {
+    .dcfTabBSModel {
+      min-width: 95%;
+    }
+  }
+  iazi-workbook .bookMargin .btn {
+    padding: 10px 10px!important;
+  }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+iazi-dcf, app-import-data{
+.customButton .text { 
+display: none;
+}
+.clonePaddingRight {
+padding-right: 0px!important;
+}
+.selectPaddingRight {
+padding-right: 0px!important;
+}
+.customButton .dropdown {
+display: block!important;
+.dropdown-title {
+display: none;
+}
+.dropdown-menu {
+left: auto!important;
+right: 0px!important;
+}
+}
+
+dcf-scenario table thead tr th {
+padding: 12px 6px !important;
+}
+}
+}
+
+@media only screen and (min-device-width: 1366px) and (max-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+.clonePaddingRight {
+padding-right: 0px!important;
+}
+.selectPaddingRight {
+padding-right: 0px!important;
+}
+}
+
+.DiscountRateWithPremium {
+font-weight: bold;
+}

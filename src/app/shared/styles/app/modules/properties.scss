@@ -1,0 +1,49 @@
+app-properties {
+    .sortbyPaddingRight
+    {
+      color:$theme-color;
+    }
+    
+    .sortPaddingRight
+    {
+      color: $theme-secondary-standard ;
+    }
+    
+    .sortPaddingRight:hover
+    {
+      color:$theme-secondary-standard ;
+    }
+    
+    .customHeading {
+      border-bottom: 1px dotted $theme-color;
+    }
+    
+    .customHeadingBottom {
+      border-bottom: 1px dotted $theme-color;
+    }
+    
+    .card .wrapper {
+      background-color:  $theme-background-color-standard;
+    }
+    
+    .iazi-card .date {
+      background-color: $theme-color;
+      color:  $theme-background-color-standard;
+    }
+    
+    .iazi-card .content {
+      background-color:  $theme-background-color-standard;
+    }
+    
+    .iazi-card .title a {
+      color: $theme-secondary-standard;
+    }
+    
+    .svg-color{
+      color:  $theme-background-color-standard;
+    }
+    
+    .card .text-font{
+      color: $theme-color;
+    }
+    }

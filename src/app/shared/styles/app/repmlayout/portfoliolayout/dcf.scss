@@ -1,0 +1,19 @@
+
+    .kpi-panel .heading {
+      font-size: $font-size-md;
+    }
+    
+    .kpi-panel .value {
+      font-size: $font-size-xl;
+      align-content: center;
+    }
+    
+    .fa-exclamation-triangle {
+      color: $fore-color-error;
+      font-size: $font-size-md;
+    }
+
+.keyValuationBtn{
+  font-size: $font-size-md;
+  font-weight: normal!important;
+}

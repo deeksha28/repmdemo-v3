@@ -1,0 +1,521 @@
+iazi-qualicasa key-data-property, iazi-qualicasa key-data-building, iazi-qualicasa diagnose, iazi-qualicasa monitoring, iazi-qualicasa risk-management,
+iazi-qualicasa {
+
+  .ui-table-auto-layout .ui-table-wrapper {
+    padding-bottom: 2rem !important;
+}
+
+  .house-data{
+    padding-left: 2rem !important
+}
+
+.planningInvestmentIaziInput {
+    input{
+           padding: 0px !important;
+              //  height: auto !important;
+               font-size: 1em !important;
+    }
+    input:focus{
+      outline:none !important;
+      outline-offset:0px !important;
+      box-shadow:none !important;
+        font-size: 1em !important;
+    }
+  }
+
+  .comment {
+    font-size: 1em !important;
+  }
+
+.unlinked-house-data{
+  padding-left: 0rem !important;
+}
+.unlinked-house-icon{
+  color: grey !important;
+}
+
+  .fa-bar-chart{
+    color: $theme-font-color-secondary !important;
+  }
+
+  .highcharts-title {
+    font-family:$font-family-standard !important;
+    font-size: $fa-size-md !important;
+    font-weight: $font-weight-medium !important;
+
+}
+  .ui-table .ui-table-tbody>tr>td.ui-editing-cell{
+    padding:0px !important; 
+  }
+
+  .fa-spinner {
+    font-size: $fa-size-lg !important;
+  }
+
+  .fa-times{
+    color:  $theme-font-color-secondary !important; 
+  }
+
+  /* Whole table Fotnt size, family, color */
+  p-dataTable .ui-widget {
+    font-size: $font-size-md;
+    font-family: $font-family-standard!important;      
+    color: $theme-secondary-standard!important;  
+    .ui-widget-content {
+      color: $theme-secondary-standard;
+      border-left-width: 0px;
+      border-right-width: 0px;
+    }    
+  }
+
+  td, th{
+    font-size: $font-size-sm;
+    font-family:$font-family-standard;
+    color: $theme-secondary-standard;
+
+  }
+
+  // th{
+    // color: $theme-font-color-secondary !important; 
+    // font-weight: $font-weight-default !important;
+  // }
+
+  .sub-row-header{
+    color:  $theme-secondary-standard !important; 
+    font-weight: $font-weight-heavy !important;
+  }
+
+  tr{
+    background-color: $theme-background-color-standard  !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Table row top and bottom borders */
+  .ui-datatable tbody>tr.ui-widget-content {
+    border-bottom: 1px solid $theme-background-color-secondary;
+    border-top: 3px solid $theme-background-color-secondary;
+    border-left-width: 0px;
+    border-right-width: 0px;
+  }
+
+  /* Table Header */
+  .ui-datatable .ui-datatable-thead > tr > th {
+    background-color: $back-color-table-header;   
+    // padding: .75em;
+    border-color: $back-color-table-header;
+    color: $theme-font-color-secondary !important;
+    padding: 0.2em;
+    padding-top: .6em;
+    padding-bottom: .8em;
+    border-width: 0px;
+    border-style: solid;
+    // border-top: thick double rgb(221, 221, 221);
+    border-top-width: 1px;
+    // border-bottom: thick double rgb(221, 221, 221);
+    border-bottom-width: 2px;
+    .fa {
+      color: $fore-color-table-header!important;
+      font-size: $font-size-md;
+    }
+  }
+
+  .ui-datatable .ui-datatable-data >tr >td {
+    border-right-color: $back-color-table-row;
+    border-left-color: $back-color-table-row;
+    padding: 0.3em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    word-break: break-word;
+    border-width: 0px;
+    .fa {
+     font-size: $font-size-md;
+    }
+    .fa-cog {
+      font-size: $font-size-xxl;
+    }
+  }
+
+  .ui-column-title {
+    font-weight: $font-weight-default!important;
+  }
+
+  /* Table header when clicked */
+  .ui-datatable thead th.ui-state-active {
+    background-color: $back-color-table-header; 
+    color: $fore-color-table-header!important;
+    border-top-style: none;
+  }
+
+  /* Table header when hovered */
+  .ui-datatable thead th.ui-sortable-column:not(.ui-state-active):hover {
+    background-color: $back-color-table-header; //#f2f2f2;
+    color: $fore-color-table-header;
+    // border-left: 1px double;
+    // border-left-color: #cccccc;
+    // border-right: 1px double;
+    // border-right-color: #cccccc;
+  }
+
+  /* Input */
+  // .form-control {
+  //     border: 1px solid $input-control-border;
+  //     border-radius: 2px!important;
+  // }
+
+  // input {
+  //     border: 1px solid $input-control-border!important;
+  //     border-radius: 2px!important;
+
+  // }
+
+  /* Settings icon same as text fore color */
+  .document-actions .fa {
+    color: $theme-secondary-standard;
+  }
+
+  /* Prime ng table paginator */
+  .ui-paginator .ui-paginator-page.ui-state-active {
+    background-color: $back-color-table-header;
+    border-color: $back-color-table-header;
+  }
+
+  .ui-paginator .ui-paginator-page, .ui-paginator-prev, .ui-paginator-first, .ui-paginator-next, .ui-paginator-last {
+    color: $back-color-table-header!important;
+  }
+
+  .ui-paginator .ui-paginator-pages .ui-paginator-page:hover.ui-state-active {
+    background-color: $back-color-table-header;
+  }
+  
+  .ui-table .ui-sortable-column .ui-sortable-column-icon {
+    color: $fore-color-table-header;
+  }
+  .ui-table .ui-sortable-column:not(.ui-state-highlight):hover .ui-sortable-column-icon {
+    color: $fore-color-table-header;
+  }
+
+  /* No of pages input text */
+  .ui-inputtext {
+    color: 1px solid $input-control-border;
+  }
+
+  /* Top right svg icons */
+  .custom-button{
+    background-color: $theme-color;
+  }
+  iazi-documents-manager .custom-button {
+    background-color: transparent;
+  }
+  .customButton {
+    margin-top: 0px !important;
+  }
+
+  .editable{
+    background-color: lightyellow !important;
+  }
+
+  .noneditable {
+    background-color: $back-color-table-row-hover !important;
+    color:  $theme-secondary-standard !important;
+  }
+
+  .diagnose-table{
+    padding-top: 0px !important;
+  }
+
+  .risk-table{
+    padding-top: 0px !important;
+  }
+
+  risk-management, diagnose, monitoring {
+    .ui-table-wrapper > table {
+      width: 99% !important;
+    }
+  }
+
+  .monitoring-table{
+    padding-top: 0px !important;
+  }
+
+  .key-data-property, .portfolio-summary{
+    th{
+      background-color: #f4f4f4 !important;
+      color: #4a494a !important;
+      font-weight: 600 !important;
+      min-width: 4vw !important;
+    }
+  }
+
+  .header-blue > th{
+    background-color: $theme-color  !important;;
+    color:  $theme-font-color-secondary  !important;;
+  }
+
+  .selected{
+    td{
+      background-color:#0381c5 !important;
+      color: white !important;
+    }
+  }
+
+  p-celleditor {
+    label {
+      font-size: 12px !important;
+      padding: 4px !important;
+      height: 100% !important;
+    }    
+  }
+
+  p-dropdownitem {
+    li {
+      font-size: 12px;
+    }
+  }
+
+  .ui-dropdown .ui-dropdown-label {
+    width: auto;
+  }
+
+  .width-18{
+    width:16em!important;
+  }
+
+  .fa.iconPosition {
+      position: relative;
+      left: -1px!important;
+      top: 3px!important;
+      font-size: medium;
+      color: #fff !important;
+  }
+  .customButton .pristine-back {
+    background-color: $theme-color;
+  }
+  .customButton .pristine {
+      color: $theme-color;
+  }
+  .saveButton .text.pristine{
+      color:#27AE60!important;
+  }
+  .saveButton .icon.pristine-back{
+      background-color: #27AE60!important;
+  }
+  .isDirty-back{
+      background-color: #9d3224!important;
+  }
+  .text.isDirty{
+      color: #9d3224!important;
+  }
+  th, td {
+      overflow: inherit;
+  }
+  .th-align-center {
+      text-align: center!important;
+  }
+  th div.align-center{
+      padding-top:3px;
+  }
+  // .ui-table .ui-table-tbody>tr>td.ui-editing-cell p-celleditor>* {
+  //   float:right;
+  //   display:inline-block;
+  //   width:70%!important;
+  // }
+  // .fa.fa-exclamation-circle.colorRed{
+  //   float:left;
+  //   display:inline-block;
+  // }
+
+  :host ::ng-deep .ui-table-auto-layout>.ui-table-wrapper .qcmultiedit{
+    background-color: #ECC089  !important;
+}
+}
+
+summary{
+
+  cursor: auto;
+  .cancel-moved-planning{
+    color:$theme-color-danger !important;
+  }
+  .save-moved-planning{
+    color:$theme-color-success !important;
+  }
+
+  .selected-to-move{
+    user-select: none;
+    background-color: #F5F5F5  !important;
+}
+
+.selected-to-move > td{
+  background-color: inherit ;
+}
+
+.move-row{
+    background-color:#F5F5F5  !important;
+    text-align: center;
+}
+
+.move-row > td{
+  background-color: #F5F5F5  !important;
+}
+.selected-year-src > td{
+    background-color: lightgrey  !important;
+}
+.selected-year-dest > td{
+    background-color: lightblue !important;
+}
+
+}
+
+iazi-qualicasa {
+
+  @supports (-ms-ime-align:auto) {
+    .form-group {
+    width: auto !important;
+    }
+}
+
+  .shiftingControl > td{
+    text-align: center !important;
+  }
+
+  .property-tab{
+    width: 100% !important;
+    max-width: none !important;
+  }
+  .manualFields {
+    color: $fore-color-manual !important;
+  }
+
+  .calculatedFields {
+    color: $fore-color-calculated !important;
+  }
+
+  configuration {
+    .btn-primary{
+      color:  $theme-font-color-secondary !important;
+      background-color: $theme-color !important;
+      border-color:$theme-color !important;
+
+    }
+  }
+  .qc-container{
+    max-width: none !important;
+  }
+
+  .fa{
+    color: $theme-secondary-standard ; 
+  }
+
+  .qc-margin{
+    margin-top:0.5rem!important;
+    padding: 1.25rem!important;
+    padding-top:0;
+  }
+
+  // .outerQcContainer{
+  //   display: inline-block;
+  //   padding: 0.8em;
+  // }
+
+  .qc-margin {
+    margin-top: .5rem;
+    padding: 1.25rem;
+  }
+  .qc-container {
+      width: 100%;
+      // padding: 1rem 1rem 0;
+  }
+
+  .no-data-div {
+   font-size: $font-size-xl;
+   color: $theme-color;
+  }
+  .width-20{
+      width:26em!important;
+  }
+  key-data-property table tr td{
+    position: inherit!important;
+  }
+
+   iazi-documents-manager {
+    textarea {
+      resize: vertical;
+    }
+
+    // @media screen and (min-width: 1500px) {
+      .document-filePath .img-responsive {
+          width: 83%;
+        }
+    // }    
+
+    @media screen and (max-width: 770px) {
+      .width-18{
+          width:10rem!important;
+      }
+      .colbox{
+          width: fit-content;
+          padding-left: 10px;
+          padding-right:10px;
+      }
+      .width-20{
+          width:16em!important;
+      }
+  }
+  @media only screen and (max-device-width: 1024px) and (min-device-width: 768px){
+      .pull-right.customButton .text {
+          display: none;
+      }
+      .outerQcContainer{
+          width:100%
+      }
+  }
+
+  @media only screen and (max-width: 1750px) and (min-width: 768px){
+    .customButton .dropdown {
+        display: block!important;
+        .dropdown-title {
+        display: none;
+        }        
+    }
+
+  }
+  }
+
+  th:focus{
+    outline-width: 0px !important;
+  }
+
+  key-data-building{
+        .staus-other{
+          font-style: normal,
+        }
+        .staus-manual{
+            font-style: normal;
+            color: $fore-color-manual !important;
+        }
+      .staus-calculated{
+          font-style: italic; text-rendering: geometricPrecision ;
+          font-family: sans-serif;
+          letter-spacing: 0.5px;
+      }
+  }
+
+  .planning-fixed{
+    color: $fore-color-manual !important;
+  }
+  .staus-other{
+    font-style: normal,
+  }
+  .staus-manual{
+      font-style: normal;
+      color: $fore-color-manual !important;
+  }
+  .staus-calculated{
+      font-style: normal,
+}
+  key-data-property, key-data-building, diagnose, summary, monitoring, configuration, risk-management, picture-management .qc-container.qc-margin {
+    label {
+      padding-top: 8px;
+    }
+  }  
+
+}

@@ -1,0 +1,149 @@
+.backwhite {
+	background-color:  $theme-background-color-standard !important;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{/* navigation bar popup link should not become black on hover */
+  background-color: $theme-color !important;
+}
+
+.navbar-app-name a{
+  color: $theme-background-color-standard!important;
+  font-family:$font-family-standard;
+  font-size:$font-size-md;
+}
+
+.cls-1 {
+  // fill: $back-color-icon;
+}
+
+.divContainerFluidCSS{
+  background-color:  $theme-background-color-standard;
+}
+
+.expandMenupadding
+{
+    color:$theme-secondary-standard !important;
+}
+
+.cls-1 {
+  // fill: $fore-color-icon-standard;
+}
+
+.modal {
+  .ngx-pagination a, .ngx-pagination button {
+      color: $back-color-modal-header!important;
+  }
+
+  .ngx-pagination .current {
+      background: $back-color-modal-header!important;
+      color: $fore-color-modal-header;
+  }
+}
+
+.navbar-inverse .navbar-text {
+  color:  $theme-background-color-standard;
+}
+
+.gm-style-mtc div {
+  font-size:$font-size-sm!important;
+}
+
+.gmnoprint button {
+  font-size:$font-size-sm!important;
+}
+
+.gm-control-active img {
+    width: $font-size-sm!important;
+}
+
+.cls-21 {
+  fill: $theme-color;
+   }
+  .cls-22 {
+        fill:  $theme-background-color-standard;
+   }
+ .cls-23 {
+     fill: $theme-color;
+ }
+ .cls-24 {
+     fill:$theme-color;
+ }
+ .cls-25 {
+     fill: $theme-color;
+ }
+ .cls-26 {
+     fill:  $theme-background-color-standard;
+ }
+ .cls-27 {
+   fill: $theme-color;
+ }
+
+ #menuList {
+  background-color: $theme-secondary-standard;
+}
+
+.activeMenuListBackground, .activeMenuListBackground.menuListHeading{
+  background-color:  $theme-background-color-standard;
+  color: $theme-secondary-standard !important;
+}
+
+.inactiveMenuListBackground, .inactiveMenuListBackground.menuListHeading{
+  color: $theme-secondary-standard !important;
+}
+
+#topbarMenuPopupDropdown {
+  background-color:  $theme-background-color-standard;
+}
+
+.menuItemColor {
+  color:  $theme-color;
+}
+
+#topbarMenuPopupDropdown li:hover {
+  background-color:  $theme-background-color-secondary;
+}
+
+#topbarMenuPopup{
+   background-color:  $theme-background-color-standard!important;
+}
+
+#topbarMenuPopupDropdown li a {
+  color: $theme-secondary-standard !important;
+}
+
+.helpIconCSS{
+  color: $fore-color-icon-standard !important;
+  font-size: $font-size-xl;
+}
+
+#editDataTab .tab-content>.tab-pane
+{
+   background-color:  $theme-background-color-standard;
+   padding: 10px 40px 16px 40px !important;
+}
+
+.filterIconColor{
+	color: #ffffff !important;
+}
+.keyValuationBtn{
+  color: $theme-secondary-standard!important;
+  background-color: #ffffff!important;
+  border-color: #ffffff!important;
+  padding-top: 0!important;
+  align-content: center;
+  padding-left: 5px!important;
+}
+.rowPadding{
+  padding-bottom: 15px!important;
+}
+.dcfBorder{
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd !important;
+    //border-top: 1px solid white !important;
+    border-radius: 0.25em;
+    //background-color: #f5f5f5 !important;
+}
+//.flexItemContent.flex-grow-1.repm5-container{
+  //background-color: #f5f5f5 !important;
+//}

@@ -1,0 +1,28 @@
+<div class="form-group">
+    <select class="form-control" [(ngModel)]="portfolio" (change)="onChange($event)">
+        <option value="portfolio1">Portfolio 1</option>
+        <option value="portfolio2">Portfolio 2</option>
+    </select>
+</div>
+<ul *ngIf="portfolio == 'portfolio1'">
+    <li (click)="selectProperty('property', 'XXX11, Street11, Zip11 Town11')">
+        XXX11, Street11, Zip11 Town11
+    </li>
+    <li (click)="selectProperty('property', 'XXX12, Street112 Zip11 Town12')">
+        XXX12, Street12, Zip12 Town12
+    </li>
+    <li (click)="selectProperty('property', 'XXX13, Street13, Zip13 Town13')">
+        XXX13, Street13, Zip13 Town13
+    </li>
+</ul>
+<ul *ngIf="portfolio == 'portfolio2'">
+    <li (click)="selectProperty('property', 'XXX21, Street21, Zip21 Town21')">
+        XXX21, Street21, Zip21 Town21
+    </li>
+    <li (click)="selectProperty('property', 'XXX22, Street22, Zip22 Town22')">
+        XXX22, Street22, Zip22 Town22
+    </li>
+    <li (click)="selectProperty('property', 'XXX23, Street23, Zip23 Town23')">
+        XXX23, Street23, Zip23 Town23
+    </li>
+</ul>

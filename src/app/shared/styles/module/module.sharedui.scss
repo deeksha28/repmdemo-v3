@@ -1,0 +1,51 @@
+#iaziAddressEditor input:read-only.form-control {
+    height: 30px !important;
+    border-left-width: 1px !important;
+}
+
+#iaziAddressEditor label {
+    margin-bottom: 0px;
+}
+
+#iaziAddressEditor button {
+    height: 30px !important;
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+}
+
+#iaziAddressEditor .fa-map-marker{
+    font-size: $font-size-xl !important;
+}
+
+repm5-modal {
+    .modal-header {
+        background-color: $theme-color;
+        color: $theme-background-color-standard;
+        .fa {
+            color: $theme-background-color-standard!important;
+            font-size: 15px;
+        }
+    }
+    #btn-confirm-yes {
+        background-color: $theme-color-success;
+    }
+    #btn-confirm-no {
+        background-color: $theme-color-danger;
+    }
+    .btn-modal {
+        color: $theme-background-color-standard;
+        background-color: $theme-color;
+    }
+
+    .modal-body {
+        color: $theme-secondary-standard;
+    }
+
+    .cursorPointer {
+        cursor: pointer;
+    }
+
+    .fa {
+        color: $theme-background-color-standard !important;
+    }
+}

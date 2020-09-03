@@ -1,0 +1,74 @@
+.freeze_horizontal:nth-child(1) {
+    border-left: 0px solid transparent!important;
+}
+
+// .cell {
+//     padding-top: 10px !important;
+//     padding-bottom: 10px!important;
+//     border-bottom: 2px solid #eee!important;
+//     border-top: 1px solid #eee!important;
+//     // padding-left: 10px!important;
+// }
+
+.tableHeader {
+    .cell {
+        padding-top: 12px !important;
+        padding-bottom: 12px!important;
+    }
+}
+
+iazi-workbook {
+    .tab-selected {
+        background-color: $back-color-tab!important;
+    }
+    .selectionCell {
+        background-color: $back-color-table-header!important;
+        color: $fore-color-table-header!important;
+    }
+    .fa-spinner {
+        font-size: inherit!important;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0; 
+    }
+    .bookMargin {
+        button {
+            color: $theme-color;
+        }
+        .btn:focus, .btn:hover {
+            color: $theme-color;
+        }
+    }
+}
+
+.cell {
+    padding-top: 7px!important;
+    padding-bottom: 7px!important;
+    // padding-left: 4px!important;
+    padding-right: 4px!important;
+    border-bottom: 2px solid #eee!important;
+    border-top: 1px solid #eee!important;
+    font-size: $font-size-sm!important;
+}
+
+.combo-content span {
+    font-size: $font-size-sm!important;
+}
+
+.level-1-border-right, .level-2-border-right,
+.level-3-border-right, .level-4-border-right,
+.level-5-border-right, .level-6-border-right,
+.level-7-border-right, .level-8-border-right {
+    padding-right: 10px!important;
+}
+
+app-rent-mirror-component{
+   
+.tableHeader .row> .cell {
+    vertical-align: top !important;
+  }
+}

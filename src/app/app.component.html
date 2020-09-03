@@ -1,1 +1,78 @@
-<router-outlet></router-outlet>
+<div class="appContainer d-flex flex-column">
+    <div class="container backwhite">
+        <nav id="mainSiteHeader" class="navbar navbar-expand-lg">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    title="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" id="LogoHome" href="/">
+                    <img id="topbar-logo" src="./assets/img/IAZI-logo-Blue.svg">
+                </a>
+                <div id="topbarLabeldiv" class="nav navbar-nav topbar-label">
+                    <app-prev-next></app-prev-next>
+                </div>
+            </div>
+            
+
+            <div class="collapse navbar-collapse displayOptions">
+                <ul class="navbar-nav mx-auto">
+                    <li>
+                        <div class="main">
+                            <div class="form-group has-search mb-0">
+                                <span class="fa fa-search form-control-feedback"></span>
+                                <input type="text" class="form-control" placeholder="Search">
+                              </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="dropdown" ngbDropdown>
+                        <div class="nav navbar-nav dropdown open active drop-header" dropdown="">
+                            <span class="cursor-pointer dropdown-toggle" ngbDropdownToggle aria-haspopup="true"
+                                aria-expanded="true">
+                                <span id="userNameTopBar" class="userNamePadding"> username@example.com </span>
+                                <span class="caret"></span>
+                            </span>
+                            <ul ngbDropdownMenu aria-labelledby="single-button"
+                                class="dropdown-menu dropdown-menu-right" role="menu">
+                                <li role="menuitem"><a class="dropdown-item pointer">Manage account</a></li>
+                                <li role="menuitem"><a class="dropdown-item pointer">Sign out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li ngbDropdown>
+                        <div class="nav navbar-nav dropdown open active drop-header" dropdown="">
+                            <span class="cursor-pointer dropdown-toggle" ngbDropdownToggle aria-haspopup="true"
+                                aria-expanded="true" tabindex="9">
+                                {{currentLang | uppercase}} <span class="caret"></span>
+                            </span>
+                            <ul ngbDropdownMenu aria-labelledby="single-button"
+                                class="dropdown-menu dropdown-menu-right" role="menu">
+                                <li class="dropdown-header pointer">Change language</li>
+                                <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('de')"
+                                        tabindex="9">Deutsch
+                                        <i [ngClass]="{ 'fa fa-check' : isCultureSelected('de') }"></i></a></li>
+                                <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('fr')"
+                                        tabindex="9">Français
+                                        <i [ngClass]="{ 'fa fa-check' : isCultureSelected('fr') }"></i></a></li>
+                                <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('it')"
+                                        tabindex="9">Italian
+                                        <i [ngClass]="{ 'fa fa-check' : isCultureSelected('it') }"></i></a></li>
+                                <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('en')"
+                                        tabindex="9">English
+                                        <i [ngClass]="{ 'fa fa-check' : isCultureSelected('en') }"></i></a></li>
+                                <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('sy')"
+                                        tabindex="9">System
+                                        <i [ngClass]="{ 'fa fa-check' : isCultureSelected('sy') }"></i></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="flex-grow-1 view-container">
+        <router-outlet></router-outlet>
+    </div>
+</div>

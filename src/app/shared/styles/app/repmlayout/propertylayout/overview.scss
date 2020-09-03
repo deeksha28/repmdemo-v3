@@ -1,0 +1,21 @@
+// app-overview {
+//     .kpi-panel .heading {
+//       font-size: $font-size-md;
+//     }
+  
+//     .kpi-panel .value {
+//       font-size: $font-size-xxb;
+//     } 
+
+//     .panel-heading {
+//       border-bottom: 1px dotted $theme-color;
+//    }
+//   }
+
+app-overview-component {
+  td, th{
+    font-size: $font-size-sm;
+    font-family:$font-family-standard;
+    color: $theme-secondary-standard !important;
+  }
+}

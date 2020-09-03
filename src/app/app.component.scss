@@ -1,0 +1,113 @@
+//flex layout container
+.appContainer {
+    height: 100%;
+    width: 100%;
+}
+
+.view-container{
+  overflow: auto;
+}
+
+.container { 
+    padding-right: 0px !important; 
+    padding-left: 0px !important; 
+    margin-right: 0 !important; 
+    margin-left: 0 !important;
+    width: 100%!important; 
+    max-width: 100%;
+    
+    .navbar {
+        min-height: 41px;
+
+    }
+}
+
+#topbarLabeldiv {
+    display: inline-block;
+    float: none;
+    // vertical-align: top;
+}
+
+#LogoHome {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+#topbar-logo {
+    height: 38px;
+    border: 1px solid #fff;
+}
+
+.navbar-app-name a {
+    color: #fff!important;
+//     font-family: "Avenir LT W01_55 Roman1475520",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+#mainSiteHeader {
+    padding-bottom: 3px;
+    padding-top: 3px;
+    padding-left: 7px
+}
+
+.drop-header{
+	margin-right: 15px;
+
+	span , label {
+		cursor:pointer;		
+	}
+}
+// .navbarText {
+//     padding-top: 8px;
+// }
+
+.navbar-brand {
+    height: auto!important;
+}
+
+.userNamePadding {
+    padding-right: 4px!important;
+}
+
+.next-previous {
+    margin-right: 20px;
+}
+.displayOptions{
+    display: contents;
+}
+
+.navbar-nav {
+    flex-direction: inherit;
+}
+.displayOptions ul li ul{
+    position: absolute;
+}
+.navbar-header .navbar-toggler{
+    display: none;
+}
+
+.main {
+    width: 150%;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}

@@ -1,0 +1,20 @@
+<div class="layoutContainer d-flex flex-row">
+    <div class="flexItemNavigation">
+        <app-navigation [showLabels]="showLabels"></app-navigation>
+    </div>
+    <div class="splitter">
+        <i *ngIf="!showLabels" class="fa fa-caret-right" aria-hidden="true" (click)="toggleViewLabels()"></i>
+        <i *ngIf="showLabels" class="fa fa-caret-left" aria-hidden="true" (click)="toggleViewLabels()"></i>
+    </div>
+    <div class="flexItemNavigation">
+        <app-portfolio [showPortfolio]="showPortfolio"></app-portfolio>
+    </div>
+    <div class="splitter">
+        <i *ngIf="!showPortfolio" class="fa fa-caret-right" aria-hidden="true" (click)="toggleViewPortfolio()"></i>
+        <i *ngIf="showPortfolio" class="fa fa-caret-left" aria-hidden="true" (click)="toggleViewPortfolio()"></i>
+    </div>
+    <div class="flexItemContent flex-grow-1 repm5-container">
+
+        <router-outlet></router-outlet>
+    </div>
+</div>

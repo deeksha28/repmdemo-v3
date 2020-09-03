@@ -1,0 +1,13 @@
+app-tenants {
+  table {
+    background-color:  $theme-background-color-standard!important;
+  }
+  thead {
+    background-color: $theme-color; // orginal value -> #0086d1;
+    color: $fore-color-table-header; //  $theme-background-color-standard;
+  }
+
+  tbody > tr:hover {
+    background-color: $back-color-table-row-hover;
+  }
+}

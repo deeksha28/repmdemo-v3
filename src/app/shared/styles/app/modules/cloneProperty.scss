@@ -1,0 +1,20 @@
+app-clone-property {
+	.divLabels {
+		padding-left: 0;
+		padding-right: 0;
+	
+		span {
+			font-size: $font-size-lg;
+			font-weight: $font-weight-heavy;
+			color: $theme-color;
+		}
+	}
+
+	#removeAllBtn, #removeBtn, #addBtn, #addAllBtn {
+	    .fa {
+	        color: $theme-color !important;
+	        font-size: $font-size-xxxb;        
+	    }    
+	    border-color: #afafaf;
+	}
+}

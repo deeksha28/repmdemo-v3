@@ -1,0 +1,141 @@
+/********************************** Colors *********************************************/
+
+    /*******Primary colors**********/
+    $theme-color : #f7b512;
+    $theme-secondary-standard : #000000;
+    $theme-background-color-standard:#ffffff;
+    $theme-background-color-secondary:#f5f5f5;
+    $theme-font-color-secondary:white;
+    $theme-color-danger:#9d3224;
+    $theme-color-success:#27AE60;
+
+  /******************************/
+
+  /********Secondary colors******/
+
+    /* IAZI-button and status colors */
+    $fore-color-error: $theme-color-danger;
+    $back-color-error: $theme-color-danger;
+
+    $fore-color-isDirty: $theme-color-danger;
+    $back-color-isDirty: $theme-color-danger;
+
+    $fore-color-pristine:  $theme-color-success;
+    $back-color-pristine:  $theme-color-success;
+
+    $fore-color-cancel: $theme-color-danger;
+    $back-color-cancel: $theme-color-danger;
+
+    $fore-color-calculated: $theme-secondary-standard;
+    $fore-color-manual: #337ab7;
+
+    /*****************************/
+
+   /*ICON colors*/
+    $fore-color-icon-standard:#f8c23a;
+    $fore-color-open-icon: $theme-color-success;
+    $fore-color-close-icon: $theme-secondary-standard;
+    $fore-color-clone-icon:#337ab7;
+    $fore-color-collapse-expand-icon: $theme-secondary-standard;
+    $fore-color-delete-icon:$theme-color-danger;
+    $back-color-icon:$theme-background-color-standard;
+    /***************************/
+
+  /* General controls like slider */
+    $back-color-slider: #c9c9c9;
+
+    $slider-gradient-color-1:#ececec;
+    $slider-gradient-color-2:#dedede;
+    $slider-gradient-color-3:#f4f566;
+    $slider-gradient-color-4:#c0e621;
+    $slider-gradient-color-5:#72c050;
+
+  /***************************/
+
+    /* tab styles */
+    $back-color-tab: #f7b512;
+    $fore-color-tab: #000;
+
+    /* Tree colors */
+    $tree-selected-node: #feebbf;
+    $tree-node-hover: #eee;
+
+    /*Others*/
+    $back-color-splitter: #000;
+
+    $font-color-read-only:#948d8d;
+
+    $input-control-border:#AAAAAA;
+
+    //Modal colors
+    $fore-color-modal-header: #ffffff;
+    $back-color-modal-header: $theme-color;
+
+    /* Table colors */
+    $back-color-table-header: $theme-color;
+    $fore-color-table-header: #000; //$theme-background-color-standard;
+    $back-color-table-row: #ffffff;
+
+    /***************************************** FONTS ***************************************************/
+    $font-size-xxs: 8px;
+    $font-size-xs: 10px;
+    $font-size-sm: 12px;
+
+    $font-size-md: 14px;
+
+    $font-size-lg: 16px;
+    $font-size-xl: 18px;
+    $font-size-xxl: 20px;
+    $font-size-xxxl: 22px;
+
+    $font-size-big: 24px;
+    $font-size-xb: 26px;
+    $font-size-xxb: 28px;
+    $font-size-xxxb: 30px;
+
+    $fa-size-sm: 10px;
+    $fa-size-md: 15px;
+    $fa-size-lg: 20px;
+    $fa-size-xl: 25px;
+    $fa-size-xxl: 50px;
+
+    $font-family-standard: "Avenir LT W01_55 Roman1475520",Helvetica,Arial,sans-serif; // "Times New Roman", Times, serif;
+
+    $font-weight-default: 400;
+    $font-weight-light: 100;
+    $font-weight-medium: 600;
+    $font-weight-heavy: bold;
+    /****************************************************************************************************/
+
+    /* DCF - Market value selection tab  */
+    $fore-color-table-header-1: #ffffff;
+    $back-color-table-header-1: $theme-color;
+
+    $fore-color-table-header-2: #ffffff;
+    $back-color-table-header-2: #f9c351;
+
+    $fore-color-table-header-3: #ffffff;
+    $back-color-table-header-3: #505050;
+
+    $fore-color-table-header-4: #ffffff;
+    $back-color-table-header-4: #6e6e6e;
+
+    $fore-color-table-header-5: #ffffff;
+    $back-color-table-header-5: #969696;
+
+    $back-color-table-row-hover: #f5f5f5;
+
+  /*****************************************************************************************************************/
+    $row-selection: #feebbf;
+
+/***************************************Primary button************************************************************/
+
+   $fore-color-primary-btn: #ffffff;
+   $back-color-primary-btn: #f9ca53;
+   $border-color-primary-btn: #f9ca53;
+
+   $fore-color-primary-btn-active: #ffffff;
+   $back-color-primary-btn-active: #f8c23a;
+   $border-color-primary-btn-active: #f8c23a;
+
+   /****************************************************************************************************/

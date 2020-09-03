@@ -1,0 +1,49 @@
+app-slider, app-slider1 {
+
+    input[type=range]::-webkit-slider-runnable-track {
+      background-color: $back-color-slider;
+      background: -moz-linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Firefox 3.6-15 */
+      background: -webkit-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Chrome, Safari 4+ */
+      background: -webkit-linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Chrome 10-25, iOS 5+, Safari 5.1+ */ 
+      background: -o-linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Opera 11.10-12.00 */
+      background: -ms-linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5);
+      background: linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+  
+    }
+  
+    input[type=range]::-moz-range-track {
+          background-color: $back-color-slider;
+          background: -moz-linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Firefox 3.6-15 */
+          background: -webkit-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Chrome, Safari 4+ */
+          background: -webkit-linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Chrome 10-25, iOS 5+, Safari 5.1+ */ 
+          background: -o-linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Opera 11.10-12.00 */
+          background: -ms-linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5);
+          background: linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+     
+    }
+  
+    input[type=range]::-ms-track {
+      background-color: $back-color-slider;
+      background: -moz-linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Firefox 3.6-15 */
+      background: -webkit-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Chrome, Safari 4+ */
+      background: -webkit-linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Chrome 10-25, iOS 5+, Safari 5.1+ */ 
+      background: -o-linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Opera 11.10-12.00 */
+      background: -ms-linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5);
+      background: linear-gradient(to right, $slider-gradient-color-1, $slider-gradient-color-2, $slider-gradient-color-3, $slider-gradient-color-4, $slider-gradient-color-5); /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+    }
+    
+    input[type=range]::-webkit-slider-thumb {
+      background: $back-color-slider;
+      background-color: $theme-color;
+    }
+    
+    input[type=range]::-moz-range-thumb {
+      background: $back-color-slider;
+      background-color: $theme-color;
+    }
+  
+    input[type=range]::-ms-thumb {
+      background: $back-color-slider;
+      background-color: $theme-color;
+    }
+  }

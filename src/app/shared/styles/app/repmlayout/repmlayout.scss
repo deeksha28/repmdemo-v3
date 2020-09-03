@@ -1,0 +1,82 @@
+app-layout {
+.input-group-addon {
+    background-color: $theme-background-color-secondary !important;
+}
+
+.fa.iconPosition {
+    position: relative;
+    left: 3px;
+    top: 2px;
+    color: #fff!important;
+}
+.fa.iconPositionCaret {
+  position: relative; 
+  top: 2px;
+}
+
+.fa {
+    font-size: $fa-size-md;
+    color: $theme-color;
+}
+
+.fa-spinner {
+  font-size: $fa-size-xxl;
+}
+
+.fa-question-circle {
+  font-size: 1.33333333em;
+}
+
+.treeBackground {
+    background-color:  $theme-background-color-standard!important;
+}
+
+.cls-2 {
+    fill: $theme-color;
+  }
+  
+  .cls-3 {
+    fill: $theme-color;
+  }
+  
+  .cls-4 {
+    fill: $theme-color;
+  }
+
+  .cls-none {
+    fill: none;
+  }
+  
+
+  .menuListHeading {
+    color: $theme-color;
+}
+
+#style-33{
+    background-color:  $theme-background-color-standard;
+}
+
+#style-333{
+    background-color:  $theme-background-color-standard;
+}
+
+#buttonbar{
+    background: $back-color-splitter;
+}
+}
+app-layout .fa.filterIconColor{
+	color: #fff !important;
+}
+.dropdown-menu div label{
+    min-height: 20px;
+    padding-left: 12px;
+    padding-right: 10px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+    max-width: 100%;
+}
+.checkbox-label{
+    margin-left: 5px!important;
+    vertical-align: text-top!important;
+}

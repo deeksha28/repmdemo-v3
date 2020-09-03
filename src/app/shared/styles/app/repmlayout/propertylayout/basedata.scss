@@ -1,0 +1,61 @@
+app-base-data,
+app-master-data-property {
+  #baseDataDiv {
+    background-color: $theme-background-color-standard;
+  }
+
+  .cls-2 {
+    fill: $theme-color;
+  }
+
+  .manualFields {
+    color: $fore-color-manual !important;
+  }
+
+  .calculatedFields {
+    color: $fore-color-calculated !important;
+  }
+
+  .input-group-addon {
+    background-color: $theme-background-color-standard;
+  }
+
+  .customPropertyIcons {
+    color: $theme-background-color-standard;
+    background-color: $theme-color;
+  }
+
+  .customPropertyIcons span:hover {
+    color: $fore-color-icon-standard;
+  }
+
+  .addressBar {
+    font-size: $font-size-xxxl;
+    color: $theme-background-color-standard;
+    background-color: $theme-color;
+  }
+
+  .editIcon {
+    color: $fore-color-icon-standard !important;
+  }
+
+  input[type="range"] {
+    padding: 0;
+    border: 0;
+    box-shadow: initial;
+  }
+}
+
+app-master-data-property app-general,
+app-master-data-property app-micro-macro,
+app-master-data-property app-real-estate,
+app-master-data-property app-surface-and-volumes,
+app-master-data-property app-datefacts {
+  select.form-control option {
+    @extend .manualFields;
+  }
+
+  select.form-control:focus {
+    @extend .manualFields;
+  }
+}

@@ -1,0 +1,72 @@
+app-agcoTree {
+
+    .filter {
+      background-color:  $theme-background-color-standard;
+      font-size: $fa-size-lg;
+    }
+  
+    .treeNode {
+      .hover-icon {
+          background-color:  $theme-background-color-standard;  
+      }
+    }
+  
+    #tree {
+      color: $theme-secondary-standard;
+    }
+    
+    .selectedNode {
+      background-color: $tree-selected-node!important;
+      .hover-icon {
+          background-color: $tree-selected-node;
+      }
+    }
+  
+    .glyphicon-triangle-bottom:before {
+      color:  $theme-background-color-standard;
+   }
+  
+   svg {
+    fill: $theme-color;
+    stroke: $theme-color;
+   }
+  
+   .menu li:hover {
+    background-color: $tree-node-hover;
+  }
+  
+  .glyphicon-sort {
+    color: $theme-color;
+  }
+  
+  
+  #divSpinner .fa {
+    color: $theme-secondary-standard;
+  }
+  
+  #divSpinner span {
+    color: $theme-secondary-standard
+  }
+  
+  .cls-25 {
+    fill: $theme-color;
+  }
+  
+  .cls-26 {
+    fill:  $theme-background-color-standard;
+  }
+  
+  .fa-arrow-up, .fa-arrow-down {
+    color: $theme-secondary-standard !important;
+  }
+  
+  .red-icon{
+    color: $fore-color-error;
+  }
+  
+  .fa-plus {
+    color: $theme-secondary-standard;
+  }
+  
+  
+  }

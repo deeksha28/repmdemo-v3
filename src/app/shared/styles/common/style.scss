@@ -1,0 +1,365 @@
+@import '../../styles/module/module.unit.scss';
+@import '../../styles/module/module.tile.scss';
+@import '../../styles/module/module.sharedui.scss';
+@import '../../styles/module/module.documentmanager.scss';
+@import '../../styles/module/module.dcf.scss';
+@import '../../styles/module/module.table.scss';
+@import '../../styles/module/module.unitcreator.scss';
+@import '../../styles/module/module.qualicasa.scss';
+@import '../../styles/component/IAZI-buttons.scss';
+@import '../../styles/component/IAZI-modal.scss';
+@import '../../styles/component/IAZI-table.scss';
+
+@import '../app/repmlayout/portfoliolayout/dcf.scss';
+@import '../app/repmlayout/portfoliolayout/profitAndLoss.scss';
+@import '../app/repmlayout/portfoliolayout/tenants.scss';
+@import '../app/repmlayout/portfoliolayout/unitcreator.scss';
+@import '../app/repmlayout/portfoliolayout/language.scss';
+
+@import '../app/repmlayout/propertylayout/basedata.scss';
+@import '../app/repmlayout/propertylayout/capRate.scss';
+@import '../app/repmlayout/propertylayout/capex.scss';
+@import '../app/repmlayout/propertylayout/dcf.scss';
+@import '../app/repmlayout/propertylayout/iazi-map-component.scss';
+@import '../app/repmlayout/propertylayout/overview.scss';
+@import '../app/repmlayout/propertylayout/profitAndLoss.scss';
+@import '../app/repmlayout/propertylayout/tenants.scss';
+@import '../app/repmlayout/propertylayout/unitcreator.scss';
+
+@import '../app/modules/addressValidation.scss';
+@import '../app/modules/agcoTree.scss';
+@import '../app/modules/financialBenchmarkOverview.scss';
+@import '../app/modules/properties.scss';
+@import '../app/modules/slider.scss';
+@import '../app/modules/tenants.scss';
+@import '../app/modules/cloneProperty.scss';
+
+@import '../app/repmlayout/repmlayout.scss';
+
+@import '../app/app.component.scss';
+
+@import '../app/components/helpInformation.scss';
+@import '../app/components/svgElementsIcons.scss';
+@import '../app/components/bootstrap-slider';
+@import '../app/components/bs-datepicker';
+@import '../app/components/bs-stepper';
+@import '../app/components/prime-ng.scss';
+
+// body {
+//     // height:93% !important
+// }
+
+// h1 {
+//     margin: 0;
+//     font-size: $font-size-xxl;
+//     color: $theme-secondary-standard;
+//     font-weight: bold;
+//     font-style: normal;
+//     font-variant: normal;
+//     text-transform: none;
+// }
+
+// h2 {
+//     padding-top: 5px;
+//     font-size: $font-size-lg;
+//     color: $theme-secondary-standard;
+//     font-weight: bold;
+//     font-style: normal;
+//     font-variant: normal;
+//     text-transform: none;
+// }
+
+// h3 {
+//     font-size: $font-size-md;
+//     color: $theme-secondary-standard;
+//     line-height: 16px;
+//     text-align: left;
+//     margin: 0;
+// }
+
+// h4 {
+//     font-size:  $font-size-sm;
+//     color: $theme-secondary-standard;
+//     font-weight: normal;
+//     font-style: normal;
+//     font-variant: normal;
+//     text-transform: none;
+// }
+
+html, body {
+    font-family: $font-family-standard !important;
+    height: 100%;
+    font-size: $font-size-sm !important;
+    color: $theme-secondary-standard !important;
+}
+.form-control {
+    color: $theme-secondary-standard !important;
+}
+
+// td, th{
+//     font-size: $font-size-sm;
+//     font-family:$font-family-standard;
+//     color: $theme-secondary-standard !important;
+// }
+
+.fa-icon-white{
+    color: $theme-font-color-secondary!important;
+}
+
+context-menu-content div ul li a:hover {
+    text-decoration: none;
+    background-color: $theme-font-color-secondary;
+}
+
+.form-control[disabled] {
+    background-color: #e9ecef;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #f8f9fa!important;
+}
+
+/* FIX FOR PAGINATOR SELECTED VALUE NOT GETTING HIGHLIGHTED ON OVERVIEW */
+body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+	color: $theme-font-color-secondary !important;
+}
+/* FIX FOR TYPEAHEAD ACTIVE VALUE COLOR ISSUE */
+div.repm5-container typeahead-container button.dropdown-item.active {
+    background-color: $theme-color !important;
+}
+
+.fa.fafaWhiteColor {
+    color: $theme-font-color-secondary !important;
+}
+
+.help-block{
+    font-size: 12px !important;
+    color: red !important;
+    padding-top: 3px !important;
+}
+    
+.colorRed{
+    color: red!important;
+}
+
+#editBuildingAddressModal,app-building-insurance {
+    table {
+        border: 1px solid #c8c8c8;
+    }
+}
+
+a {
+    color: $theme-color!important;
+    text-decoration: none;
+}
+
+label{
+    font-weight: normal;
+    font-size: $font-size-sm;
+    color: $theme-secondary-standard;
+}
+
+.subHeaderLabel repm5-label-field label{
+  font-weight: bold !important;
+  font-size: 13px;
+}
+
+// input[type="text"]:not(.ui-state-default), input[type="password"], input[type="range"], input[type="datetime"],
+// textarea, input[type="number"], input[type="date"],input[type="email"] {
+//     border: 1px solid $input-control-border;
+//     margin: 0;
+//     width: 100%;
+//     font-family: $font-family-standard;
+//     -webkit-border-radius: 2px;
+//     -moz-border-radius: 2px;
+//     border-radius: 2px;
+//     padding-left: 11px !important;
+//     padding-right: 11px !important;
+// }
+
+// select {
+//     font-size: $font-size-md !important;
+//     padding-left: 7px !important;
+//     border: 1px solid $input-control-border;
+//     border-radius: 2px !important;
+//     padding-bottom: 0px !important;
+//     padding-top: 0px !important;
+// }
+// select.form-control,
+// textarea.form-control{
+//     border: 1px solid $input-control-border;
+// }
+
+// .splash {
+//     height: 100%;
+//     width: 100%;
+//     top: 0;
+//     left: 0;
+//     z-index: 100000;
+// }
+
+// .message-container {
+//     height: 100px;
+//     width: 400px;
+//     top: 50%;
+//     width: 100%;
+//     text-align: center;
+// }
+
+// .message {
+//     padding-top: 35px;
+// }
+
+// .signal {
+//     border: 5px solid #333;
+//     border-radius: 30px;
+//     height: 30px;
+//     margin: -15px 0 0 -15px;
+//     opacity: 0;
+//     width: 30px;
+//     position: absolute;
+//     left: 50%;
+//     animation: pulsate 1s ease-out;
+//     animation-iteration-count: infinite;
+// }
+
+// @keyframes pulsate {
+//     0% {
+//       transform: scale(.1);
+//       opacity: 0.0;
+//     }
+//     50% {
+//       opacity: 1;
+//     }
+//     100% {
+//       transform: scale(1.2);
+//       opacity: 0;
+//     }
+// }
+
+.customH4{
+    font-size: $font-size-xl;
+    color: $theme-color !important;
+    font-weight:bold;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $theme-color;
+    margin-top: 15px;
+}
+
+// .input-sm, .rangeLabel {
+//     font-size: $font-size-md;
+//     color: $theme-secondary-standard;
+// }
+
+.spinnerCenter {
+    position:absolute;
+    font-size: $fa-size-xxl;
+    left:50%;
+    top:50%;
+}
+
+ .input-and-label .input{
+      color: $theme-secondary-standard !important;
+    }
+// .form-control{
+//     color: $theme-secondary-standard;
+// }
+
+// .cursor-pointer  {
+// 	cursor: pointer;
+// }
+
+// .helpIconCSS{
+//     color: $fore-color-icon-standard !important;
+//     font-size: $font-size-xl;
+//     padding-bottom: 0px;
+//     vertical-align: 2%;
+// }
+
+// html {
+//     overflow-x: hidden;
+//     overflow-y: hidden;
+// }
+
+// html, body {
+//     height: 100%;
+//     color: $theme-secondary-standard !important;
+//     font-family: $font-family-standard;
+// }
+
+// .form-button-container{
+//     margin-bottom:5px;
+// }
+
+// .panel{
+//     border-radius:0px !important;
+// }
+
+// .input-group-addon {
+//     color: $theme-secondary-standard;
+// }
+
+// /* button overwrite */
+// .btn-primary {
+//     color: $fore-color-primary-btn;
+//     background-color: $back-color-primary-btn;
+//     border-color: $border-color-primary-btn;
+// }
+
+// .btn-primary.active, .btn-primary:active {
+//     color: $fore-color-primary-btn-active;
+//     background-color:  $back-color-primary-btn-active;
+//     border-color: $border-color-primary-btn-active;
+// }
+
+// .btn-primary:hover, .btn-primary.active:hover {
+//     color: $fore-color-primary-btn-active;
+//     background-color: $theme-color;
+//     border-color: $theme-color;
+// }
+
+// .spinning {
+//     animation: spin 1s infinite linear;
+//     -webkit-animation: spin2 1s infinite linear;
+// }
+
+// @keyframes spin {
+//     from { transform: scale(1) rotate(0deg); }
+//     to { transform: scale(1) rotate(360deg); }
+// }
+
+// @-webkit-keyframes spin2 {
+//     from { -webkit-transform: rotate(0deg); }
+//     to { -webkit-transform: rotate(360deg); }
+// }
+
+// /* edit control */
+// #editDataTab,.qc-container {
+//     .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+//         color: $fore-color-tab!important;
+//         background-color: $back-color-tab;
+//     }
+    
+//     .nav-tabs>li>a {
+//         color: $theme-secondary-standard!important;
+//     }
+// } 
+
+/* Qlik Sense Alternate Dimension */
+div[role="presentation"] > div > nav > div > div > span {
+	font-size: 13px !important;
+}
+
+div[role="presentation"] > div > nav {
+	background-color: #404040;
+	color: #d9d9d9;
+}
+
+div[role="presentation"] > div > nav > div > div > i {
+	color: #d9d9d9;
+}
+
+div[role="presentation"] > div > nav > div:hover {
+	background-color: #4a4a4a
+}

@@ -1,0 +1,20 @@
+app-portfolio-unitcreator {
+
+    #return-to-top {
+      background: $theme-color;
+    }
+  
+    #return-to-top i {
+      color: $back-color-icon;
+      font-size: $font-size-xxl;
+    }
+  
+    #return-to-top:hover {
+      background: $theme-color;
+    }
+  
+    #return-to-top:hover i {
+      color:  $theme-background-color-standard;
+    }
+  
+  }

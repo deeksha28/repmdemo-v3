@@ -1,0 +1,30 @@
+app-tenantsWrapper {
+    .tableHeader .cell {
+      background-color: $theme-color !important;
+      color: $fore-color-table-header; // $theme-background-color-standard;
+    }
+  
+    .cell {
+      background-color:  $theme-background-color-standard;
+      color: $theme-secondary-standard;
+    }
+  
+    .fa {
+      font-size: $fa-size-md;
+    }
+  
+    .fa.fa-circle {
+      font-size:$font-size-xxs;
+    }
+  
+    // .tenantDataLoading {
+    //   font-size:$fa-size-xxl!important;
+    // }
+  
+    .tableHeader tr th {
+        white-space: nowrap!important;
+    }
+  
+    #tenantBackground{
+    }
+  }

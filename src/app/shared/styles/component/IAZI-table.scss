@@ -1,0 +1,133 @@
+app-tenantsWrapper, app-tenants, app-financialBenchmark-overview, dcf-scenario, app-language,
+iazi-qualicasa key-data-property, iazi-qualicasa key-data-building, iazi-qualicasa diagnose, iazi-qualicasa monitoring, iazi-qualicasa risk-management,
+iazi-qualicasa summary { // .iazi-table {
+    table {
+        width: 100%;
+  
+        thead {
+            display: table-header-group;
+            position: relative;
+            overflow: visible;
+            border: 1px solid #eee;
+            
+            tr {
+                line-height: 11px !important; 
+                // border-top:none !important; 
+                border-bottom:none !important;
+  
+                th {
+                    border: none!important;
+                    border-top: 1px solid #eee!important;
+                    background-color: $theme-color !important; 
+                    color:  $fore-color-table-header !important; 
+                    padding: 12px 10px !important;  
+                    // text-align: center;
+                    font-weight: normal;
+                    white-space: nowrap!important;
+                    cursor: pointer;
+                    line-height: 11px!important;
+                }
+            }
+        }
+  
+        tr {
+            margin-left: 0px;
+            margin-right: 0px;
+  
+            td, th {
+                position: relative;
+                display: table-cell;
+                padding: 5px 10px!important;
+                // overflow: hidden;
+                // background-color: $theme-background-color-standard ; 
+                // color: $theme-secondary-standard !important; 
+            }
+        }
+  
+        tbody {
+            display: table-row-group;
+            position: relative;
+            max-height: 70vh;
+            overflow: scroll;
+            border: 1px solid #eee;
+
+            td {
+              border: none!important;
+              border-top: 3px solid #eee!important;
+              border-bottom: 1px solid #eee!important;
+            }
+        }
+    }
+  
+    // .fa {
+    //   font-size: $fa-size-sm; 
+    //   color: $theme-secondary-standard;
+    //   line-height: 0px;
+    // }
+  
+    // .fa.fa-circle {
+    //   font-size:$font-size-xxs; 
+    // }
+  
+    // tr.inactive td:after {
+    //   content: "\00B7";
+    // }
+  
+    .number {
+      text-align: right!important;
+    }
+  
+    .text {
+      text-align: left!important;
+    }
+
+    .icon {
+      text-align: right!important;
+    }
+
+    .heading {
+      font-weight: $font-weight-heavy;
+    }
+}
+
+iazi-qualicasa {
+  table tbody td {
+    border-top-width: 1px !important;
+  }
+  .header-1 > th{
+    background-color: $theme-color !important; 
+    color:  $fore-color-table-header!important; 
+  }
+  @supports (-ms-ime-align:auto) {
+    td, th {
+     position: static !important;
+    }
+  }
+
+
+  @-moz-document url-prefix() {
+ 
+    td, th {
+      background-clip: padding-box;
+    }
+    tbody{
+      position: static !important;
+    }
+
+ }
+}
+iazi-qualicasa key-data-property table tbody td{
+  // /border-top: 1px solid #eee!important;
+  border-top: none!important;
+}
+app-tenantsWrapper, app-tenants, app-financialBenchmark-overview, iazi-market-value-selection, dcf-scenario, iazi-qualicasa {
+  .fa {
+    font-size: $fa-size-sm; 
+    color: $theme-secondary-standard;
+    line-height: 0px;
+  }
+
+  .fa.fa-circle {
+    font-size:$font-size-xxs; 
+  }
+}

@@ -1,0 +1,26 @@
+.ui-table .ui-table-thead > tr > th {
+    font-weight: 600!important;
+    color: $fore-color-table-header !important; 
+    background-color: $theme-color !important; 
+    border-left: 0px!important;
+    border-right: 0px!important;
+}
+.ui-table .ui-table-thead > tr.sub-header th {
+    background-color: #f4f4f4!important;
+}
+.ui-table .ui-table-tbody > tr:nth-child(2n) {
+    background-color: $theme-background-color-standard!important;
+}
+.ui-table .ui-table-tbody > tr:hover {
+    background-color: $theme-background-color-secondary!important;
+}
+.ui-table .ui-table-tbody > tr > td{
+    border-left: 0px!important;
+    border-right: 0px!important;
+}
+app-docu-manager-general tr.ui-state-highlight {
+    background-color: $tree-selected-node!important;
+}
+settings td:not(.selected-view):hover {
+    background-color: unset!important;
+}

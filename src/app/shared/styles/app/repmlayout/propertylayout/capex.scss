@@ -1,0 +1,18 @@
+capex-wrapper {
+    .inlineScenario label {
+      font-weight: 700;
+      color: $theme-color;
+    }
+  
+    .inlineScenario span {
+            color: $theme-color!important;
+    }
+  
+    .inlineScenario {
+      color: $theme-color!important;
+    }
+  
+    .panelShadowCustom{
+      background-color:  $theme-background-color-standard;
+    }
+  }

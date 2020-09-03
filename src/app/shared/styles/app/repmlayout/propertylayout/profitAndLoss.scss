@@ -1,0 +1,21 @@
+app-profit-and-loss {
+    .controlStyle {
+      background-color:  $theme-background-color-standard!important;
+    }
+  
+    .inlineScenario span {
+      color: $fore-color-icon-standard!important;
+    }
+  
+    .inlineScenario {
+      color: $fore-color-icon-standard!important;
+    }
+
+    .customButton {
+      	margin-top: 0px !important; 
+    }
+
+    .customButtonScenario .btn.dropdown-toggle {
+      color: $theme-secondary-standard !important;
+    }
+  }

@@ -1,1 +1,253 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+// @import '~primeng/resources/primeng.min.css';
+@import '~font-awesome/css/font-awesome.css';
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~primeng/resources/themes/nova-light/theme.css';
+@import "~primeicons/primeicons.css";
+@import "../src/app/shared/styles/_variables.scss";
+// html, body {
+//     // font-family: "Brush Script MT", "Avenir LT W01_55 Roman1475520",Helvetica,Arial,sans-serif !important;
+//     height: 100%;
+//     // font-size: 20px !important;
+// }
+
+.align-right{
+	text-align: right;
+}
+.align-left{
+	text-align: left;
+}
+.align-center{
+	text-align: center;
+}
+
+
+.no-wrap{
+	white-space: nowrap
+}
+
+.repm5-box-shadow{
+    box-shadow: 0px 0px 3px 1px lightgrey;
+}
+
+// .btn-primary{
+//     // background-color: #005684;
+//     background-color: #005684!important
+// }
+
+// td,th{
+//     font-size: 12px;
+// }
+.containerAutoWidth {
+     padding-right: 0px !important;  
+     margin-right: 0 !important; 
+}
+
+.form-group {
+    width: 100%;
+}
+
+.input-group-addon {
+  height: calc(1.5em + 0.90rem) !important;
+}
+
+
+.keyNameClass {
+  display: inline-block !important;
+border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.pointer{
+    cursor: pointer;
+}
+
+context-menu-content div ul li a {
+   display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    white-space: nowrap;
+}
+
+context-menu-content div ul li.disabled a {
+    cursor: not-allowed;
+}
+
+// context-menu-content div ul li.disabled a:hover {
+//     text-decoration: none;
+//     background-color: #ffffff;
+// }
+
+.dropdown-menu .disabled a:hover {
+    text-decoration: none;
+    cursor: not-allowed;
+    background-color: transparent;
+    background-image: none;
+}
+
+
+help-information-popup div ul div {
+    margin-right: -12px !important;
+    margin-left: -12px !important;
+}
+
+.modal .ngx-pagination {
+    text-align: center!important;
+}
+
+.ngx-pagination {
+    margin-top: 1rem !important;
+}
+
+app-layout .input-group-addon {
+  border: 1px solid #ccc;
+}
+
+iazi-address-input-field div div span {
+  margin-top: -2px !important;
+}
+
+iazi-address-input-field div div span button {
+    background: #a5c3d4 !important;
+    border-bottom-left-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+}
+
+iazi-address-input-field div div input[name="addressLabel"] {
+    margin-top: 2px;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px;
+}
+
+.helpSelectedIcon {
+  margin-left: 15px !important;
+}
+
+.btn.disabled, .btn[disabled] {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
+
+.form-control[disabled] {
+    cursor: not-allowed;
+    // background-color: #e9ecef;
+    opacity: 1;
+}
+
+.rangeLabel {
+  padding: 10px 0px 5px !important;
+}
+// .dropdown-item.active, .dropdown-item:active {
+//     background-color: #f8f9fa!important;
+// }
+
+.dropdown-menu {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+//fix for ipad vertical table scroll
+@media screen and (max-height: 800px) and (max-width: 1070px){
+	app-overview-component p-table .ui-table.ui-widget .ui-table-wrapper{
+		max-height: 34vh!important;
+	}
+}
+@media screen and (min-device-height : 800px) and (max-device-height : 1070px) and (orientation : portrait){
+	app-overview-component p-table .ui-table.ui-widget .ui-table-wrapper{
+		max-height: 41vh!important;
+	}
+}
+
+/* FIX FOR PAGINATOR SELECTED VALUE NOT GETTING HIGHLIGHTED ON OVERVIEW */
+// body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+// 	color: #fff !important;
+// }
+/* FIX FOR TYPEAHEAD VALUES OVERFLOWING */
+div.repm5-container typeahead-container {
+    overflow-y: auto !important;
+}
+/* FIX FOR TYPEAHEAD ACTIVE VALUE COLOR ISSUE */
+// div.repm5-container typeahead-container button.dropdown-item.active {
+//     background-color: #007bff !important;
+// }
+.helpPanelDefault.row{
+margin-right: -12px!important;
+margin-left:-12px!important;
+}
+.noPaddingRight{
+   padding-right: 0px!important;
+}
+.noPaddingLeft{
+   padding-left: 0px!important;
+}
+.marginLeftMinus{
+   margin-left: -22px;
+}
+@media screen and (max-width: 800px){
+    .col-sm-1.noPaddingRight{
+        padding-left: 0px;
+    }
+    .marginLeftMinus{
+        margin-left: -12px;
+    }
+}
+
+#editBuildingAddressModal,app-building-insurance {
+    table {
+        border-collapse: separate!important;
+        border-spacing: 0;
+        // border: 1px solid #c8c8c8;red
+        border-radius: 5px;
+    }
+    th,td {
+        border-left: none!important;
+        border-top: none!important;
+    }
+    tr:first-child th:first-child { border-top-left-radius: 5px; }
+    tr:first-child th:last-child { border-top-right-radius: 5px; }
+    tr:last-child td:first-child { border-bottom-left-radius: 5px; }
+    tr:last-child td:last-child { border-bottom-right-radius: 5px; }
+    tr:first-child th { border-left: none!important; }
+    tr th:last-child { border-right: none!important; }
+    tr:last-child td { border-bottom: none!important; }
+    tr td:last-child { border-right: none!important; }
+}
+
+.help-block{
+    font-size: 12px !important;
+    // color:red !important;
+    padding-top: 3px !important;
+}
+.colorRed{
+    // color:red!important;
+}
+.disabled{
+    cursor: not-allowed!important;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+// .fa.fafaWhiteColor {
+//     color: #fff !important;
+// }
+
+.rowPaddingBottom {
+    padding-bottom: 10px !important;
+}
+
+.colbox{
+    width: fit-content;
+    padding-left: 15px;
+    padding-right:15px;
+}
+@media screen and (max-width: 770px) {
+    .colbox{
+        width: fit-content;
+        padding-left: 9px;
+        padding-right:9px;
+    }
+}

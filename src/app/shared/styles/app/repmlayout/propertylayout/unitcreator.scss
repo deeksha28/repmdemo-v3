@@ -1,0 +1,18 @@
+app-property-unitcreator {
+    #return-to-top {
+      background: $fore-color-icon-standard;
+    }
+  
+    #return-to-top i {
+      color: $back-color-icon;
+      font-size: $font-size-xl;
+    }
+  
+    #return-to-top:hover {
+      background: $fore-color-icon-standard;
+    }
+  
+    #return-to-top:hover i {
+      color: $back-color-icon;
+    }
+  }
