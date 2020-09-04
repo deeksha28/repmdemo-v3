@@ -72,6 +72,10 @@ outline: none!important;
 
 .portfolio-selected {
     background-color: lightgrey;
+    cursor: pointer;
+    border: 1px solid #005684;
+    border-radius: 5px;
+    padding: 4px !important;
 }
 .groupHeader{
     margin-bottom: 0;

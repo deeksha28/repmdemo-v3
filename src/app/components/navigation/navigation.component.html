@@ -8,14 +8,14 @@
     </td>
   </tr>
 
-  <tr>
-    <td title="Portfolio" (click)="navigate('portfolio', '', '')">
-      <div [ngClass]="{ 'selected-view portfolio-selected': selectedView === 'portfolio' || viewPortfolio }" class="svg-container">
-        <i class="fa fa-sitemap  iconSize23" aria-hidden="true"></i>
-        <span class="align-span" *ngIf="showLabels">&nbsp;&nbsp;Portfolio</span>
-      </div>
-    </td>
-  </tr>
+    <tr>
+      <td title="Portfolio" (click)="navigate('portfolio', '', '')">
+        <div [ngClass]="{ 'portfolio-selected': viewPortfolio }" class="svg-container">
+          <i class="fa fa-sitemap  iconSize23" aria-hidden="true"></i>
+          <span class="align-span" *ngIf="showLabels">&nbsp;&nbsp;Portfolio</span>
+        </div>
+      </td>
+    </tr>
 
   <tr>
     <td title="Tasks" (click)="navigate('tasks', '', 'tasks')">

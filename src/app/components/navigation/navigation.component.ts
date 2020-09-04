@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SVGKEYS } from 'src/app/shared/components/interfaces/shared.interface';
+import { SVGKEYS } from '../../shared/components/interfaces/shared.interface';
 import { Router } from '@angular/router';
-import { DataService } from 'src/app/shared/services/data.service';
+import { DataService } from '../../shared/services/data.service';
 
 @Component({
   selector: 'app-navigation',
@@ -68,56 +68,16 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public navigate(selectedView: string, level: string, path: string) {
-    this.selectedView = selectedView
-    if(this.selectedView != 'portfolio')
+  public navigate(selectedView: string, level: string, path: string) {    
+    if(this.selectedView != 'portfolio'){
+      this.selectedView = selectedView
       this.router.navigate([path])
-    else{
+    }else{
       this.ds.headerTypeSubject.next('portfolio')
       this.ds.portfolioToggleSubject.next(!this.ds.portfolioToggleSubject.getValue())
-    }      
-    // this.path = path;
-    // this.selectedView_temp = selectedView;
-    // if (level === 'portfolio') {
-    //   this.path = path + this.portfolioId;
-    // } else if (level === 'property') {
-    //   this.path = path + this.propertyId;
-    // }
-
-    // if (this.unitService.getNavigateConfirmation()) {
-    //   this.selectedView = selectedView;
-    //   this.unitService.setSelectedView(selectedView);
-    //   this.router.navigate([this.path]);
-    // } else {
-    //   this.toggleConfirmModal = true;
-    // }
+    }   
   }
   public selectView(selectedView) {
-    // if (selectedView === 'dashboard') {
-    //   this.unitService.getQlikSenseURL();
-    //   // this.navigate('immo-cockpit', 'portfolio', 'layout/immo-cockpit/iframe/portfolio/');
-    // } else if (selectedView === 'map') {
-    //   let address = ''; // sessionStorage.getItem('propertyAddress');
-    //   const fulladdress: string = sessionStorage.getItem('address');
-    //   const splitAddress: string[] = fulladdress.split('|');
-
-    //   if (splitAddress && splitAddress.length > 0) {
-    //     const zip = splitAddress[0];
-    //     const town = splitAddress[1];
-    //     const street = splitAddress[2] && splitAddress[2] !== '' ? splitAddress[2] + ', ' : '';
-    //     address = street + zip + ' ' + town;
-    //   }
-
-    //   const lat = sessionStorage.getItem('lat');
-    //   const lon = sessionStorage.getItem('lon');
-
-    //   if (lat === '0') {
-    //     this.validateAddressAndSave(address);
-    //     return;
-    //   }
-    //   window.open(Config.API_MAP_URL + 'address=' + address + '&lat=' + lat + '&lon=' + lon, '_blank');
-    // } else {
-    //   this.unitService.setSelectedView(selectedView);
-    // }
+    
   }
 }

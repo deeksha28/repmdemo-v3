@@ -130,7 +130,7 @@ const routes: Routes = [
           import("./modules/mapspro/mapspro.module").then((m) => m.MapsproModule),
       },
       { 
-        path: 'task',
+        path: 'tasks',
         loadChildren: () => import('./modules/task/task.module').then(m => m.TaskModule) 
       },
       { 

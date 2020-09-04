@@ -1,7 +1,7 @@
 <p-table #dt [value]="tasks" [(selection)]="selectedTasks" dataKey="id" styleClass="ui-table-customers" [rowHover]="true"
-    [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" [(first)]="first"
+    [rows]="10" [showCurrentPageReport]="false" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" [(first)]="first"
     [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-    [filterDelay]="0" [globalFilterFields]="['assignee','process.name','creator.name','status']">
+    [filterDelay]="0" [globalFilterFields]="['assignee','process.name','creator.name','status']" [scrollable]="true">
     <ng-template pTemplate="caption">
         <div class="ui-table-globalfilter-container search">
             <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search Task" />
@@ -9,6 +9,20 @@
             <button type="button" class="btn btn-primary create-task-btn">Create Task</button>
         </div>
     </ng-template>
+    <ng-template pTemplate="colgroup">
+        <colgroup>
+          <col style="width:150px;">
+          <col style="width:80px;">
+          <col style="width:150px;">
+          <col style="width:150px;">
+          <col style="width:150px;">
+          <col style="width:150px;">
+          <col style="width:150px;">
+          <col style="width:150px;">
+          <col style="width:150px;">
+          <col style="width:150px;">
+        </colgroup>
+      </ng-template>
     <ng-template pTemplate="header">
         <tr>
             <th pSortableColumn="status">Status <p-sortIcon field="status"></p-sortIcon></th>
