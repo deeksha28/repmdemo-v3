@@ -66,4 +66,18 @@ outline: none!important;
     }
 }
 
-    
+.groupHeader{
+    margin-bottom: 0;
+    padding: 8px;
+}
+hr{
+    margin-top: 0;
+}
+
+.groupToggle { 
+    display: block; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    transition: all 0.25s ease-out; 
+} 

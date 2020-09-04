@@ -7,59 +7,66 @@
         </div>
       </td>
     </tr>
-  
+
+    <p class="groupHeader groupToggle" *ngIf="true"><a data-toggle="collapse" href="#collapseEdit" role="button" aria-expanded="false" aria-controls="collapseExample">Edit</a></p>
     <hr class="seperator" *ngIf="true"/>
+    <div class="collapse" id="collapseEdit">
+      <tr *ngIf="view == 'portfolio'">  
+        <td title="Construction Planning"
+          (click)="navigate('constructionplanning', 'portfolio', 'layout/constructionplanning/portfolio/')">
+          <div class="svg-container"
+            [ngClass]="{ 'selected-view': selectedView === 'constructionplanning' }">
+            <app-svg-icons [key]="qccapexKey" [height]="svgHeight" [fillColor]="svgFillColorArr[7]"> </app-svg-icons>
+            <span *ngIf="showLabels">&nbsp;&nbsp;Construction Planning</span>
+          </div>
+        </td>
+      </tr>
+    
+      <tr *ngIf="view == 'portfolio'">  
+        <td title="Profit & loss"
+          (click)="navigate('profit-and-loss', 'portfolio', 'layout/profit-and-loss/portfolio/')">
+          <div [ngClass]="{ 'selected-view': selectedView === 'profit-and-loss' }" class="svg-container">
+            <app-svg-icons [key]="proftitnlossKey" [height]="svgHeight" [fillColor]="svgFillColorArr[5]"> </app-svg-icons>
+            <span *ngIf="showLabels">&nbsp;&nbsp;Profit & loss</span>
+          </div>
+        </td>
+      </tr>
+    </div>
+    
+    <p class="groupHeader groupToggle" *ngIf="true"><a data-toggle="collapse" href="#collapseCalc" role="button" aria-expanded="false" aria-controls="collapseExample">Calculations</a></p>
+    <hr class="seperator"/>
+    
+    <div class="collapse" id="collapseCalc">
+      <tr *ngIf="view == 'portfolio'">  
+        <td title="DCF" (click)="navigate('dcf', 'portfolio', 'layout/dcf/portfolio/')">
+          <div [ngClass]="{ 'selected-view': selectedView === 'dcf' }" class="svg-container">
+            <app-svg-icons [key]="dcfKey" [height]="svgHeight" [fillColor]="svgFillColorArr[1]"> </app-svg-icons>
+            <span *ngIf="showLabels">&nbsp;&nbsp;DCF</span>
+          </div>
+        </td>
+      </tr>
+    
+      <tr *ngIf="view == 'portfolio'">
+        <td title="QC Capex"
+          (click)="navigate('qualicasa', 'portfolio', 'layout/qualicasa/portfolio/')">
+          <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'qualicasa' }">
+            <app-svg-icons [key]="qccapexKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
+            <span *ngIf="showLabels">&nbsp;&nbsp;QC Capex</span>
+          </div>
+        </td>
+      </tr>
+    
+      <tr *ngIf="view == 'portfolio'"> 
+        <td title="Hedonic" (click)="navigate('hedonic', 'portfolio', 'layout/hedonic/portfolio/')">
+          <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'hedonic' }">
+            <app-svg-icons [key]="hedonicKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
+            <span *ngIf="showLabels">&nbsp;&nbsp;Hedonic</span>
+          </div>
+        </td>
+      </tr>
+    </div>
   
-    <tr *ngIf="view == 'portfolio'">  
-      <td title="Construction Planning"
-        (click)="navigate('constructionplanning', 'portfolio', 'layout/constructionplanning/portfolio/')">
-        <div class="svg-container"
-          [ngClass]="{ 'selected-view': selectedView === 'constructionplanning' }">
-          <app-svg-icons [key]="qccapexKey" [height]="svgHeight" [fillColor]="svgFillColorArr[7]"> </app-svg-icons>
-          <span *ngIf="showLabels">&nbsp;&nbsp;Construction Planning</span>
-        </div>
-      </td>
-    </tr>
-  
-    <tr *ngIf="view == 'portfolio'">  
-      <td title="Profit & loss"
-        (click)="navigate('profit-and-loss', 'portfolio', 'layout/profit-and-loss/portfolio/')">
-        <div [ngClass]="{ 'selected-view': selectedView === 'profit-and-loss' }" class="svg-container">
-          <app-svg-icons [key]="proftitnlossKey" [height]="svgHeight" [fillColor]="svgFillColorArr[5]"> </app-svg-icons>
-          <span *ngIf="showLabels">&nbsp;&nbsp;Profit & loss</span>
-        </div>
-      </td>
-    </tr>
-  
-    <tr *ngIf="view == 'portfolio'">  
-      <td title="DCF" (click)="navigate('dcf', 'portfolio', 'layout/dcf/portfolio/')">
-        <div [ngClass]="{ 'selected-view': selectedView === 'dcf' }" class="svg-container">
-          <app-svg-icons [key]="dcfKey" [height]="svgHeight" [fillColor]="svgFillColorArr[1]"> </app-svg-icons>
-          <span *ngIf="showLabels">&nbsp;&nbsp;DCF</span>
-        </div>
-      </td>
-    </tr>
-  
-    <tr *ngIf="view == 'portfolio'">
-      <td title="QC Capex"
-        (click)="navigate('qualicasa', 'portfolio', 'layout/qualicasa/portfolio/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'qualicasa' }">
-          <app-svg-icons [key]="qccapexKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
-          <span *ngIf="showLabels">&nbsp;&nbsp;QC Capex</span>
-        </div>
-      </td>
-    </tr>
-  
-    <tr *ngIf="view == 'portfolio'"> 
-      <td title="Hedonic" (click)="navigate('hedonic', 'portfolio', 'layout/hedonic/portfolio/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'hedonic' }">
-          <app-svg-icons [key]="hedonicKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
-          <span *ngIf="showLabels">&nbsp;&nbsp;Hedonic</span>
-        </div>
-      </td>
-    </tr>
-  
-    <tr *ngIf="view == 'portfolio'"> 
+    <!-- <tr *ngIf="view == 'portfolio'"> 
       <td title="Document manager"
         (click)="navigate('documanager', 'portfolio', 'layout/documanager/portfolio/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'documanager' }">
@@ -67,8 +74,8 @@
           <span *ngIf="showLabels">&nbsp;&nbsp;Document manager</span>
         </div>
       </td>
-    </tr>
-  
+    </tr> -->
+<!--   
     <tr *ngIf="view == 'portfolio'"> 
       <td title="Rating" (click)="navigate('rating', 'portfolio', 'layout/rating/portfolio/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'rating' }">
@@ -77,7 +84,7 @@
         </div>
       </td>
     </tr>
-  
+   -->
     <!--  <tr *ngIf="modulePermission.indexOf(moduleName.AddressValidationQS) !== -1">
       <td title="{{ 'Address Validator' | translate }}"
         (click)="navigate('addressvalidator', 'portfolio', 'layout/addressvalidator/qs/portfolio/')">
@@ -88,7 +95,7 @@
       </td>
     </tr> -->
   
-    <hr class="seperator"/>
+    <!-- <hr class="seperator"/>
   
     <tr *ngIf="view == 'portfolio'"> 
       <td title="Credit application"
@@ -109,9 +116,10 @@
         </div>
       </td>
     </tr>
-  
-    <hr class="seperator" />
-  
+   -->
+  <p class="groupHeader groupToggle" *ngIf="true"><a data-toggle="collapse" href="#collapseAnalysis" role="button" aria-expanded="false" aria-controls="collapseExample">Analysis</a></p>
+  <hr class="seperator" />
+  <div class="collapse" id="collapseAnalysis">
     <tr *ngIf="view == 'portfolio'">
       <td title="Cockpit" (click)="selectView('dashboard')">
         <div class="svg-container">
@@ -120,9 +128,11 @@
         </div>
       </td>
     </tr>
-  
-    <hr class="seperator" />
-  
+  </div>
+
+  <p class="groupHeader groupToggle" *ngIf="true"><a data-toggle="collapse" href="#collapseSettings" role="button" aria-expanded="false" aria-controls="collapseExample">Settings</a></p>
+  <hr class="seperator" />
+<!--   
     <tr *ngIf="view == 'portfolio'"> 
       <td title="Import Data"
         (click)="navigate('importdata', 'portfolio', 'layout/importdata/portfolio/')">
@@ -132,7 +142,8 @@
         </div>
       </td>
     </tr>
-  
+   -->
+  <div class="collapse" id="collapseSettings">
     <tr *ngIf="view == 'portfolio'"> 
       <td title="Language" (click)="navigate('language', 'portfolio', 'layout/language/portfolio/')">
         <div class="svg-container svg-lang" [ngClass]="{ 'selected-view': selectedView === 'language' }">
@@ -161,6 +172,7 @@
         </div>
       </td>
     </tr>
+  </div>
   
    <!-- <hr *ngIf="modulePermission.indexOf(moduleName.MiniReport) !== -1" class="seperator" />
   
