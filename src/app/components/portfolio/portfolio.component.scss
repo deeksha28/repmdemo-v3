@@ -1,6 +1,7 @@
 // flex container for navigation and view content
 .layoutContainer {
     min-height: 100%;
+    overflow:overlay;
 }
 .flexItemNavigation{
     height: 500px;
