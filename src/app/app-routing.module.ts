@@ -10,7 +10,7 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       { 
-        path: 'task',
+        path: 'tasks',
         loadChildren: () => import('./modules/task/task.module').then(m => m.TaskModule) 
       },
       { 

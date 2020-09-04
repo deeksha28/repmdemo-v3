@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DataService } from 'src/app/shared/services/data.service';
+import { DataService } from '../../shared/services/data.service';
 import { isInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 
 @Component({
