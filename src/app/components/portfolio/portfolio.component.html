@@ -1,28 +1,89 @@
-<div class="form-group">
-    <select class="form-control" [(ngModel)]="portfolio" (change)="onChange($event)">
-        <option value="portfolio1">Portfolio 1</option>
-        <option value="portfolio2">Portfolio 2</option>
-    </select>
+<div class="layoutContainer d-flex flex-row">
+    <div [ngClass]="{'alignCenter': !showLabels}" class="flexItemNavigation">
+        <div class="row">
+            <div [ngClass]="{'col-md-1 col-sm-1': showLabels, 'col-md-12 col-sm-12': !showLabels}"  style="padding-top: 6px;">
+                <span><i class="fas fa-briefcase" aria-hidden="true"></i></span>
+            </div>
+            <div class="col-md-10 col-sm-10" style="padding-left: 0">
+                <select *ngIf="showLabels" style="padding-left: 0" (change)="selectPortfolio($event)" class="form-control ng-pristine ng-valid ng-touched"><option _ngcontent-bjx-c142="" value="0"> BGV Portfolio</option><option _ngcontent-bjx-c142="" value="1"> Offered Portfolio</option><!----></select>
+            </div> 
+        </div>
+        <hr class="seperator"/>
+        <div class="row">
+            <div [ngClass]="{'col-md-1 col-sm-1': showLabels, 'col-md-12 col-sm-12': !showLabels}" class="">
+                <span><i class="fas fa-home" aria-hidden="true"></i></span>
+            </div>
+            <div class="col-md-10 col-sm-10" style="padding-left: 5px;">
+                <span *ngIf="showLabels" >6503</span>
+            </div> 
+        </div>
+        <hr class="seperator"/>
+
+        <p *ngIf="!showLess&&showLabels">
+            <label>Canton</label>
+            <select #canton class="form-control ng-pristine ng-valid ng-touched"><option _ngcontent-cax-c142="" value="0: null"></option><option _ngcontent-cax-c142="" value="1: 13" class="ng-star-inserted"> Basel-Country </option><option _ngcontent-cax-c142="" value="2: 14" class="ng-star-inserted"> Schaffhausen </option><!----></select>
+        </p>
+
+        <hr *ngIf="!showLess&&showLabels" class="seperator"/>
+
+        <p *ngIf="!showLess&&showLabels">
+            <label>Zip/Town</label> 
+            <select #ziptown id="sel1" class="form-control ng-pristine ng-valid ng-touched"><option _ngcontent-cax-c142="" value="0: null"></option><option _ngcontent-cax-c142="" value="1: 4102" class="ng-star-inserted"> 4102 Binningen</option><option _ngcontent-cax-c142="" value="2: 4103" class="ng-star-inserted"> 4103 Bottmingen</option><option _ngcontent-cax-c142="" value="3: 4104" class="ng-star-inserted"> 4104 Oberwil</option><option _ngcontent-cax-c142="" value="4: 4107" class="ng-star-inserted"> 4107 Ettingen</option><option _ngcontent-cax-c142="" value="5: 4123" class="ng-star-inserted"> 4123 Allschwil</option><option _ngcontent-cax-c142="" value="6: 4133" class="ng-star-inserted"> 4133 Pratteln</option><option _ngcontent-cax-c142="" value="7: 4142" class="ng-star-inserted"> 4142 Münchenstein</option><option _ngcontent-cax-c142="" value="8: 4147" class="ng-star-inserted"> 4147 Aesch</option><option _ngcontent-cax-c142="" value="9: 4153" class="ng-star-inserted"> 4153 Reinach</option><option _ngcontent-cax-c142="" value="10: 4225" class="ng-star-inserted"> 4225 Brislach</option><option _ngcontent-cax-c142="" value="11: 4410" class="ng-star-inserted"> 4410 Liestal</option><option _ngcontent-cax-c142="" value="12: 4414" class="ng-star-inserted"> 4414 Füllinsdorf</option><option _ngcontent-cax-c142="" value="13: 4417" class="ng-star-inserted"> 4417 Ziefen</option><option _ngcontent-cax-c142="" value="14: 4424" class="ng-star-inserted"> 4424 Arboldswil</option><option _ngcontent-cax-c142="" value="15: 4436" class="ng-star-inserted"> 4436 Oberdorf</option><option _ngcontent-cax-c142="" value="16: 4436" class="ng-star-inserted"> 4436 Oberdorf BL</option><option _ngcontent-cax-c142="" value="17: 4448" class="ng-star-inserted"> 4448 Läufelfingen</option><option _ngcontent-cax-c142="" value="18: 4450" class="ng-star-inserted"> 4450 Sissach</option><option _ngcontent-cax-c142="" value="19: 4460" class="ng-star-inserted"> 4460 Gelterkinden</option><option _ngcontent-cax-c142="" value="20: 8207" class="ng-star-inserted"> 8207 Schaffhausen</option><!----></select>
+        </p>
+
+        <hr *ngIf="!showLess&&showLabels" class="seperator"/>
+
+        <p *ngIf="!showLess&&showLabels">
+                <label>Category</label>
+                <select [(ngModel)]="category" class="form-control ng-valid ng-touched ng-dirty"><option _ngcontent-cax-c142="" value="0: null"></option><option _ngcontent-cax-c142="" value="1" class="ng-star-inserted"> Mixed use property</option><option _ngcontent-cax-c142="" value="2" class="ng-star-inserted"> Residential property</option><!----></select>
+        </p>
+
+        <hr *ngIf="!showLess&&showLabels" class="seperator"/>
+
+        <p *ngIf="!showLess&&showLabels">
+            <select *ngIf="showLabels" class="form-control ng-pristine ng-valid ng-touched">
+                <option>All Property</option>
+            </select>
+        </p>
+        <hr *ngIf="!showLess&&showLabels" class="seperator"/>
+        <div>
+
+            <span *ngIf="showLess&&showLabels"><a href="javascript:;" (click)="toggleShowLess()">Show More</a></span>
+            <span *ngIf="!showLess&&showLabels"><a href="javascript:;" (click)="toggleShowLess()">Show Less</a></span>
+       
+            <button style="float: right;" class="btn" *ngIf="showLabels" (click)="filterItem()">
+                <span><i class="fa fa-search" aria-hidden="true"></i></span><span *ngIf="showLabels">Search</span>
+            </button>
+            <span *ngIf="!showLabels" style="font-weight:bold;padding-right: 5px;">...</span>
+            <a href="javascript:;" *ngIf="!showLabels"><i class="fa fa-search" aria-hidden="true"></i></a>
+        </div>
+        <hr class="seperator"/>
+      
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align: left; padding-bottom: 18px;">
+                        <span *ngIf="showLabels"> BGV Portfolio</span> 
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let property of filteredProperties">
+                    <td>
+                        <span>{{property.id}}</span> 
+                        <span *ngIf="showLabels">{{property.name}}</span> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="splitter">
+        <i *ngIf="!showLabels" class="fa fa-caret-right" aria-hidden="true" (click)="toggleViewLabels()"></i>
+        <i *ngIf="showLabels" class="fa fa-caret-left" aria-hidden="true" (click)="toggleViewLabels()"></i>
+    </div>
+
+    <div class="flexItemContent flex-grow-1 repm5-container">
+
+        <router-outlet></router-outlet>
+    </div>
 </div>
-<ul *ngIf="portfolio == 'portfolio1'">
-    <li (click)="selectProperty('property', 'XXX11, Street11, Zip11 Town11')">
-        XXX11, Street11, Zip11 Town11
-    </li>
-    <li (click)="selectProperty('property', 'XXX12, Street112 Zip11 Town12')">
-        XXX12, Street12, Zip12 Town12
-    </li>
-    <li (click)="selectProperty('property', 'XXX13, Street13, Zip13 Town13')">
-        XXX13, Street13, Zip13 Town13
-    </li>
-</ul>
-<ul *ngIf="portfolio == 'portfolio2'">
-    <li (click)="selectProperty('property', 'XXX21, Street21, Zip21 Town21')">
-        XXX21, Street21, Zip21 Town21
-    </li>
-    <li (click)="selectProperty('property', 'XXX22, Street22, Zip22 Town22')">
-        XXX22, Street22, Zip22 Town22
-    </li>
-    <li (click)="selectProperty('property', 'XXX23, Street23, Zip23 Town23')">
-        XXX23, Street23, Zip23 Town23
-    </li>
-</ul>
