@@ -1,4 +1,4 @@
-<p-table #dt [value]="tasks" [(selection)]="selectedTasks" dataKey="id" styleClass="ui-table-customers" [rowHover]="true"
+<p-table #dt [value]="tasks" [(selection)]="selectedTasks" dataKey="id" styleClass="ui-table-task" [rowHover]="true"
     [rows]="10" [showCurrentPageReport]="false" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" [(first)]="first"
     [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
     [filterDelay]="0" [globalFilterFields]="['assignee','process.name','creator.name','status']" [scrollable]="true">
@@ -39,22 +39,22 @@
         </tr>
    
     </ng-template>
-    <ng-template pTemplate="body" let-customer>
+    <ng-template pTemplate="body" let-task>
         <tr class="ui-selectable-row">        
-            <td><span [class]="'customer-badge status-' + customer.status">{{customer.status}}</span></td>
-            <td>{{customer.p}}</td>
-            <td> <span style="vertical-align: middle; margin-left: .5em">{{customer.process.name}}</span> </td>
-            <td>  {{customer.key}} </td>
-            <td><span style="vertical-align: middle; margin-left: .5em">{{customer.createddate}}</span> </td>
+            <td><span [class]="'task-badge status-' + task.status">{{task.status | uppercase}}</span></td>
+            <td>{{task.p}}</td>
+            <td> <span style="vertical-align: middle; margin-left: .5em">{{task.process.name}}</span> </td>
+            <td>  {{task.key}} </td>
+            <td><span style="vertical-align: middle; margin-left: .5em">{{task.createddate}}</span> </td>
             <td>
-                <span style="vertical-align: middle; margin-left: .5em">{{customer.summary}}</span>
+                <span style="vertical-align: middle; margin-left: .5em">{{task.summary}}</span>
             </td>
             <td>
-                <span style="vertical-align: middle; margin-left: .5em">{{customer.assignee}}</span>
+                <span style="vertical-align: middle; margin-left: .5em">{{task.assignee}}</span>
             </td>
-            <td>{{customer.creator.name}}</td>
-            <td>{{customer.startdate}}</td>
-            <td>{{customer.deadline}}</td>
+            <td>{{task.creator.name}}</td>
+            <td>{{task.startdate}}</td>
+            <td>{{task.deadline}}</td>
         </tr>
     </ng-template>
     <ng-template pTemplate="emptymessage">

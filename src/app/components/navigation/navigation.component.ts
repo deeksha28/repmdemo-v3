@@ -68,8 +68,8 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public navigate(selectedView: string, level: string, path: string) {    
-    if(this.selectedView != 'portfolio'){
+  public navigate(selectedView: string, level: string, path: string) {   
+    if(selectedView != 'portfolio'){
       this.selectedView = selectedView
       this.router.navigate([path])
     }else{

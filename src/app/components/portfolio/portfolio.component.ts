@@ -56,6 +56,7 @@ export class PortfolioComponent implements OnInit {
     this.portfolio = 'portfolio1'
     this.properties = this.bgvPortfolio;
     this.ds.headerSubject.next(this.portfolios[0])
+    this.ds.viewSubject.next('portfolio')
     this.assignCopy();
   }
 
@@ -82,6 +83,7 @@ export class PortfolioComponent implements OnInit {
       this.properties  = this.bgvPortfolio;
     
     this.ds.headerTypeSubject.next('portfolio')
+    this.ds.viewSubject.next('portfolio')
     this.ds.headerSubject.next(this.portfolios[event.target.value])
     
     this.selectedPortfolio = event.target.options[event.target.options.selectedIndex].text
@@ -90,6 +92,7 @@ export class PortfolioComponent implements OnInit {
   selectProp(id, name){
     this.selectedRowId = id;
     this.ds.headerTypeSubject.next('property')
+    this.ds.viewSubject.next('property')
     this.ds.headerSubject.next(id + name)
   }
 
