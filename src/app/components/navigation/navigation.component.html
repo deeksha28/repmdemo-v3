@@ -244,8 +244,10 @@
         </div>
       </td>
     </tr>
-    
+
+    <p class="groupHeader groupToggle" *ngIf="true"><a data-toggle="collapse" href="#collapseCalc" role="button" aria-expanded="false" aria-controls="collapseExample">Claculations</a></p>
     <hr class="seperator"/>
+    <div class="collapse" id="collapseCalc">
     <tr *ngIf="view == 'property'">
       <td title="QC Capex" (click)="navigate('qualicasa', 'property', 'qualicasa')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'qualicasa' }">
@@ -292,26 +294,29 @@
         </div>
       </td>
     </tr>
-  
+    </div>
+
+    <p class="groupHeader groupToggle" *ngIf="true"><a data-toggle="collapse" href="#collapseAnalysis" role="button" aria-expanded="false" aria-controls="collapseExample">Analysis</a></p>
     <hr class="seperator"/>
-  
-    <tr *ngIf="view == 'property'">
-      <td title="ImmoCockpit" (click)="navigate('immoCockpit', 'property', 'immoCockpit')">
-        <div class="svg-container">
-          <app-svg-icons [key]="dashboardKey" [height]="svgHeight" [fillColor]="svgFillColorArr[7]"> </app-svg-icons>
-          <span *ngIf="showLabels">&nbsp;&nbsp;ImmoCockpit</span>
-        </div>
-      </td>
-    </tr>
-  
-    <tr *ngIf="view == 'property'">
-      <td title="IAZI MapsPro" (click)="navigate('mapsPro', 'property', 'mapsPro')">
-        <div class="svg-container">
-          <app-svg-icons [key]="mapKey" [height]="svgHeight" [fillColor]="svgFillColorArr[8]"></app-svg-icons>
-          <span *ngIf="showLabels">&nbsp;&nbsp;IAZI MapsPro</span>
-        </div>
-      </td>
-    </tr>
+    <div class="collapse" id="collapseAnalysis">
+      <tr *ngIf="view == 'property'">
+        <td title="ImmoCockpit" (click)="navigate('immoCockpit', 'property', 'immoCockpit')">
+          <div class="svg-container">
+            <app-svg-icons [key]="dashboardKey" [height]="svgHeight" [fillColor]="svgFillColorArr[7]"> </app-svg-icons>
+            <span *ngIf="showLabels">&nbsp;&nbsp;ImmoCockpit</span>
+          </div>
+        </td>
+      </tr>
+    
+      <tr *ngIf="view == 'property'">
+        <td title="IAZI MapsPro" (click)="navigate('mapsPro', 'property', 'mapsPro')">
+          <div class="svg-container">
+            <app-svg-icons [key]="mapKey" [height]="svgHeight" [fillColor]="svgFillColorArr[8]"></app-svg-icons>
+            <span *ngIf="showLabels">&nbsp;&nbsp;IAZI MapsPro</span>
+          </div>
+        </td>
+      </tr>
+    </div>
   </table> 
   
   <!-- <repm5-modal [type]="'confirmation'" [modalSizeClass]="'modal-md'" [id]="'saveConfirmationModal'" [header]="'Warning'"
