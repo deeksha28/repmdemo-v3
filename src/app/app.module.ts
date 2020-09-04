@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -11,7 +11,7 @@ import { NgbPaginationModule, NgbAlertModule, NgbDropdownModule } from '@ng-boot
 import { DataService } from "./shared/services/data.service";
 import { FormsModule } from '@angular/forms';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { TaskComponent } from './components/task/task.component';
+
 
 @NgModule({
   declarations: [
@@ -19,15 +19,15 @@ import { TaskComponent } from './components/task/task.component';
     LayoutComponent,
     NavigationComponent,
     PrevNextComponent,
-    PortfolioComponent,
-    TaskComponent
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SvgIconsModule,
     NgbDropdownModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule 
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

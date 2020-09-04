@@ -18,6 +18,10 @@ export class PortfolioComponent implements OnInit {
   selectedRowId = 0;
   properties : any;
   filteredProperties : object;
+  portfolios = [
+    "BGV Portfolio",
+    "Offered Portfolio"
+  ]
   selectedPortfolio = "BGV Portfolio"
   bgvPortfolio = [
     {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil', 'category' : '2','canton':'1','zipTown':'1'},
@@ -51,6 +55,7 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
     this.portfolio = 'portfolio1'
     this.properties = this.bgvPortfolio;
+    this.ds.headerSubject.next(this.portfolios[0])
     this.assignCopy();
   }
 
@@ -74,12 +79,18 @@ export class PortfolioComponent implements OnInit {
     if(event.target.value == 1)
       this.properties = this.offeredPortfolio;
     else
-    this.properties  = this.bgvPortfolio;
+      this.properties  = this.bgvPortfolio;
+    
+    this.ds.headerTypeSubject.next('portfolio')
+    this.ds.headerSubject.next(this.portfolios[event.target.value])
+    
     this.selectedPortfolio = event.target.options[event.target.options.selectedIndex].text
     this.assignCopy();
   }
-  selectProp(id){
+  selectProp(id, name){
     this.selectedRowId = id;
+    this.ds.headerTypeSubject.next('property')
+    this.ds.headerSubject.next(id + name)
   }
 
   assignCopy(){

@@ -57,3 +57,8 @@ select{
 .flexItemNavigation{
     padding:10px;
 }
+
+.selectedRow td{
+	background-color: #0381c5 !important;
+	color: #ffffff !important;
+}

@@ -66,6 +66,13 @@ outline: none!important;
     }
 }
 
+.align-span {
+    vertical-align: baseline !important;
+}
+
+.portfolio-selected {
+    background-color: lightgrey;
+}
 .groupHeader{
     margin-bottom: 0;
     padding: 8px;
@@ -81,3 +88,11 @@ hr{
     cursor: pointer; 
     transition: all 0.25s ease-out; 
 } 
+
+
+
+
+
+
+
+
