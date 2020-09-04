@@ -68,12 +68,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let property of filteredProperties">
-                    <td>
-                        <span>{{property.id}}</span> 
-                        <span *ngIf="showLabels">{{property.name}}</span> 
-                    </td>
-                </tr>
+                <ng-container *ngFor="let property of filteredProperties">
+                    <tr  (click)="selectProp(property.id)" [ngClass]="{ 'selectedRow': selectedRowId == property.id }">
+                        <td>
+                            <span>{{property.id}}</span> 
+                            <span *ngIf="showLabels">{{property.name}}</span> 
+                        </td>
+                    </tr>
+                </ng-container>
             </tbody>
         </table>
     </div>

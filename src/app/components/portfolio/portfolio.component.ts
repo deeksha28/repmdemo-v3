@@ -14,6 +14,7 @@ export class PortfolioComponent implements OnInit {
   zipTown = 0;
   canton = 0;
   category = 0;
+  selectedRowId = 0;
   properties : any;
   filteredProperties : object;
   bgvPortfolio = [
@@ -70,6 +71,9 @@ export class PortfolioComponent implements OnInit {
       this.properties = this.offeredPortfolio;
     else
     this.properties  = this.bgvPortfolio;
+  }
+  selectProp(id){
+    this.selectedRowId = id;
   }
 
   assignCopy(){
