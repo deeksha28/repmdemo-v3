@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './components/layout/layout.component';
+
 
 const routes: Routes = [
   // { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -8,6 +9,10 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
+      { 
+        path: 'task',
+        loadChildren: () => import('./modules/task/task.module').then(m => m.TaskModule) 
+      },
       { 
         path: 'overview', 
         loadChildren: () => import('./modules/overview/overview.module').then(m => m.OverviewModule) 
