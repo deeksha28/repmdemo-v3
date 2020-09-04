@@ -5,7 +5,9 @@
                 <span><i class="fas fa-briefcase" aria-hidden="true"></i></span>
             </div>
             <div class="col-md-10 col-sm-10" style="padding-left: 0">
-                <select *ngIf="showLabels" style="padding-left: 0" (change)="selectPortfolio($event)" class="form-control ng-pristine ng-valid ng-touched"><option _ngcontent-bjx-c142="" value="0"> BGV Portfolio</option><option _ngcontent-bjx-c142="" value="1"> Offered Portfolio</option><!----></select>
+                <select *ngIf="showLabels" style="padding-left: 0" (change)="selectPortfolio($event)" class="form-control ng-pristine ng-valid ng-touched">
+                    <option _ngcontent-bjx-c142="" value="0"> BGV Portfolio</option>
+                    <option _ngcontent-bjx-c142="" value="1"> Offered Portfolio</option><!----></select>
             </div> 
         </div>
         <hr class="seperator"/>
@@ -69,7 +71,7 @@
             </thead>
             <tbody>
                 <ng-container *ngFor="let property of filteredProperties">
-                    <tr  (click)="selectProp(property.id)" [ngClass]="{ 'selectedRow': selectedRowId == property.id }">
+                    <tr  (click)="selectProp(property.id, property.name)" [ngClass]="{ 'selectedRow': selectedRowId == property.id }">
                         <td>
                             <span>{{property.id}}</span> 
                             <span *ngIf="showLabels">{{property.name}}</span> 
@@ -84,8 +86,8 @@
         <i *ngIf="showLabels" class="fa fa-caret-left" aria-hidden="true" (click)="toggleViewLabels()"></i>
     </div>
 
-    <div class="flexItemContent flex-grow-1 repm5-container">
+    <!-- <div class="flexItemContent flex-grow-1 repm5-container">
 
         <router-outlet></router-outlet>
-    </div>
+    </div> -->
 </div>

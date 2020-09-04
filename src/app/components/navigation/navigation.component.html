@@ -7,6 +7,24 @@
         </div>
       </td>
     </tr>
+
+    <tr>
+      <td title="Portfolio" (click)="navigate('portfolio', '', '')">
+        <div [ngClass]="{ 'selected-view portfolio-selected': selectedView === 'portfolio' || viewPortfolio }" class="svg-container">
+          <i class="fa fa-sitemap  iconSize23" aria-hidden="true"></i>
+          <span class="align-span" *ngIf="showLabels">&nbsp;&nbsp;Portfolio</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td title="Tasks" (click)="navigate('tasks', '', 'tasks')">
+        <div [ngClass]="{ 'selected-view': selectedView === 'tasks' }" class="svg-container">
+          <i class="fa fa-tasks iconSize23" aria-hidden="true"></i>
+          <span class="align-span" *ngIf="showLabels">&nbsp;&nbsp;Tasks</span>
+        </div>
+      </td>
+    </tr>
   
     <hr class="seperator" *ngIf="true"/>
   
@@ -127,7 +145,8 @@
       <td title="Import Data"
         (click)="navigate('importdata', 'portfolio', 'layout/importdata/portfolio/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'importdata' }">
-          <app-svg-icons [key]="importDataKey" [height]="svgHeight" [fillColor]="svgFillColorArr[14]"> </app-svg-icons>
+          <!-- <app-svg-icons [key]="importDataKey" [height]="svgHeight" [fillColor]="svgFillColorArr[14]"> </app-svg-icons> -->
+          <i class="fa fa-upload iconSize23" aria-hidden="true"></i>
           <span *ngIf="showLabels">&nbsp;&nbsp;Import Data</span>
         </div>
       </td>
@@ -137,7 +156,7 @@
       <td title="Language" (click)="navigate('language', 'portfolio', 'layout/language/portfolio/')">
         <div class="svg-container svg-lang" [ngClass]="{ 'selected-view': selectedView === 'language' }">
           <span><i class="fa fa-language" aria-hidden="true"></i></span>
-          <span *ngIf="showLabels">&nbsp;&nbsp;Language</span>
+          <span class="align-span" *ngIf="showLabels">&nbsp;&nbsp;Language</span>
         </div>
       </td>
     </tr>
@@ -157,7 +176,7 @@
         (click)="navigate('settings', 'portfolio', 'layout/settings/portfolio/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'settings' }">
           <i class="fa fa-cog iconSize23" aria-hidden="true"></i>
-          <span *ngIf="showLabels">&nbsp;&nbsp;Settings</span>
+          <span class="align-span" *ngIf="showLabels">&nbsp;&nbsp;Settings</span>
         </div>
       </td>
     </tr>
@@ -188,10 +207,28 @@
   
   <table *ngIf="view === 'property'">
     <tr>
-      <td title="Overview" (click)="navigate('overview', '', 'layout/overview')">
+      <td title="Overview" (click)="navigate('overview', '', 'overview')">
         <div [ngClass]="{ 'selected-view': selectedView === 'overview' }" class="svg-container">
           <app-svg-icons [key]="overviewKey" [height]="svgHeight" [fillColor]="svgFillColorArr[0]"> </app-svg-icons>
           <span *ngIf="showLabels">&nbsp;&nbsp;Overview</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td title="Portfolio" (click)="navigate('portfolio', '', '')">
+        <div [ngClass]="{ 'selected-view portfolio-selected': selectedView === 'portfolio' }" class="svg-container">
+          <i class="fa fa-sitemap  iconSize23" aria-hidden="true"></i>
+          <span class="align-span" *ngIf="showLabels">&nbsp;&nbsp;Portfolio</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td title="Tasks" (click)="navigate('tasks', '', 'tasks')">
+        <div [ngClass]="{ 'selected-view': selectedView === 'tasks' }" class="svg-container">
+          <i class="fa fa-tasks iconSize23" aria-hidden="true"></i>
+          <span class="align-span" *ngIf="showLabels">&nbsp;&nbsp;Tasks</span>
         </div>
       </td>
     </tr>
@@ -324,7 +361,7 @@
         </div>
       </td>
     </tr>
-  </table> -->
+  </table> 
   
   <!-- <repm5-modal [type]="'confirmation'" [modalSizeClass]="'modal-md'" [id]="'saveConfirmationModal'" [header]="'Warning'"
     [showHeaderCancel]="true" [showModal]="toggleConfirmModal" [confirmationMessage]="'saveConfirmation'"

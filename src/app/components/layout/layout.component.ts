@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
   selector: 'app-layout',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class LayoutComponent implements OnInit {
   public showLabels = false;
   public showPortfolio = false;
-  constructor() { }
+  viewPortfolio: boolean = false
+  constructor(private ds: DataService) { }
 
   ngOnInit(): void {
+    this.ds.portfolioToggle.subscribe((value) => {
+      this.viewPortfolio = value
+    })
   }
 
   toggleViewLabels() {

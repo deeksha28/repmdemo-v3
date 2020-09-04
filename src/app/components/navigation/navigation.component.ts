@@ -30,6 +30,7 @@ export class NavigationComponent implements OnInit {
   public svgHeight = 35;
   selectedView;
   view;
+  viewPortfolio;
   public svgFillColorArr = [
     '#ff9800',
     '#7e57c2',
@@ -57,6 +58,10 @@ export class NavigationComponent implements OnInit {
     this.ds.view.subscribe((value) => {
       this.view = value
     })
+
+    this.ds.portfolioToggle.subscribe((value) => {
+      this.viewPortfolio = value
+    })
     this.view = "portfolio"
   }
 
@@ -65,7 +70,12 @@ export class NavigationComponent implements OnInit {
 
   public navigate(selectedView: string, level: string, path: string) {
     this.selectedView = selectedView
-    this.router.navigate([path])
+    if(this.selectedView != 'portfolio')
+      this.router.navigate([path])
+    else{
+      this.ds.headerTypeSubject.next('portfolio')
+      this.ds.portfolioToggleSubject.next(!this.ds.portfolioToggleSubject.getValue())
+    }      
     // this.path = path;
     // this.selectedView_temp = selectedView;
     // if (level === 'portfolio') {

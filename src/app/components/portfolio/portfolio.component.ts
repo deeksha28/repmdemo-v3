@@ -17,29 +17,33 @@ export class PortfolioComponent implements OnInit {
   selectedRowId = 0;
   properties : any;
   filteredProperties : object;
+  portfolios = [
+    "BGV Portfolio",
+    "Offered Portfolio"
+  ]
   bgvPortfolio = [
     {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil', 'category' : '1'},
     {'id': '6506','name': '-Oberwilerstrasse 7,4102 Binningen','category' : '1'},
     {'id': '6509','name': '-Hauptstrasse 125 / 129 und Amerikanerstrasse 22 / 26,4102 Binningen','category' : '2'},
     {'id': '6512','name': '-Neumattstrasse 44/46,4103 Bottmingen'},
     {'id': '6518','name': '-Flühbergweg 2/2a/2b,4107 Ettingen'},
-    {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
-    {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
-    {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
-    {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
-    {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
+    {'id': '6519','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
+    {'id': '6520','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
+    {'id': '6521','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
+    {'id': '6522','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
+    {'id': '6523','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
   ]
   offeredPortfolio = [
     {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
     {'id': '6506','name': '-Oberwilerstrasse 7,4102 Binningen'},
     {'id': '6512','name': '-Neumattstrasse 44/46,4103 Bottmingen'},
     {'id': '6518','name': '-Flühbergweg 2/2a/2b,4107 Ettingen'},
-    {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
-    {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
-    {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
-    {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
-    {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
-    {'id': '6503','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
+    {'id': '6519','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
+    {'id': '6520','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
+    {'id': '6521','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
+    {'id': '6522','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
+    {'id': '6523','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
+    {'id': '6524','name': '-Kurzelängeweg 24/24a,4123 Allschwil'},
   ]
   constructor(private ds: DataService) {     
   }
@@ -47,6 +51,7 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
     this.portfolio = 'portfolio1'
     this.properties = this.bgvPortfolio;
+    this.ds.headerSubject.next(this.portfolios[0])
     this.assignCopy();
   }
 
@@ -70,10 +75,15 @@ export class PortfolioComponent implements OnInit {
     if(event.target.value == 1)
       this.properties = this.offeredPortfolio;
     else
-    this.properties  = this.bgvPortfolio;
+      this.properties  = this.bgvPortfolio;
+    
+    this.ds.headerTypeSubject.next('portfolio')
+    this.ds.headerSubject.next(this.portfolios[event.target.value])
   }
-  selectProp(id){
+  selectProp(id, name){
     this.selectedRowId = id;
+    this.ds.headerTypeSubject.next('property')
+    this.ds.headerSubject.next(id + name)
   }
 
   assignCopy(){
