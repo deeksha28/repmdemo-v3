@@ -32,7 +32,10 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/css/header.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
-              "src/app/shared/styles/styles.scss"
+              "src/app/shared/styles/styles.scss",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           },

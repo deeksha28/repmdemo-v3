@@ -6,11 +6,10 @@
         <i *ngIf="!showLabels" class="fa fa-caret-right" aria-hidden="true" (click)="toggleViewLabels()"></i>
         <i *ngIf="showLabels" class="fa fa-caret-left" aria-hidden="true" (click)="toggleViewLabels()"></i>
     </div>
-    <div class="flexItemNavigation">
+    <div class="flexItemNavigation" *ngIf="viewPortfolio">
         <app-portfolio [showPortfolio]="showPortfolio"></app-portfolio>
     </div>
     <div class="flexItemContent flex-grow-1 repm5-container">
-
         <router-outlet></router-outlet>
     </div>
 </div>
