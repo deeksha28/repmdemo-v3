@@ -64,7 +64,7 @@ export class PortfolioComponent implements OnInit {
       if(!(this.ds.headerTypeSubject.value == 'property')){
         this.ds.headerTypeSubject.next('portfolio')
         this.ds.viewSubject.next('portfolio')
-        this.ds.headerSubject.next(this.portfolios[0])        
+        // this.ds.headerSubject.next(this.portfolios[0])        
       }    
     })
     this.properties = this.bgvPortfolio;
@@ -77,7 +77,7 @@ export class PortfolioComponent implements OnInit {
       var topElementHeight = document.getElementsByClassName('container')[0]?document.getElementsByClassName('container')[0].clientHeight + 2:0;
       var treeWidth = document.getElementById('propertyTree').offsetWidth;
       var propertyLabelWidth = document.getElementById('mainSiteHeader')?document.getElementById('mainSiteHeader').children[1].children[0].scrollWidth:0
-      document.getElementById('propertyTree').style.left = (logoElementWidth + propertyLabelWidth) - document.getElementById('topbarLabeldiv').scrollWidth + 'px';
+      document.getElementById('propertyTree').style.left = (logoElementWidth + propertyLabelWidth) - document.getElementsByClassName('topbar-label')[0].scrollWidth + 'px';
       document.getElementById('propertyTree').style.top = (topElementHeight) + 'px';
     }
   }
