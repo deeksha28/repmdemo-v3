@@ -28,6 +28,9 @@ export class NavigationComponent implements OnInit {
   budgetKey = SVGKEYS.BUDGET;
   processstepperKey = SVGKEYS.PROCESSSTEPPER;
   mapKey = SVGKEYS.MAP;
+  public  = 0;
+  public portfolioId = 0;
+  propertyId = 0;
   public svgHeight = 25;
   selectedView;
   view;
@@ -70,21 +73,26 @@ export class NavigationComponent implements OnInit {
   }
 
   public navigate(selectedView: string, level: string, path: string) {   
-    if(selectedView != 'portfolio'){
-      this.selectedView = selectedView
-      this.router.navigate([path])
+    
+    if (level === 'portfolio') {
+      this.portfolioId = this.portfolioId + 1;
+      this.tabService.addTab(path,this.portfolioId);
+      path = path + this.portfolioId;
+    } else if (level === 'property') {
+      this.propertyId = this.propertyId + 1;
+      this.tabService.addTab(path,this.propertyId);
+      path = path + this.propertyId;
     }
-    // }else{
-    //   this.ds.headerTypeSubject.next('portfolio')
-    //   this.ds.portfolioToggleSubject.next(!this.ds.portfolioToggleSubject.getValue())
-    // }   
+    this.selectedView = selectedView;
+    this.router.navigate([path]);
   }
+
   public selectView(selectedView) {
     
   }
 
   openTab(url: string) {
-    this.tabService.addTab(url);
-    this.router.navigateByUrl(url);
+    this.tabService.addTab(url,(this.portfolioId+1));
+    this.router.navigateByUrl(url+ (this.portfolioId+1));
   }
 }

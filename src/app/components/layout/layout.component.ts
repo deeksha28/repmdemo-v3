@@ -36,6 +36,6 @@ export class LayoutComponent implements OnInit {
     event.preventDefault();
   }
   onTabChange(event) {
-    this.router.navigateByUrl('/'+event.nextId.split('/')[1]);
+    this.router.navigateByUrl(event.nextId);
   }
 }
