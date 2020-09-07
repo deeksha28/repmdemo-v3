@@ -9,7 +9,7 @@ import { Router, NavigationEnd   } from '@angular/router';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-  public showLabels = false;
+  public showLabels = true;
   public showPortfolio = false;
   viewPortfolio: boolean = false
   tabs = [];
@@ -25,7 +25,7 @@ export class LayoutComponent implements OnInit {
   }
 
   toggleViewLabels() {
-    this.showLabels = !this.showLabels;
+   /*  this.showLabels = !this.showLabels; */
   }
 
   toggleViewPortfolio() {

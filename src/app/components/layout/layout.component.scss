@@ -4,8 +4,8 @@
 }
 
 .splitter {
-    background-color: #eaeaea;
-    min-width: 12px;
+    background-color: #c4bebe;
+    min-width: 2px;
 }
 
 .fa-caret-right, .fa-caret-left {
@@ -17,4 +17,8 @@
 
 .flexItemContent {
     overflow-x: auto
+}
+
+.flexItemNavigation{
+    width:7%;
 }
