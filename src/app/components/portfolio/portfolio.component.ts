@@ -57,7 +57,6 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit(): void {
     this.ds.header.subscribe((value) => {
-      console.log(value)
       if(value)
         this.selectedRowId = isNaN(parseInt(value.split('-')[0]))?0:parseInt(value.split('-')[0]);
 
@@ -65,8 +64,7 @@ export class PortfolioComponent implements OnInit {
       if(!(this.ds.headerTypeSubject.value == 'property')){
         this.ds.headerTypeSubject.next('portfolio')
         this.ds.viewSubject.next('portfolio')
-        this.ds.headerSubject.next(this.portfolios[0])
-        
+        this.ds.headerSubject.next(this.portfolios[0])        
       }    
     })
     this.properties = this.bgvPortfolio;
@@ -82,11 +80,6 @@ export class PortfolioComponent implements OnInit {
       document.getElementById('propertyTree').style.left = (logoElementWidth + propertyLabelWidth) - document.getElementById('topbarLabeldiv').scrollWidth + 'px';
       document.getElementById('propertyTree').style.top = (topElementHeight) + 'px';
     }
-  }
-
-  onChange(event) {
-    this.ds.headerTypeSubject.next('portfolio')
-    this.ds.headerSubject.next(this.portfolio)
   }
 
   toggleViewLabels() {
