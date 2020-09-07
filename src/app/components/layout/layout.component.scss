@@ -22,3 +22,20 @@
 .flexItemNavigation{
     width:7%;
 }
+
+.closeTab{
+    position: relative;
+    top: -7px;
+    left: 9px;
+    font-weight: 700;
+}
+@media (max-width: 992px) {
+    .flexItemNavigation {
+        width: 10%;
+    }
+}
+@media (max-width: 768px){
+    .flexItemNavigation {
+        width: 14%;
+    }
+}

@@ -14,7 +14,7 @@
             <ngb-tab *ngFor="let tab of tabs ; let index = index" [id]="tab.url + tab.id">
             <ng-template ngbTabTitle>
                 <span style="text-transform: capitalize;">{{tab.name}}</span>
-                <span (click)="closeTab(index, $event)">&times;</span>
+                <span (click)="closeTab(index, $event)" class="closeTab">&times;</span>
                 </ng-template>
             <ng-template ngbTabContent><router-outlet></router-outlet></ng-template>
             </ngb-tab>
