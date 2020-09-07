@@ -75,6 +75,10 @@ export class TabService {
   deleteTab(index: number) {
     this.tabs.splice(index, 1);
   }
+
+  getTab(){
+    return this.tabs;
+  }
 }
 
 

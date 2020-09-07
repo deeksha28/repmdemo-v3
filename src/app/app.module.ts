@@ -25,6 +25,7 @@ import {ProgressBarModule} from 'primeng/progressbar';
 import {InputTextModule} from 'primeng/inputtext';
 import {PaginatorModule} from 'primeng/paginator';
 
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {PaginatorModule} from 'primeng/paginator';
     SvgIconsModule,
     NgbDropdownModule,
     FormsModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
+    TooltipModule.forRoot()
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
