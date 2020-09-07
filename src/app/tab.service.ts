@@ -9,45 +9,48 @@ export class TabService {
   tabs: ITAB[] = [];
   activeUrl;
   tabOptions: ITAB[] = [
-    { name: 'overview', url: '/overview' , tabId: '' }, 
-    { name: 'constructionPlanning', url: '/constructionplanning/portfolio/' , tabId: '' },
-    { name: 'characteristics', url: '/characteristics/property/' ,  tabId: '' },  
-    { name: 'rent-roll', url: '/rent/property/' ,  tabId: '' },  
-    { name: 'budget', url: '/budget/property/' ,  tabId: '' },      
-    { name: 'process', url: '/process/property/' ,  tabId: '' },      
-    { name: 'rating', url: '/rating/property/' ,  tabId: '' },      
-    { name: 'profitAndLoss', url: '/profitAndLoss/portfolio/' ,  tabId: '' }, 
-    { name: 'profitAndLoss', url: '/profitAndLoss/property/' ,  tabId: '' }, 
-    { name: 'qualicasa', url: '/qualicasa/portfolio/' ,  tabId: '' }, 
-    { name: 'qualicasa', url: '/qualicasa/property/' ,  tabId: '' }, 
-    { name: 'hedonic', url: '/hedonic/portfolio/' ,  tabId: '' }, 
-    { name: 'hedonic', url: '/hedonic/property/' ,  tabId: '' },
-    { name: 'tasks',   url: '/tasks' ,  tabId: '' },
-    { name: 'DCF',   url: '/dcf/portfolio/',  tabId: '' },
-    { name: 'DCF',   url: '/dcf/property/',  tabId: '' }
+    { name: 'overview', path: '/overview' , tabId: '',url: ''}, 
+    { name: 'constructionPlanning', path: '/constructionplanning/portfolio/' , tabId: '',url: '' },
+    { name: 'characteristics', path: '/characteristics/property/' ,  tabId: '',url: '' },  
+    { name: 'rent-roll', path: '/rent/property/' ,  tabId: '' ,url: ''},  
+    { name: 'budget', path: '/budget/property/' ,  tabId: '',url: '' },      
+    { name: 'process', path: '/process/property/' ,  tabId: '' ,url: ''},      
+    { name: 'rating', path: '/rating/property/' ,  tabId: '' ,url: ''},      
+    { name: 'profitAndLoss', path: '/profitAndLoss/portfolio/' ,  tabId: '',url: '' }, 
+    { name: 'profitAndLoss', path: '/profitAndLoss/property/' ,  tabId: '',url: '' }, 
+    { name: 'qualicasa', path: '/qualicasa/portfolio/' ,  tabId: '',url: '' }, 
+    { name: 'qualicasa', path: '/qualicasa/property/' ,  tabId: '' ,url: ''}, 
+    { name: 'hedonic', path: '/hedonic/portfolio/' ,  tabId: '' ,url: ''}, 
+    { name: 'hedonic', path: '/hedonic/property/' ,  tabId: '' ,url: ''},
+    { name: 'tasks',   path: '/tasks' ,  tabId: '' ,url: ''},
+    { name: 'DCF',   path: '/dcf/portfolio/',  tabId: '' ,url: ''},
+    { name: 'DCF',   path: '/dcf/property/',  tabId: '',url: '' }
   ];
  
   constructor() { }
 
-  addTab(url: string,id = 0) {
-    const tab = this.getTabOptionByUrl(url);
-    if(id>0){
+  addTab(path: string,id = null) {
+    const tab = this.getTabOptionByPath(path);
+    if(id!=null){
       if (!this.tabs.includes(tab)) {
-        tab.tabId = tab.url + id;
+        tab.tabId = tab.path + id;
+        tab.url = tab.tabId;
         this.tabs.push(tab);
-        this.activeUrl = tab.url  + id
+        this.activeUrl = tab.path  + id
       }
       else if (this.tabs.includes(tab)){
-        var duplicateTabs = this.tabs.filter(tab => tab.url == tab.url)
+        var duplicateTabs = this.tabs.filter(tab => tab.path == tab.path)
         var tabCopy = {...tab};
-        tabCopy.tabId = tabCopy.url + id;
+        tabCopy.tabId = tabCopy.path + id + '/' + (duplicateTabs.length + 1);
+        tabCopy.url = tabCopy.path + id
         this.tabs.push(tabCopy);
-        this.activeUrl = tabCopy.url  + id
+        this.activeUrl = tabCopy.path  + id + '/' + (duplicateTabs.length + 1);
       }
     }
     else{
       if (!this.tabs.includes(tab)) {
-        tab.tabId = tab.url;
+        tab.tabId = tab.path;
+        tab.url = tab.tabId;
         this.tabs.push(tab);
         this.activeUrl = tab.url;
        // this.activeUrl = tab.url + '/' + id;
@@ -62,8 +65,8 @@ export class TabService {
     }
   }
    
-  getTabOptionByUrl(url: string): ITAB {
-    return this.tabOptions.find(tab => tab.url === url);
+  getTabOptionByPath(path: string): ITAB {
+    return this.tabOptions.find(tab => tab.path === path);
   }
   
   getActiveUrl(){

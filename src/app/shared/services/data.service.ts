@@ -13,5 +13,21 @@ export class DataService {
   headerType = this.headerTypeSubject.asObservable();
   portfolioToggleSubject = new BehaviorSubject<boolean>(false);
   portfolioToggle = this.portfolioToggleSubject.asObservable();
+  public portfolioId = 0;
+  public propertyId = 0;
   constructor() { }
+
+
+  setPortfolioId(portfolioId){
+    this.portfolioId = portfolioId;
+  }
+  getPortfolioId(){
+    return this.portfolioId
+  }
+  setPropertyId(propertyId){
+    this.propertyId = propertyId;
+  }
+  getPropertyId(){
+    return this.propertyId;
+  }
 }

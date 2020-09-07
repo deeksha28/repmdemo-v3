@@ -6,8 +6,8 @@
             </div>
             <div class="col-md-10 col-sm-10" style="padding-left: 0;margin-top: 1px">
                 <select *ngIf="showLabels" style="padding-left: 0" (change)="selectPortfolio($event)" class="form-control ng-pristine ng-valid ng-touched">
-                    <option _ngcontent-bjx-c142="" value="0"> BGV Portfolio</option>
-                    <option _ngcontent-bjx-c142="" value="1"> Offered Portfolio</option><!----></select>
+                    <option [selected]="0 === selectedPortfolioId" value="0"> BGV Portfolio</option>
+                    <option  [selected]="1 === selectedPortfolioId" value="1"> Offered Portfolio</option><!----></select>
             </div> 
         </div>
         <hr class="seperator"/>
@@ -58,7 +58,7 @@
         </div>
         <hr class="seperator"/>
 
-        <table>
+        <!-- <table>
             <thead>
                 <tr>
                     <th style="text-align: left; padding-bottom: 18px;">
@@ -83,7 +83,31 @@
                     </tr>
                 </ng-container>
             </tbody>
-        </table>
+        </table> -->
+
+        <p-table [value]="filteredProperties" [paginator]="true" [rows]="10" [showCurrentPageReport]="false" 
+        [rowsPerPageOptions]="[10,20,30]">
+            <ng-template pTemplate="caption">
+                <div>
+                    <span>{{selectedPortfolio}}</span>
+                </div>
+            </ng-template>
+            <!-- <ng-template pTemplate="header">
+                <tr>
+                    <th>Property</th>
+                </tr>
+            </ng-template> -->
+            <ng-template pTemplate="body" let-property>
+                <tr>
+                    <td>{{property.id}}{{property.name}}</td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="8" style="text-align:left">No task found.</td>
+                </tr>
+            </ng-template>
+        </p-table>
     </div>
     <!-- <div class="splitter">
         <i *ngIf="!showLabels" class="fa fa-caret-right" aria-hidden="true" (click)="toggleViewLabels()"></i>

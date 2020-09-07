@@ -75,11 +75,11 @@ export class NavigationComponent implements OnInit {
   public navigate(selectedView: string, level: string, path: string) {   
     
     if (level === 'portfolio') {
-      this.portfolioId = this.portfolioId + 1;
+      this.portfolioId = this.ds.getPortfolioId();
       this.tabService.addTab(path,this.portfolioId);
       path = path + this.portfolioId;
     } else if (level === 'property') {
-      this.propertyId = this.propertyId + 1;
+      this.propertyId = this.ds.getPropertyId();
       this.tabService.addTab(path,this.propertyId);
       path = path + this.propertyId;
     }

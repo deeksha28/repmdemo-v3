@@ -31,11 +31,14 @@ export class LayoutComponent implements OnInit {
   toggleViewPortfolio() {
     this.showPortfolio = !this.showPortfolio;
   }
-  closeTab(index: number, event: Event) {
+  closeTab(index: number, event: Event,url) {
+    
     this.tabService.deleteTab(index);
+    //this.router.navigateByUrl(event.nextId)
     event.preventDefault();
+    console.log(this.tabService.activeUrl);
   }
   onTabChange(event) {
-    this.router.navigateByUrl(event.nextId);
+    this.router.navigateByUrl(this.tabs.find(tab=>tab.tabId == event.nextId).url);
   }
 }

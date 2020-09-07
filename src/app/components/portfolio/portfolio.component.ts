@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild} from '@angular/core';
 import { DataService } from '../../shared/services/data.service';
 import { Router } from '@angular/router';
+import { Table } from 'primeng/table';
 import { isInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 
 @Component({
@@ -17,6 +18,7 @@ export class PortfolioComponent implements OnInit {
   canton = 0;
   category = 0;
   selectedRowId = 0;
+  selectedPortfolioId = 0;
   properties : any;
   selectedView;
   filteredProperties : any;
@@ -67,7 +69,13 @@ export class PortfolioComponent implements OnInit {
         // this.ds.headerSubject.next(this.portfolios[0])        
       }    
     })
-    this.properties = this.bgvPortfolio;
+    if(this.ds.getPortfolioId() != 1)
+      this.properties = this.bgvPortfolio;
+    else {
+      this.properties = this.offeredPortfolio;
+      this.selectedPortfolioId = this.ds.getPortfolioId();
+    }
+      
     this.assignCopy();
   }
 
@@ -93,7 +101,7 @@ export class PortfolioComponent implements OnInit {
       this.properties = this.offeredPortfolio;
     else
       this.properties  = this.bgvPortfolio;
-    
+    this.ds.setPortfolioId(event.target.value)
     this.ds.headerTypeSubject.next('portfolio')
     this.ds.viewSubject.next('portfolio')
     this.ds.headerSubject.next(this.portfolios[event.target.value])
@@ -104,6 +112,7 @@ export class PortfolioComponent implements OnInit {
 
   selectProp(id, name){
     this.selectedRowId = id;
+    this.ds.setPropertyId(id)
     this.ds.headerTypeSubject.next('property')
     this.ds.portfolioToggleSubject.next(!this.ds.portfolioToggleSubject.getValue())
     this.ds.viewSubject.next('property')
