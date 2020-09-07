@@ -98,7 +98,7 @@
                 </tr>
             </ng-template> -->
             <ng-template pTemplate="body" let-property>
-                <tr>
+                <tr (click)="selectProp(property.id, property.name)" [ngClass]="{ 'selectedRow': selectedRowId == property.id }">
                     <td>{{property.id}}{{property.name}}</td>
                 </tr>
             </ng-template>
