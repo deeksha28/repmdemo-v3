@@ -19,7 +19,7 @@ export class PortfolioComponent implements OnInit {
   selectedRowId = 0;
   properties : any;
   selectedView;
-  filteredProperties : object;
+  filteredProperties : any;
 
   portfolios = [
     "BGV Portfolio",

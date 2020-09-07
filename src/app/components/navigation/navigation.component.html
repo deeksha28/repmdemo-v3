@@ -200,7 +200,7 @@
   
     <tr >
       <td title="Rent roll"
-        (click)="navigate('renter-mirror', 'property', 'rent-roll')">
+        (click)="navigate('renter-mirror', 'property', 'rent')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'renter-mirror' }">
           <app-svg-icons [key]="rentermirrorKey" [height]="svgHeight" [fillColor]="svgFillColorArr[2]"> </app-svg-icons>
           <span *ngIf="showLabels" [ngStyle]="{'color': svgFillColorArr[2]}">&nbsp;&nbsp;Rent roll</span>
