@@ -6,6 +6,9 @@ const routes: Routes = [
   {
     path: "",
     component: ConstructionPlanningComponent,
+    children: [
+      { path: 'portfolio/:id', component: ConstructionPlanningComponent },
+    ]
   },
 ];
 

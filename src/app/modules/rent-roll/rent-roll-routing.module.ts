@@ -6,6 +6,9 @@ const routes: Routes = [
   {
     path: "",
     component: RentRollComponent,
+    children: [
+      { path: 'property/:id', component: RentRollComponent },
+    ]
   },
 ];
 
