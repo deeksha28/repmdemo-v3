@@ -63,7 +63,7 @@
   <div class="collapse" id="collapseCalc">
   <table>
     <tr >  
-      <td title="DCF" (click)="navigate('dcf', 'portfolio', 'dcf')">
+      <td title="DCF" (click)="navigate('dcf', 'portfolio', '/dcf/portfolio/')">
         <div [ngClass]="{ 'selected-view': selectedView === 'dcf' }" class="svg-container">
           <app-svg-icons [key]="dcfKey" [height]="svgHeight" [fillColor]="svgFillColorArr[1]"> </app-svg-icons>
           <span *ngIf="showLabels" [ngStyle]="{'color': svgFillColorArr[1]}">&nbsp;&nbsp;DCF</span>
@@ -243,7 +243,7 @@
     </tr>
   
     <tr >
-      <td title="DCF" (click)="navigate('dcf', 'property', 'dcf')">
+      <td title="DCF" (click)="navigate('dcf', 'property', '/dcf/property/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'dcf' }">
           <app-svg-icons [key]="dcfKey" [height]="svgHeight" [fillColor]="svgFillColorArr[1]"> </app-svg-icons>
           <span *ngIf="showLabels" [ngStyle]="{'color': svgFillColorArr[1]}">&nbsp;&nbsp;DCF</span>
