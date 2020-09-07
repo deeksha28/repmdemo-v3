@@ -9,7 +9,7 @@
                 <a class="navbar-brand" id="LogoHome" href="/">
                     <img id="topbar-logo" src="./assets/img/IAZI-logo-Blue.svg">
                 </a>
-                <a class="navbar-brand aVerticalAlign" id="LogoHome" [routerLink]="['/overview']">
+                <a class="navbar-brand aVerticalAlign" id="LogoHome" (click)="navigate('overview', '', '/overview')">
                     <div id="topbar-logo">
                         <app-svg-icons class="iconVerticalAlign" [key]="overviewKey" [height]="svgHeight" [fillColor]="svgFillColor"> </app-svg-icons> 
                     </div>
@@ -43,7 +43,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li>
-                        <a class="navbar-brand aVerticalAlign" id="LogoHome" [routerLink]="['/tasks']">
+                        <a class="navbar-brand aVerticalAlign" id="LogoHome" (click)="navigate('tasks', '', '/tasks')">
                             <div id="topbar-logo">
                                 <i class="fa fa-tasks iconSize23 iconTaskPadding" aria-hidden="true"></i>
                             </div>

@@ -1,6 +1,7 @@
 export interface ITAB {
     name: string;
     url: string;
-    id:number;
+    tabId:string;
+ //   id:number;
 }
 

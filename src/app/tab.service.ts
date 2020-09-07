@@ -9,39 +9,56 @@ export class TabService {
   tabs: ITAB[] = [];
   activeUrl;
   tabOptions: ITAB[] = [
-    { name: 'overview', url: '/overview' , id: 0 }, 
-    { name: 'constructionPlanning', url: '/constructionplanning/portfolio/' , id: 0 },
-    { name: 'characteristics', url: '/characteristics/property/' , id: 0 },  
-    { name: 'rent-roll', url: '/rent/property/' , id: 0 },  
-    { name: 'budget', url: '/budget/property/' , id: 0 },      
-    { name: 'process', url: '/process/property/' , id: 0 },      
-    { name: 'rating', url: '/rating/property/' , id: 0 },      
-    { name: 'profitAndLoss', url: '/profitAndLoss/portfolio/' , id: 0 }, 
-    { name: 'profitAndLoss', url: '/profitAndLoss/property/' , id: 0 }, 
-    { name: 'qualicasa', url: '/qualicasa/portfolio/' , id: 0 }, 
-    { name: 'qualicasa', url: '/qualicasa/property/' , id: 0 }, 
-    { name: 'hedonic', url: '/hedonic/portfolio/' , id: 0 }, 
-    { name: 'hedonic', url: '/hedonic/property/' , id: 0 },
-    { name: 'tasks',   url: '/tasks' , id: 0},
-    { name: 'DCF',   url: '/dcf/portfolio/', id: 0},
-    { name: 'DCF',   url: '/dcf/property/', id: 0}
+    { name: 'overview', url: '/overview' , tabId: '' }, 
+    { name: 'constructionPlanning', url: '/constructionplanning/portfolio/' , tabId: '' },
+    { name: 'characteristics', url: '/characteristics/property/' ,  tabId: '' },  
+    { name: 'rent-roll', url: '/rent/property/' ,  tabId: '' },  
+    { name: 'budget', url: '/budget/property/' ,  tabId: '' },      
+    { name: 'process', url: '/process/property/' ,  tabId: '' },      
+    { name: 'rating', url: '/rating/property/' ,  tabId: '' },      
+    { name: 'profitAndLoss', url: '/profitAndLoss/portfolio/' ,  tabId: '' }, 
+    { name: 'profitAndLoss', url: '/profitAndLoss/property/' ,  tabId: '' }, 
+    { name: 'qualicasa', url: '/qualicasa/portfolio/' ,  tabId: '' }, 
+    { name: 'qualicasa', url: '/qualicasa/property/' ,  tabId: '' }, 
+    { name: 'hedonic', url: '/hedonic/portfolio/' ,  tabId: '' }, 
+    { name: 'hedonic', url: '/hedonic/property/' ,  tabId: '' },
+    { name: 'tasks',   url: '/tasks' ,  tabId: '' },
+    { name: 'DCF',   url: '/dcf/portfolio/',  tabId: '' },
+    { name: 'DCF',   url: '/dcf/property/',  tabId: '' }
   ];
  
   constructor() { }
 
-  addTab(url: string,id) {
+  addTab(url: string,id = 0) {
     const tab = this.getTabOptionByUrl(url);
-    if (!this.tabs.includes(tab)) {
-      tab.id = id;
-      this.tabs.push(tab);
-      this.activeUrl = tab.url  + id
+    if(id>0){
+      if (!this.tabs.includes(tab)) {
+        tab.tabId = tab.url + id;
+        this.tabs.push(tab);
+        this.activeUrl = tab.url  + id
+      }
+      else if (this.tabs.includes(tab)){
+        var duplicateTabs = this.tabs.filter(tab => tab.url == tab.url)
+        var tabCopy = {...tab};
+        tabCopy.tabId = tabCopy.url + id;
+        this.tabs.push(tabCopy);
+        this.activeUrl = tabCopy.url  + id
+      }
     }
-    else if (this.tabs.includes(tab)){
-      var duplicateTabs = this.tabs.filter(tab => tab.url == tab.url)
-      var tabCopy = {...tab};
-      tabCopy.id = id;
-      this.tabs.push(tabCopy);
-      this.activeUrl = tabCopy.url  + id
+    else{
+      if (!this.tabs.includes(tab)) {
+        tab.tabId = tab.url;
+        this.tabs.push(tab);
+        this.activeUrl = tab.url;
+       // this.activeUrl = tab.url + '/' + id;
+      }
+      // else if (this.tabs.includes(tab)){
+      //   var duplicateTabs = this.tabs.filter(tab => tab.url == tab.url)
+      //   var tabCopy = {...tab};
+      //   tabCopy.id = duplicateTabs.length + 1;
+      //   this.tabs.push(tabCopy);
+      //   this.activeUrl = tabCopy.url + '/' + tabCopy.id
+      // }
     }
   }
    
