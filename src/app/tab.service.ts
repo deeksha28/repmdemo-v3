@@ -10,7 +10,12 @@ export class TabService {
   activeUrl;
   tabOptions: ITAB[] = [
     { name: 'overview', url: '/overview' , id: 0 }, 
-    { name: 'constructionPlanning', url: '/constructionPlanning' , id: 0 }, 
+    { name: 'constructionPlanning', url: '/constructionplanning/portfolio/' , id: 0 },
+    { name: 'characteristics', url: '/characteristics/property/' , id: 0 },  
+    { name: 'rent-roll', url: '/rent/property/' , id: 0 },  
+    { name: 'budget', url: '/budget/property/' , id: 0 },      
+    { name: 'process', url: '/process/property/' , id: 0 },      
+    { name: 'rating', url: '/rating/property/' , id: 0 },      
     { name: 'profitAndLoss', url: '/profitAndLoss/portfolio/' , id: 0 }, 
     { name: 'profitAndLoss', url: '/profitAndLoss/property/' , id: 0 }, 
     { name: 'qualicasa', url: '/qualicasa/portfolio/' , id: 0 }, 

@@ -25,7 +25,7 @@ const routes: Routes = [
           import("./modules/dcf/dcf.module").then((m) => m.DcfModule),
       },
       {
-        path: "constructionPlanning",
+        path: "constructionplanning",
         loadChildren: () =>
           import(
             "./modules/construction-planning/construction-planning.module"

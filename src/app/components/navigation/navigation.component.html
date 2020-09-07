@@ -36,7 +36,7 @@
   <table>
     <tr>  
       <td title="Construction Planning"
-        (click)="navigate('constructionplanning', 'portfolio', 'constructionPlanning')">
+        (click)="navigate('constructionplanning', 'portfolio', '/constructionPlanning/portfolio/')">
         <div class="svg-container"
           [ngClass]="{ 'selected-view': selectedView === 'constructionplanning' }">
           <app-svg-icons [key]="qccapexKey" [height]="svgHeight" [fillColor]="svgFillColorArr[7]"> </app-svg-icons>
@@ -190,7 +190,7 @@
   <table>
     <tr>
       <td title="Characteristics"
-        (click)="navigate('masterdata', 'property', 'characteristics')">
+        (click)="navigate('masterdata', 'property', '/characteristics/property/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'masterdata' }">
           <app-svg-icons [key]="masterdataKey" [height]="svgHeight" [fillColor]="svgFillColorArr[3]"> </app-svg-icons>
           <span *ngIf="showLabels" [ngStyle]="{'color': svgFillColorArr[3]}">&nbsp;&nbsp;Characteristics</span>
@@ -200,7 +200,7 @@
   
     <tr >
       <td title="Rent roll"
-        (click)="navigate('renter-mirror', 'property', 'rent')">
+        (click)="navigate('renter-mirror', 'property', '/rent/property/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'renter-mirror' }">
           <app-svg-icons [key]="rentermirrorKey" [height]="svgHeight" [fillColor]="svgFillColorArr[2]"> </app-svg-icons>
           <span *ngIf="showLabels" [ngStyle]="{'color': svgFillColorArr[2]}">&nbsp;&nbsp;Rent roll</span>
@@ -219,7 +219,7 @@
     </tr>
   
     <tr>
-      <td title="Budget" (click)="navigate('budget', 'property', 'budget')">
+      <td title="Budget" (click)="navigate('budget', 'property', '/budget/property/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'budget' }">
           <app-svg-icons [key]="budgetKey" [height]="svgHeight" [fillColor]="svgFillColorArr[15]"> </app-svg-icons>
           <span *ngIf="showLabels" [ngStyle]="{'color': svgFillColorArr[15]}">&nbsp;&nbsp;Budget</span>
@@ -262,7 +262,7 @@
   
     <tr >
       <td title="Process stepper"
-        (click)="navigate('process-stepper', 'property', 'process')">
+        (click)="navigate('process-stepper', 'property', '/process/property/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'process-stepper' }">
           <app-svg-icons [key]="processstepperKey" [height]="svgHeight" [fillColor]="svgFillColorArr[10]">
           </app-svg-icons>
@@ -272,7 +272,7 @@
     </tr>
   
     <tr >
-      <td title="Rating" (click)="navigate('rating', 'property', 'rating')">
+      <td title="Rating" (click)="navigate('rating', 'property', '/rating/property/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'rating' }">
           <app-svg-icons [key]="ratingKey" [height]="svgHeight" [fillColor]="svgFillColorArr[18]"> </app-svg-icons>
           <span *ngIf="showLabels" [ngStyle]="{'color': svgFillColorArr[18]}">&nbsp;&nbsp;Rating</span>

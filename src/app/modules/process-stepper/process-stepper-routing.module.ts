@@ -6,6 +6,9 @@ const routes: Routes = [
   {
     path: "",
     component: ProcessStepperComponent,
+    children: [
+      { path: 'property/:id', component: ProcessStepperComponent },
+    ]
   },
 ];
 

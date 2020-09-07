@@ -6,6 +6,9 @@ const routes: Routes = [
   {
     path: "",
     component: BudgetComponent,
+    children: [
+      { path: 'property/:id', component: BudgetComponent },
+    ]
   },
 ];
 

@@ -7,6 +7,9 @@ const routes: Routes = [
   {
     path: "",
     component: RatingComponent,
+    children: [
+      { path: 'property/:id', component: RatingComponent },
+    ]
   },
 ];
 
