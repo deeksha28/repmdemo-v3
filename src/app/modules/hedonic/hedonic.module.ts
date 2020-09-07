@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { HedonicRoutingModule } from './hedonic-routing.module';
 import { HedonicComponent } from './hedonic.component';
+import { HedonicPortfolioComponent } from './component/hedonic-portfolio/hedonic-portfolio.component';
+import { HedonicPropertyComponent } from './component/hedonic-property/hedonic-property.component';
 
 
 @NgModule({
-  declarations: [HedonicComponent],
+  declarations: [HedonicComponent, HedonicPortfolioComponent, HedonicPropertyComponent],
   imports: [
     CommonModule,
     HedonicRoutingModule

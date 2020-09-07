@@ -11,8 +11,12 @@ export class TabService {
   tabOptions: ITAB[] = [
     { name: 'overview', url: '/overview' , id: 0 }, 
     { name: 'constructionPlanning', url: '/constructionPlanning' , id: 0 }, 
-    { name: 'profitAndLoss', url: '/profitAndLoss' , id: 0 }, 
-    { name: 'qualicasa', url: '/qualicasa' , id: 0 }, 
+    { name: 'profitAndLoss', url: '/profitAndLoss/portfolio/' , id: 0 }, 
+    { name: 'profitAndLoss', url: '/profitAndLoss/property/' , id: 0 }, 
+    { name: 'qualicasa', url: '/qualicasa/portfolio/' , id: 0 }, 
+    { name: 'qualicasa', url: '/qualicasa/property/' , id: 0 }, 
+    { name: 'hedonic', url: '/hedonic/portfolio/' , id: 0 }, 
+    { name: 'hedonic', url: '/hedonic/property/' , id: 0 },
     { name: 'tasks',   url: '/tasks' , id: 0},
     { name: 'DCF',   url: '/dcf/portfolio/', id: 0},
     { name: 'DCF',   url: '/dcf/property/', id: 0}
