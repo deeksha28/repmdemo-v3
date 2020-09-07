@@ -47,7 +47,7 @@
 
     <tr>  
       <td title="Profit & loss"
-        (click)="navigate('profit-and-loss', 'property', 'profitAndLoss')">
+        (click)="navigate('profit-and-loss', 'property', '/profitAndLoss/portfolio/')">
         <div [ngClass]="{ 'selected-view': selectedView === 'profit-and-loss' }" class="svg-container">
           <app-svg-icons [key]="proftitnlossKey" [height]="svgHeight" [fillColor]="svgFillColorArr[5]"> </app-svg-icons>
           <span *ngIf="showLabels" [ngStyle]="{'color': svgFillColorArr[5]}">&nbsp;&nbsp;Profit & loss</span>
@@ -73,7 +73,7 @@
 
     <tr >
       <td title="QC Capex"
-        (click)="navigate('qualicasa', 'portfolio', 'qualicasa')">
+        (click)="navigate('qualicasa', 'portfolio', '/qualicasa/portfolio/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'qualicasa' }">
           <app-svg-icons [key]="qccapexKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
           <span *ngIf="showLabels" [ngStyle]="{'color': svgFillColorArr[6]}">&nbsp;&nbsp;QC Capex</span>
@@ -82,7 +82,7 @@
     </tr>
 
     <tr > 
-      <td title="Hedonic" (click)="navigate('hedonic', 'portfolio', 'hedonic')">
+      <td title="Hedonic" (click)="navigate('hedonic', 'portfolio', '/hedonic/portfolio/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'hedonic' }">
           <app-svg-icons [key]="hedonicKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
           <span *ngIf="showLabels" [ngStyle]="{'color': svgFillColorArr[6]}">&nbsp;&nbsp;Hedonic</span>
@@ -210,7 +210,7 @@
   
     <tr>
       <td title="Profit & loss"
-        (click)="navigate('profit-and-loss', 'property', 'profitAndLoss')">
+        (click)="navigate('profit-and-loss', 'property', '/profitAndLoss/property/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'profit-and-loss' }">
           <app-svg-icons [key]="proftitnlossKey" [height]="svgHeight" [fillColor]="svgFillColorArr[5]"> </app-svg-icons>
           <span *ngIf="showLabels" [ngStyle]="{'color': svgFillColorArr[5]}">&nbsp;&nbsp;Profit & loss</span>
@@ -234,7 +234,7 @@
     <div class="collapse" id="collapseCalcProp">
     <table>
       <tr >
-      <td title="QC Capex" (click)="navigate('qualicasa', 'property', 'qualicasa')">
+      <td title="QC Capex" (click)="navigate('qualicasa', 'property', '/qualicasa/property/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'qualicasa' }">
           <app-svg-icons [key]="qccapexKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
           <span *ngIf="showLabels" [ngStyle]="{'color': svgFillColorArr[6]}">&nbsp;&nbsp;QC Capex</span>
@@ -252,7 +252,7 @@
     </tr>
   
     <tr >
-      <td title="Hedonic" (click)="navigate('hedonic', 'property', 'hedonic')">
+      <td title="Hedonic" (click)="navigate('hedonic', 'property', '/hedonic/property/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'hedonic' }">
           <app-svg-icons [key]="hedonicKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
           <span *ngIf="showLabels" [ngStyle]="{'color': svgFillColorArr[6]}">&nbsp;&nbsp;Hedonic</span>
