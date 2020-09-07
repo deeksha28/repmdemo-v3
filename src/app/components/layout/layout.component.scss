@@ -21,11 +21,15 @@
 
 .flexItemNavigation{
     width:7%;
+    position: fixed;
+    top: 45px;
+    left: 0;
+    height: 100vh!important;
+    border-right: 2px solid #9f9f9f;
 }
 
 .closeTab{
     position: relative;
-    top: -7px;
     left: 9px;
     font-weight: 700;
 }
