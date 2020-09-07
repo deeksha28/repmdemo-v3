@@ -10,6 +10,14 @@
         <app-portfolio [showPortfolio]="showPortfolio"></app-portfolio>
     </div>
     <div class="flexItemContent flex-grow-1 repm5-container">
-        <router-outlet></router-outlet>
+        <ngb-tabset *ngIf="tabs.length>0" [activeId]="tabService.activeUrl" (tabChange)="onTabChange($event)">
+            <ngb-tab *ngFor="let tab of tabs ; let index = index" [id]="tab.url + '/' + tab.id">
+            <ng-template ngbTabTitle>
+                <span style="text-transform: capitalize;">{{tab.name}}</span>
+                <span (click)="closeTab(index, $event)">&times;</span>
+                </ng-template>
+            <ng-template ngbTabContent><router-outlet></router-outlet></ng-template>
+            </ngb-tab>
+        </ngb-tabset>
     </div>
 </div>

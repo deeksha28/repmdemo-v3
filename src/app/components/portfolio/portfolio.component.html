@@ -1,10 +1,10 @@
-<div class="layoutContainer d-flex flex-row">
+<div id="propertyTree" class="layoutContainer d-flex flex-row">
     <div [ngClass]="{'alignCenter': !showLabels}" class="flexItemNavigation">
         <div class="row">
             <div [ngClass]="{'col-md-1 col-sm-1': showLabels, 'col-md-12 col-sm-12': !showLabels}"  style="padding-top: 6px;">
                 <span><i class="fas fa-briefcase" aria-hidden="true"></i></span>
             </div>
-            <div class="col-md-10 col-sm-10" style="padding-left: 0;">
+            <div class="col-md-11 col-sm-11" style="padding-left: 0;">
                 <select *ngIf="showLabels" style="padding-left: 0" (change)="selectPortfolio($event)" class="form-control ng-pristine ng-valid ng-touched">
                     <option _ngcontent-bjx-c142="" value="0"> BGV Portfolio</option>
                     <option _ngcontent-bjx-c142="" value="1"> Offered Portfolio</option><!----></select>
@@ -19,13 +19,6 @@
                 <span *ngIf="showLabels" >{{selectedRowId}}</span>
             </div> 
         </div>
-        <hr class="seperator"/>
-
-        <p *ngIf="!showLess&&showLabels">
-            <label>Canton</label>
-            <select [(ngModel)]="canton" class="form-control ng-pristine ng-valid ng-touched"><option _ngcontent-cax-c142="" value="0: null"></option><option _ngcontent-cax-c142="" value="1: 13" class="ng-star-inserted"> Basel-Country </option><option _ngcontent-cax-c142="" value="2: 14" class="ng-star-inserted"> Schaffhausen </option><!----></select>
-        </p>
-
         <hr *ngIf="!showLess&&showLabels" class="seperator"/>
 
         <p *ngIf="!showLess&&showLabels">
@@ -34,7 +27,7 @@
         </p>
 
         <hr *ngIf="!showLess&&showLabels" class="seperator"/>
-
+	
         <p *ngIf="!showLess&&showLabels">
                 <label>Category</label>
                 <select [(ngModel)]="category" class="form-control ng-valid ng-touched ng-dirty"><option _ngcontent-cax-c142="" value="0: null"></option><option _ngcontent-cax-c142="" value="1" class="ng-star-inserted"> Mixed use property</option><option _ngcontent-cax-c142="" value="2" class="ng-star-inserted"> Residential property</option><!----></select>
@@ -48,19 +41,23 @@
             </select>
         </p>
         <hr *ngIf="!showLess&&showLabels" class="seperator"/>
-        <div>
-
-            <span *ngIf="showLess&&showLabels"><a href="javascript:;" (click)="toggleShowLess()">Show More</a></span>
-            <span *ngIf="!showLess&&showLabels"><a href="javascript:;" (click)="toggleShowLess()">Show Less</a></span>
-       
-            <button style="float: right;" class="btn" *ngIf="showLabels" (click)="filterItem()">
-                <span><i class="fa fa-search" aria-hidden="true"></i></span><span *ngIf="showLabels">Search</span>
-            </button>
+        
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <span class="showLess" *ngIf="showLess&&showLabels"><a href="javascript:;" (click)="toggleShowLess()">Show More</a></span>
+                <span class="showLess" *ngIf="!showLess&&showLabels"><a href="javascript:;" (click)="toggleShowLess()">Show Less</a></span>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <button style="float: right;background: gray;color:#005684" class="btn" *ngIf="showLabels" (click)="filterItem()">
+                    <span><i class="fa fa-search" aria-hidden="true"></i></span><span *ngIf="showLabels">Search</span>
+                </button>
+            </div>
+           
             <span *ngIf="!showLabels" style="font-weight:bold;padding-right: 5px;">...</span>
             <a href="javascript:;" *ngIf="!showLabels"><i class="fa fa-search" aria-hidden="true"></i></a>
         </div>
         <hr class="seperator"/>
-      
+
         <table>
             <thead>
                 <tr>
@@ -78,16 +75,20 @@
                         </td>
                     </tr>
                 </ng-container>
+                <ng-container *ngIf="filteredProperties.length==0">
+                    <tr>
+                        <td>
+                            <span>No data available</span> 
+                        </td>
+                    </tr>
+                </ng-container>
             </tbody>
         </table>
     </div>
-    <div class="splitter">
+    <!-- <div class="splitter">
         <i *ngIf="!showLabels" class="fa fa-caret-right" aria-hidden="true" (click)="toggleViewLabels()"></i>
         <i *ngIf="showLabels" class="fa fa-caret-left" aria-hidden="true" (click)="toggleViewLabels()"></i>
-    </div>
-
-    <!-- <div class="flexItemContent flex-grow-1 repm5-container">
-
-        <router-outlet></router-outlet>
     </div> -->
+
+  
 </div>

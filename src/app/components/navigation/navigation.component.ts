@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { SVGKEYS } from '../../shared/components/interfaces/shared.interface';
 import { Router } from '@angular/router';
 import { DataService } from '../../shared/services/data.service';
+import { TabService } from '../../tab.service';
 
 @Component({
   selector: 'app-navigation',
@@ -27,7 +28,7 @@ export class NavigationComponent implements OnInit {
   budgetKey = SVGKEYS.BUDGET;
   processstepperKey = SVGKEYS.PROCESSSTEPPER;
   mapKey = SVGKEYS.MAP;
-  public svgHeight = 35;
+  public svgHeight = 25;
   selectedView;
   view;
   viewPortfolio;
@@ -53,7 +54,7 @@ export class NavigationComponent implements OnInit {
     '#fbc02d'
   ];
   
-  constructor(private router: Router, private ds: DataService) { 
+  constructor(private router: Router, private ds: DataService,private tabService: TabService) { 
     this.selectedView = "overview"
     this.ds.view.subscribe((value) => {
       this.view = value
@@ -72,12 +73,18 @@ export class NavigationComponent implements OnInit {
     if(selectedView != 'portfolio'){
       this.selectedView = selectedView
       this.router.navigate([path])
-    }else{
-      this.ds.headerTypeSubject.next('portfolio')
-      this.ds.portfolioToggleSubject.next(!this.ds.portfolioToggleSubject.getValue())
-    }   
+    }
+    // }else{
+    //   this.ds.headerTypeSubject.next('portfolio')
+    //   this.ds.portfolioToggleSubject.next(!this.ds.portfolioToggleSubject.getValue())
+    // }   
   }
   public selectView(selectedView) {
     
+  }
+
+  openTab(url: string) {
+    this.tabService.addTab(url);
+    this.router.navigateByUrl(url);
   }
 }

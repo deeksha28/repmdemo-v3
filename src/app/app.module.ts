@@ -11,6 +11,8 @@ import { NgbPaginationModule, NgbAlertModule, NgbDropdownModule } from '@ng-boot
 import { DataService } from "./shared/services/data.service";
 import { FormsModule } from '@angular/forms';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule,
     SvgIconsModule,
     NgbDropdownModule,
     FormsModule,

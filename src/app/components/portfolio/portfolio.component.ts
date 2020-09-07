@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild} from '@angular/core';
 import { DataService } from '../../shared/services/data.service';
+import { Router } from '@angular/router';
 import { isInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 
 @Component({
@@ -17,7 +18,9 @@ export class PortfolioComponent implements OnInit {
   category = 0;
   selectedRowId = 0;
   properties : any;
+  selectedView;
   filteredProperties : object;
+
   portfolios = [
     "BGV Portfolio",
     "Offered Portfolio"
@@ -49,25 +52,41 @@ export class PortfolioComponent implements OnInit {
     {'id': '9014','name': '-Seftigenstrasse 259,3084 Wabern', 'category' : '1','canton':'1','zipTown':'1'},
     {'id': '9017','name': '-Eggweg 13/13a,3065 Bolligen', 'category' : '1','canton':'1','zipTown':'1'},
   ]
-  constructor(private ds: DataService) {     
+  constructor(private router: Router,private ds: DataService) {     
   }
 
   ngOnInit(): void {
-    this.portfolio = 'portfolio1'
+    this.ds.header.subscribe((value) => {
+      console.log(value)
+      if(value)
+        this.selectedRowId = isNaN(parseInt(value.split('-')[0]))?0:parseInt(value.split('-')[0]);
+
+           
+      if(!(this.ds.headerTypeSubject.value == 'property')){
+        this.ds.headerTypeSubject.next('portfolio')
+        this.ds.viewSubject.next('portfolio')
+        this.ds.headerSubject.next(this.portfolios[0])
+        
+      }    
+    })
     this.properties = this.bgvPortfolio;
-    this.ds.headerSubject.next(this.portfolios[0])
-    this.ds.viewSubject.next('portfolio')
     this.assignCopy();
+  }
+
+  ngAfterViewChecked(): void{
+    if(document.getElementById('propertyTree')){
+      var logoElementWidth = document.getElementById('mainSiteHeader')?document.getElementById('mainSiteHeader').children[0].clientWidth:0
+      var topElementHeight = document.getElementsByClassName('container')[0]?document.getElementsByClassName('container')[0].clientHeight + 2:0;
+      var treeWidth = document.getElementById('propertyTree').offsetWidth;
+      var propertyLabelWidth = document.getElementById('mainSiteHeader')?document.getElementById('mainSiteHeader').children[1].children[0].scrollWidth:0
+      document.getElementById('propertyTree').style.left = (logoElementWidth + propertyLabelWidth) - document.getElementById('topbarLabeldiv').scrollWidth + 'px';
+      document.getElementById('propertyTree').style.top = (topElementHeight) + 'px';
+    }
   }
 
   onChange(event) {
     this.ds.headerTypeSubject.next('portfolio')
     this.ds.headerSubject.next(this.portfolio)
-  }
-
-  selectProperty(type, name){
-    this.ds.headerTypeSubject.next(type)
-    this.ds.headerSubject.next(name)
   }
 
   toggleViewLabels() {
@@ -89,9 +108,11 @@ export class PortfolioComponent implements OnInit {
     this.selectedPortfolio = event.target.options[event.target.options.selectedIndex].text
     this.assignCopy();
   }
+
   selectProp(id, name){
     this.selectedRowId = id;
     this.ds.headerTypeSubject.next('property')
+    this.ds.portfolioToggleSubject.next(!this.ds.portfolioToggleSubject.getValue())
     this.ds.viewSubject.next('property')
     this.ds.headerSubject.next(id + name)
   }
@@ -99,7 +120,8 @@ export class PortfolioComponent implements OnInit {
   assignCopy(){
     this.filteredProperties = Object.assign([], this.properties);
   }
- filterItem(value){
+
+  filterItem(value){
     var isFiltered = false;
     if(this.category == 1 || this.category == 2){
       this.filteredProperties = Object.assign([], this.properties).filter(
@@ -121,5 +143,8 @@ export class PortfolioComponent implements OnInit {
     } 
     else if(!isFiltered)
       this.assignCopy();
+  }
+  public navigate(selectedView: string, level: string, path: string) {   
+      this.ds.portfolioToggleSubject.next(!this.ds.portfolioToggleSubject.getValue())
   }
 }
