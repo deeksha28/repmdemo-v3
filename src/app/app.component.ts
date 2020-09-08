@@ -3,7 +3,7 @@ import { SVGKEYS } from './shared/components/interfaces/shared.interface';
 import { Router } from '@angular/router';
 import { DataService } from './shared/services/data.service';
 import { TabService } from './tab.service';
-
+import { environment } from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,7 @@ import { TabService } from './tab.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public redirectURL = environment.redirectingURL;
   overviewKey = SVGKEYS.OVERVIEW;
   public svgHeight = 25;
   public svgFillColor = '#ffffff';

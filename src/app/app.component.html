@@ -6,7 +6,7 @@
                     title="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" id="LogoHome" href="/">
+                <a class="navbar-brand" id="LogoHome" href="{{redirectURL}}">
                     <img id="topbar-logo" src="./assets/img/IAZI-logo-Blue.svg">
                 </a>
                 <a class="navbar-brand aVerticalAlign" id="LogoHome" (click)="navigate('overview', '', '/overview')">
@@ -48,7 +48,8 @@
                     <li>
                         <a class="navbar-brand aVerticalAlign" id="LogoHome" (click)="navigate('tasks', '', '/tasks')">
                             <div class="pointer" id="topbar-logo" tooltip="Tasks" placement="bottom">
-                                <i class="fa fa-tasks iconSize23 iconTaskPadding" aria-hidden="true"></i>
+                                <!-- <i class="fa fa-tasks iconSize23 iconTaskPadding" aria-hidden="true"></i> -->
+                                <img class="iconTaskPadding"  aria-hidden="true" src="./assets/img/task list_1.svg">
                             </div>
                         </a>
                     </li>

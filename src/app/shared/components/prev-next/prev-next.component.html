@@ -4,9 +4,9 @@
 
 	<app-svg-icons *ngIf="showPrevNext()" id="next" [key]="nextKey" [height]="svgHeight" [fillColor]="svgFillColor"
 		class="pointer" (click)="navigate('next')"></app-svg-icons> -->
-	<img class="prev-next pointer"  *ngIf="showPrevNext()" src="./assets/img/house-arrow-left.svg">
+	<img class="prev-next pointer"  *ngIf="showPrevNext()" src="./assets/img/home_arrow_left.svg">
 	<span class="cursor-pointer" (click)="navigate('portfolio', '', '')"> {{ header }} </span>
-	<img class="prev-next pointer"  *ngIf="showPrevNext()" src="./assets/img/house-arrow-right.svg">
+	<img class="prev-next pointer"  *ngIf="showPrevNext()" src="./assets/img/home_arrow_right.svg">
 	<ngContainer *ngIf="!header">
 		<div id="intialPropBox" (click)="navigate('portfolio', '', '')">
 			<div [ngClass]="{ 'portfolio-selected': viewPortfolio }" class="svg-container">

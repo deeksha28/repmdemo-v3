@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  imgURL: "../../../../assets/img/"
+  redirectingURL: "/"
 };
 
 /*
