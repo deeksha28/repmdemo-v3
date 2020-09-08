@@ -6,13 +6,14 @@
                     title="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" id="LogoHome" href="{{redirectURL}}">
+                <a class="navbar-brand mr-1" id="LogoHome" href="{{redirectURL}}">
                     <img id="topbar-logo" src="./assets/img/IAZI-logo-Blue.svg">
                 </a>
-                <a class="navbar-brand aVerticalAlign" id="LogoHome" (click)="navigate('overview', '', '/overview')">
-                    <div class="pointer" id="topbar-logo" tooltip="Overview" placement="bottom">
-                        <app-svg-icons class="iconVerticalAlign" [key]="overviewKey" [height]="svgHeight" [fillColor]="svgFillColor"> </app-svg-icons> 
-                    </div>
+                <a class="navbar-brand mr-1" id="LogoHome" (click)="navigate('overview', '', '/overview')">
+                    <img class="p-2" id="topbar-logo" src="./assets/img/Overview.svg">
+                </a>
+                <a class="navbar-brand mr-1" id="LogoHome" (click)="navigate('tasks', '', '/tasks')">
+                    <img class="p-2" id="topbar-logo" src="./assets/img/task list_1.svg">
                 </a>
             </div>
             
@@ -42,16 +43,6 @@
                                 <input type="text" class="form-control" placeholder="Search">
                               </div>
                         </div>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li>
-                        <a class="navbar-brand aVerticalAlign" id="LogoHome" (click)="navigate('tasks', '', '/tasks')">
-                            <div class="pointer" id="topbar-logo" tooltip="Tasks" placement="bottom">
-                                <!-- <i class="fa fa-tasks iconSize23 iconTaskPadding" aria-hidden="true"></i> -->
-                                <img class="iconTaskPadding"  aria-hidden="true" src="./assets/img/task list_1.svg">
-                            </div>
-                        </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">                    
