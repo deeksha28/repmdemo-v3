@@ -45,8 +45,27 @@
                         </div>
                     </li>
                 </ul>
-                <ul class="navbar-nav">                    
-                    <li class="dropdown" ngbDropdown>
+                <ul class="navbar-nav">                       
+                    <li ngbDropdown>
+                        <div class="nav navbar-nav dropdown open active drop-header" dropdown="">
+                            <span class="cursor-pointer dropdown-toggle" ngbDropdownToggle aria-haspopup="true"
+                                aria-expanded="true" tabindex="9">
+                                <i class="fa fa-cog iconSize18"></i> <span class="caret"></span>
+                            </span>
+                            <ul ngbDropdownMenu aria-labelledby="single-button" class="dropdown-menu dropdown-menu-right" role="menu">
+                                <li class="dropdown-header username">username@example.com </li>
+                                <li role="menuitem"><a class="dropdown-item pointer">Manage account</a></li>
+                                <li role="menuitem">                                    
+                                    <a ngbDropdown class="dropdown-item pointer dropdown-toggle" aria-haspopup="true">{{currentLang | uppercase}} <span class="caret"></span></a>
+                                    <!-- <ul ngbDropdownMenu aria-labelledby="single-button" class="dropdown-menu" role="menu">
+                                    </ul>  -->
+                                </li>
+                                <li role="menuitem"><a class="dropdown-item pointer">Sign out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- <li class="dropdown" ngbDropdown>
                         <div class="nav navbar-nav dropdown open active drop-header" dropdown="">
                             <span class="cursor-pointer dropdown-toggle" ngbDropdownToggle aria-haspopup="true"
                                 aria-expanded="true">
@@ -86,7 +105,7 @@
                                         <i [ngClass]="{ 'fa fa-check' : isCultureSelected('sy') }"></i></a></li>
                             </ul>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
                 <ul class="collapse navbar-nav" id="searchForm">
                     <div class="form-group has-search mb-0">
