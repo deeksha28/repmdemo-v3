@@ -114,6 +114,7 @@ hr{
 #collapsePortfolio table, #collapseProperty table{
     table-layout: fixed;
     text-align: center;
+    width: 100%;
 }
 
 #portfolio{
@@ -121,8 +122,11 @@ hr{
     margin-top:5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .svg-container span{
         display: none;
     }          
+    #portfolio, #property{
+       font-size:8px!important;
+    }
 }

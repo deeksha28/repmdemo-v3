@@ -1,28 +1,68 @@
- // flex container for navigation and view content
+// flex container for navigation and view content
 .layoutContainer {
-    min-height: 100%;
+  min-height: 100%;
 }
 
 .splitter {
-   background-color: #eaeaea;
-   min-width: 16px;
-   text-align: center;
-   border-right: 1px solid #a6a6a6;
-   border-left: 1px solid #a6a6a6;
+  background-color: #eaeaea;
+  min-width: 10px;
+  text-align: center;
+  border-right: 1px solid #a6a6a6;
+  border-left: 1px solid #a6a6a6;
 }
 
-.fa-caret-right, .fa-caret-left {
-   font-size: 23px;
-   cursor: pointer;
-   position: relative;
-   top: 50%;
+.fa-caret-right,
+.fa-caret-left {
+  font-size: 23px;
+  cursor: pointer;
+  position: relative;
+  top: 50%;
 }
-
+/* .fa-caret-right{
+    left: 2px;
+}
+.fa-caret-left{
+    left: 2px;
+} */
 .flexItemContent {
-   overflow-x: auto
+  overflow-x: auto;
 }
-.closeTab{
-    position: relative;
-    left: 9px;
-    font-weight: 700;
+.closeTab {
+  position: relative;
+  left: 9px;
+  font-weight: 700;
 }
+.flexItemNavigation {
+    width: 116.77px;
+    min-width: 116.77px
+}
+.flexItemNavigationContent {
+  width: 100%;
+}
+
+/* @media (max-width: 560px) {
+  .flexItemNavigation {
+    width: 14%;
+  }
+}
+
+// Portrait
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .flexItemNavigation {
+    width: 15%;
+    min-width: 15%;
+  }
+}
+// // Landscape
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .flexItemNavigation {
+    width: 11.2%;
+    min-width: 11.2%;
+  }
+}
+@media (max-width: 992px) {
+  .flexItemNavigation {
+    width: 11.6%;
+    min-width: 11.6%;
+  }
+} */
