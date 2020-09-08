@@ -37,7 +37,7 @@ export class LayoutComponent implements OnInit {
     
     this.tabService.deleteTab(index);
     if(this.tabService.getTab().length == 0){
-      this.router.navigateByUrl(this.redirectURL)
+      this.router.navigateByUrl('/')
     }
     event.preventDefault();
     console.log(this.tabService.activeUrl);
@@ -45,4 +45,6 @@ export class LayoutComponent implements OnInit {
   onTabChange(event) {
     this.router.navigateByUrl(this.tabs.find(tab=>tab.tabId == event.nextId).url);
   }
+
+  
 }
