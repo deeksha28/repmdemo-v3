@@ -11,7 +11,7 @@ import { environment } from "../../../environments/environment";
 })
 export class LayoutComponent implements OnInit {
   public redirectURL = environment.redirectingURL;
-  public showLabels = false;
+  public showLabels = true;
   public showPortfolio = false;
   viewPortfolio: boolean = false
   tabs = [];

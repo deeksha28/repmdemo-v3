@@ -1,6 +1,6 @@
-<div *ngIf="showLabels">
-<p class="groupHeader groupToggle" *ngIf="true" id="portfolio"><a data-toggle="collapse"  href="#collapsePortfolio" role="button" aria-expanded="false" aria-controls="collapseExample">Portfolio</a><span class="caret"></span></p>
-<div  class="collapse" id="collapsePortfolio">
+<div >
+<p class="groupHeader groupToggle" *ngIf="true"  id="portfolio"><a data-toggle="collapse"  href="#collapsePortfolio" role="button" aria-expanded="false" aria-controls="collapseExample">Portfolio</a><span class="caret"></span></p>
+<div  class="collapse" *ngIf="showLabels" id="collapsePortfolio">
 
  <!--  <table >
   <tr>
@@ -155,7 +155,7 @@
 </div><!--collapsePortfolio-->
 
   <p class="groupHeader groupToggle" id="property" *ngIf="view == 'property'"><a data-toggle="collapse"  href="#collapseProperty" role="button" aria-expanded="false" aria-controls="collapseExample">Property</a><span  class="caret"></span></p>
-<div  class="collapse" id="collapseProperty">
+<div  class="collapse" *ngIf="showLabels" id="collapseProperty">
 <!--   <table>
   <tr>
       <td title="Overview" (click)="navigate('overview', '', 'overview')">
