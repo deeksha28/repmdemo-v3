@@ -1,45 +1,28 @@
-// flex container for navigation and view content
+ // flex container for navigation and view content
 .layoutContainer {
     min-height: 100%;
 }
 
 .splitter {
-    background-color: #c4bebe;
-    min-width: 2px;
+   background-color: #eaeaea;
+   min-width: 16px;
+   text-align: center;
+   border-right: 1px solid #a6a6a6;
+   border-left: 1px solid #a6a6a6;
 }
 
 .fa-caret-right, .fa-caret-left {
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    top: 49%;
+   font-size: 23px;
+   cursor: pointer;
+   position: relative;
+   top: 50%;
 }
 
 .flexItemContent {
-    overflow-x: auto
+   overflow-x: auto
 }
-
-.flexItemNavigation{
-    width:7%;
-    position: fixed;
-    left: 0;
-    height: 100vh!important;
-    border-right: 2px solid #9f9f9f;
-}
-
 .closeTab{
     position: relative;
     left: 9px;
     font-weight: 700;
-    padding: 0 0.5rem;
-}
-@media (max-width: 992px) {
-    .flexItemNavigation {
-        width: 10%;
-    }
-}
-@media (max-width: 768px){
-    .flexItemNavigation {
-        width: 14%;
-    }
 }

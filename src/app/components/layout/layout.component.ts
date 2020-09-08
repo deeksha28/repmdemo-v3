@@ -11,7 +11,7 @@ import { environment } from "../../../environments/environment";
 })
 export class LayoutComponent implements OnInit {
   public redirectURL = environment.redirectingURL;
-  public showLabels = true;
+  public showLabels = false;
   public showPortfolio = false;
   viewPortfolio: boolean = false
   tabs = [];
@@ -27,7 +27,7 @@ export class LayoutComponent implements OnInit {
   }
 
   toggleViewLabels() {
-   /*  this.showLabels = !this.showLabels; */
+    this.showLabels = !this.showLabels;
   }
 
   toggleViewPortfolio() {
