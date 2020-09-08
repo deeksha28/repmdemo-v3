@@ -1,6 +1,8 @@
 <div class="layoutContainer d-flex flex-row">
-    <div class="flexItemNavigation">
-        <app-navigation [showLabels]="showLabels"></app-navigation>
+    <div class="flexItemNavigation" *ngIf="showLabels">
+        <div class="flexItemNavigationContent">
+            <app-navigation [showLabels]="showLabels"></app-navigation>
+        </div>      
     </div>
     <div class="splitter">
         <i *ngIf="!showLabels" class="fa fa-caret-right" aria-hidden="true" (click)="toggleViewLabels()"></i>

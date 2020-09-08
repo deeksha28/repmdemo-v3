@@ -5,7 +5,7 @@
 
 .splitter {
    background-color: #eaeaea;
-   min-width: 16px;
+   min-width: 10px;
    text-align: center;
    border-right: 1px solid #a6a6a6;
    border-left: 1px solid #a6a6a6;
@@ -17,7 +17,12 @@
    position: relative;
    top: 50%;
 }
-
+/* .fa-caret-right{
+    left: 2px;
+}
+.fa-caret-left{
+    left: 2px;
+} */
 .flexItemContent {
    overflow-x: auto
 }
@@ -25,4 +30,17 @@
     position: relative;
     left: 9px;
     font-weight: 700;
+}
+.flexItemNavigation{
+    width: 7.6%; 
+    min-width: 7.6%;
+}
+.flexItemNavigationContent{
+    width: 100%;
+}
+
+@media(max-width:560px){
+    .flexItemNavigation{
+        width: 14%;
+    }
 }
