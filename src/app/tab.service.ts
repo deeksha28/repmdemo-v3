@@ -30,6 +30,7 @@ export class TabService {
   constructor() { }
 
   addTab(path: string,id = null) {
+    debugger;
     const tab = this.getTabOptionByPath(path);
     if(id!=null){
       if (!this.tabs.includes(tab)) {

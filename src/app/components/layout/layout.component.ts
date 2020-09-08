@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../shared/services/data.service';
 import { TabService } from '../../tab.service';
 import { Router, NavigationEnd   } from '@angular/router';
+import { environment } from "../../../environments/environment";
 
 @Component({
   selector: 'app-layout',
@@ -9,6 +10,7 @@ import { Router, NavigationEnd   } from '@angular/router';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+  public redirectURL = environment.redirectingURL;
   public showLabels = true;
   public showPortfolio = false;
   viewPortfolio: boolean = false
@@ -35,7 +37,7 @@ export class LayoutComponent implements OnInit {
     
     this.tabService.deleteTab(index);
     if(this.tabService.getTab().length == 0){
-      this.router.navigateByUrl('/')
+      this.router.navigateByUrl(this.redirectURL)
     }
     event.preventDefault();
     console.log(this.tabService.activeUrl);
