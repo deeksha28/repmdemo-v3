@@ -33,7 +33,7 @@
   font-weight: 700;
 }
 .flexItemNavigation {
-  width: auto;
+  width: 6.6%;
   min-width: 6.6%;
 }
 .flexItemNavigationContent {
@@ -61,8 +61,8 @@
   }
 }
 @media (max-width: 992px) {
-    .flexItemNavigation{
-        width: 11.6%;
-        min-width: 11.6%;
-    }
+  .flexItemNavigation {
+    width: 11.6%;
+    min-width: 11.6%;
+  }
 }
