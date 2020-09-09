@@ -20,7 +20,8 @@ export class LayoutComponent implements OnInit {
   constructor(private ds: DataService,public tabService: TabService, private router : Router, private activatedRoute : ActivatedRoute) { 
     this.ds.portalSubject.next(false)   
     let url = this.activatedRoute.snapshot['_routerState'].url;
-    this.tabService.refreshURL(url);    
+    let path = this.tabService.refreshURL(url);    
+    this.ds.tabValueSubject.next(this.tabService.getTabOptionByPath(path))
   }
 
   ngOnInit(): void {
@@ -59,7 +60,8 @@ export class LayoutComponent implements OnInit {
     if(this.tabService.getTab().length == 0){
       this.ds.tabValueSubject.next(null)
       this.tabService.addTab('/overview')
-      this.router.navigate(['/overview']);      
+      this.router.navigate(['/overview']);
+      this.ds.tabValueSubject.next(this.tabService.getTabOptionByPath('/overview')) 
     }
     
     else if(activeTabId == deleteTabId){

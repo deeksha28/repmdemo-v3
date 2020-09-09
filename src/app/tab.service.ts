@@ -108,6 +108,8 @@ export class TabService {
     }else{
       this.addTab(tab.path, path.split(tab.path)[1])
     }
+
+    return tab.path
   }
 }
 
