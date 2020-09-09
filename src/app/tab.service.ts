@@ -9,22 +9,22 @@ export class TabService {
   tabs: ITAB[] = [];
   activeUrl;
   tabOptions: ITAB[] = [
-    { name: 'overview', path: '/overview' , tabId: '',url: ''}, 
-    { name: 'constructionPlanning', path: '/constructionplanning/portfolio/' , tabId: '',url: '' },
-    { name: 'characteristics', path: '/characteristics/property/' ,  tabId: '',url: '' },  
-    { name: 'rent-roll', path: '/rent/property/' ,  tabId: '' ,url: ''},  
-    { name: 'budget', path: '/budget/property/' ,  tabId: '',url: '' },      
-    { name: 'process', path: '/process/property/' ,  tabId: '' ,url: ''},      
-    { name: 'rating', path: '/rating/property/' ,  tabId: '' ,url: ''},      
-    { name: 'profitAndLoss', path: '/profitAndLoss/portfolio/' ,  tabId: '',url: '' }, 
-    { name: 'profitAndLoss', path: '/profitAndLoss/property/' ,  tabId: '',url: '' }, 
-    { name: 'qualicasa', path: '/qualicasa/portfolio/' ,  tabId: '',url: '' }, 
-    { name: 'qualicasa', path: '/qualicasa/property/' ,  tabId: '' ,url: ''}, 
-    { name: 'hedonic', path: '/hedonic/portfolio/' ,  tabId: '' ,url: ''}, 
-    { name: 'hedonic', path: '/hedonic/property/' ,  tabId: '' ,url: ''},
-    { name: 'tasks',   path: '/tasks' ,  tabId: '' ,url: ''},
-    { name: 'DCF',   path: '/dcf/portfolio/',  tabId: '' ,url: ''},
-    { name: 'DCF',   path: '/dcf/property/',  tabId: '',url: '' }
+    { name: 'overview', path: '/overview' , tabId: '',url: '', actionBtn: []}, 
+    { name: 'constructionPlanning', path: '/constructionplanning/portfolio/' , tabId: '',url: '' , actionBtn: []},
+    { name: 'characteristics', path: '/characteristics/property/' ,  tabId: '',url: '' , actionBtn: ["Save", "Cancel"]},  
+    { name: 'rent-roll', path: '/rent/property/' ,  tabId: '' ,url: '', actionBtn: ["Export Worksheets", "Reports(DropDown)"]},  
+    { name: 'budget', path: '/budget/property/' ,  tabId: '',url: '' , actionBtn: []},      
+    { name: 'process', path: '/process/property/' ,  tabId: '' ,url: '', actionBtn: ["Save", "Cancel"]},      
+    { name: 'rating', path: '/rating/property/' ,  tabId: '' ,url: '', actionBtn: []},      
+    { name: 'profitAndLoss', path: '/profitAndLoss/portfolio/' ,  tabId: '',url: '' , actionBtn: ["Export Worksheet"]}, 
+    { name: 'profitAndLoss', path: '/profitAndLoss/property/' ,  tabId: '',url: '' , actionBtn: ["Save", "Export Worksheet"]}, 
+    { name: 'qualicasa', path: '/qualicasa/portfolio/' ,  tabId: '',url: '' , actionBtn: ["Export Data"]}, 
+    { name: 'qualicasa', path: '/qualicasa/property/' ,  tabId: '' ,url: '', actionBtn: ["Export Data", "New Building"]}, 
+    { name: 'hedonic', path: '/hedonic/portfolio/' ,  tabId: '' ,url: '', actionBtn: ["Hedonic Appraisal"]}, 
+    { name: 'hedonic', path: '/hedonic/property/' ,  tabId: '' ,url: '', actionBtn: ["Appraisal Report", "Appraise", "Appraise and Save", "Cancel"]},
+    { name: 'tasks',   path: '/tasks' ,  tabId: '' ,url: '', actionBtn: []},
+    { name: 'DCF',   path: '/dcf/portfolio/',  tabId: '' ,url: '', actionBtn: ["New Valuation"]},
+    { name: 'DCF',   path: '/dcf/property/',  tabId: '',url: '', actionBtn: ["New Valuation", "Reports(DropDown)"] }
   ];
  
   constructor() { }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from "rxjs";
+import { ITAB } from '../../itab';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,11 @@ export class DataService {
   headerType = this.headerTypeSubject.asObservable();
   portfolioToggleSubject = new BehaviorSubject<boolean>(false);
   portfolioToggle = this.portfolioToggleSubject.asObservable();
+  tabValueSubject = new BehaviorSubject<ITAB>(null);
+  tabValue = this.tabValueSubject.asObservable();
   public portfolioId = 0;
   public propertyId = 0;
+
   constructor() { }
 
 
