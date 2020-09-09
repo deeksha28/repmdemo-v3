@@ -17,16 +17,19 @@ export class LayoutComponent implements OnInit {
   tabs = [];
  
 
-  constructor(private ds: DataService,public tabService: TabService, private router : Router, private activatedRoute : ActivatedRoute) { }
+  constructor(private ds: DataService,public tabService: TabService, private router : Router, private activatedRoute : ActivatedRoute) { 
+    this.ds.portalSubject.next(false)   
+    let url = this.activatedRoute.snapshot['_routerState'].url;
+    this.tabService.refreshURL(url);    
+  }
 
   ngOnInit(): void {
-    this.router.navigate(['/overview'])
+    // this.router.navigate(['/overview'])
     this.ds.portfolioToggle.subscribe((value) => {
       this.viewPortfolio = value
     })
     this.tabs = this.tabService.tabs;
-    console.log(this.router.url)
-   
+    console.log(this.router.url)    
     // if(this.router.url!=null){
     //   var path = this.router.url;
     //   path = this.tabService.tabOptions.find(tab => path.includes(tab.path)).path;
@@ -55,7 +58,8 @@ export class LayoutComponent implements OnInit {
     this.tabService.deleteTab(index);
     if(this.tabService.getTab().length == 0){
       this.ds.tabValueSubject.next(null)
-      this.router.navigate(['']);
+      this.tabService.addTab('/overview')
+      this.router.navigate(['/overview']);      
     }
     
     else if(activeTabId == deleteTabId){
