@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../shared/services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-overview',
@@ -8,10 +9,11 @@ import { DataService } from '../../shared/services/data.service';
 })
 export class OverviewComponent implements OnInit {
   view;
-  constructor(private ds: DataService) { }
+  constructor(private ds: DataService, router:Router) { }
 
   ngOnInit(): void {
     // this.view = "portfolio"
+    
   }
 
   onChange(newValue) {
