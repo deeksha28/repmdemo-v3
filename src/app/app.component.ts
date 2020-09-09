@@ -37,20 +37,18 @@ export class AppComponent implements OnInit {
        });
       });
     this.ds.portal.subscribe((value) => {
-      this.portal = value
+      this.portal = value;      
     })
   }
   ngOnInit(): void {
-    // this.router.navigate(['overview', '', '/overview'])
-    this.navigate("overview", "", "/overview"); 
-
   }
 
   onLangChange(lang){
     this.currentLang = lang
   }
   public navigate(selectedView: string, level: string, path: string) {   
-    // this.selectedView = selectedView;
+    if(selectedView == 'overview' || selectedView == 'tasks')
+      this.tabService.setActiveUrl(path);
     this.ds.tabValueSubject.next(this.tabService.getTabOptionByPath(path))
     this.tabService.addTab(path);
     this.router.navigate([path]);
