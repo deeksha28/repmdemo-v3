@@ -53,22 +53,22 @@
             <div class="">
                 <ul class="navbar-nav">                                           
                     <li>
-                        <div class="btn-group" dropdown placement="bottom right" *ngIf="tab">
+                        <div class="btn-group" dropdown placement="bottom right" *ngIf="activeTabCopy">
                             <button id="button-alignment" dropdownToggle type="button"
                                     class="btn btn-primary btnmenu dropdown-toggle" aria-controls="dropdown-alignment">
                               Action Button <span class="caret"></span>
                             </button>
                             <ul id="dropdown-alignment" *dropdownMenu class="dropdown-menu dropdown-menu-right"
                                 role="menu" aria-labelledby="button-alignment">
-                                <li role="menuitem" *ngFor="let action of tab.actionBtn">
+                                <li role="menuitem" *ngFor="let action of activeTabCopy.actionBtn">
                                   <a class="dropdown-item" (click)="action()">{{action}}</a>
                                 </li>
-                                <li role="menuitem" *ngIf="tab.actionBtn.length == 0">
+                                <li role="menuitem" *ngIf="activeTabCopy.actionBtn.length == 0">
                                     <a class="dropdown-item" (click)="action()">No Action Button</a>
                                 </li>                                                              
                             </ul>
                         </div>
-                        <div class="btn-group" dropdown placement="bottom right" [isDisabled]="!tab" *ngIf="!tab">
+                        <div class="btn-group" dropdown placement="bottom right" [isDisabled]="!activeTabCopy" *ngIf="!activeTabCopy">
                             <button id="button-alignment" dropdownToggle type="button"
                                     class="btn btn-primary btnmenu dropdown-toggle" aria-controls="dropdown-alignment">
                               Action Button <span class="caret"></span>

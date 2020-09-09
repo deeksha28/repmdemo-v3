@@ -24,7 +24,7 @@ export class LayoutComponent implements OnInit {
       this.viewPortfolio = value
     })
     this.tabs = this.tabService.tabs;
-    console.log(this.router.url)
+ 
    
     // if(this.router.url!=null){
     //   var path = this.router.url;
@@ -65,8 +65,7 @@ export class LayoutComponent implements OnInit {
   }
   onTabChange(event) {
     this.ds.tabValueSubject.next(this.tabs.find(tab=>tab.tabId == event.nextId))
+    this.ds.dcfTabIdSubject.next('tab1')
     this.router.navigateByUrl(this.tabs.find(tab=>tab.tabId == event.nextId).url);
   }
-
-  
 }

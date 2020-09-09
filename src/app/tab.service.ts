@@ -27,6 +27,23 @@ export class TabService {
     { name: 'DCF',   path: '/dcf/property/',  tabId: '',url: '', actionBtn: ["New Valuation", "Reports(DropDown)"] }
   ];
  
+  dcfPropertyBtnPermissions =  {
+    'tab1': ["New Valuation", "Reports(DropDown)"],
+    'tab2': ["Export Data", "Settings"],
+    'tab3': ["Export Data", "Settings","Show active categories"],
+    'tab4': ["Export Data", "Settings"],
+    'tab5': ["Export Data", "Settings"],
+    'tab6': []
+  }
+
+  dcfPortfolioBtnPermissions = {
+      'tab1': ["New Valuation"],
+      'tab2': [],
+      'tab3': [],
+      'tab4': []
+  }
+  
+
   constructor() { }
 
   addTab(path: string,id = null) {

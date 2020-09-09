@@ -16,12 +16,26 @@ export class AppComponent {
   public svgHeight = 25;
   public svgFillColor = '#ffffff';
   currentLang = 'en';
-  tab;
+  public activeTab;
+  public activeTabCopy;
+
   constructor(private router: Router, private ds: DataService, private tabService: TabService) { 
     // this.selectedView = "overview"
     this.ds.tabValue.subscribe((value) => {
-      this.tab = value
-    })
+      this.activeTab = value
+      this.activeTabCopy = {...this.activeTab};
+      this.ds.dcfTabIdValue.subscribe((value)=>{
+        if(value)
+        {
+          if(this.activeTabCopy!=null && this.activeTabCopy.name=="DCF"){
+            if(this.activeTabCopy.path.includes('portfolio'))
+              this.activeTabCopy.actionBtn = this.tabService.dcfPortfolioBtnPermissions[value];
+            else if(this.activeTabCopy.path.includes('property'))
+              this.activeTabCopy.actionBtn = this.tabService.dcfPropertyBtnPermissions[value]
+          }
+        }
+       });
+    });
   }
 
   onLangChange(lang){

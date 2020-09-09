@@ -1,4 +1,70 @@
-<div>
-    <img src="./assets/img/prop-dcf.png" class="w-100" alt="dcf">
 
+<div>
+    <img src="./assets/img/prop-dcf-header.png" class="w-100" alt="dcf">  
+</div>
+<div class="tabContainer">
+    <ngb-tabset (tabChange)="onTabChange($event)">
+        <ngb-tab id="tab1">
+            <ng-template ngbTabTitle>
+                <span style="text-transform: capitalize;">Appraisal Parameter</span>
+            </ng-template>
+            <ng-template ngbTabContent>
+                <div>
+                    <img src="./assets/img/prop-dcf-tab1.png" class="w-100" alt="dcf">  
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab id="tab2">
+            <ng-template ngbTabTitle>
+                <span style="text-transform: capitalize;">DCF</span>
+            </ng-template>
+            <ng-template ngbTabContent>
+                <div>
+                    <img src="./assets/img/prop-dcf-tab2.png" class="w-100" alt="dcf">
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab id="tab3">
+            <ng-template ngbTabTitle>
+                <span style="text-transform: capitalize;">Vacancy</span>
+            </ng-template>
+            <ng-template ngbTabContent>
+                <div>
+                    <img src="./assets/img/prop-dcf-tab3.png" class="w-100" alt="dcf">
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab id="tab4">
+            <ng-template ngbTabTitle>
+                <span style="text-transform: capitalize;">Object rent</span>
+            </ng-template>
+            <ng-template ngbTabContent>
+                <div>
+                    <img src="./assets/img/prop-dcf-tab4.png" class="w-100" alt="dcf">
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab id="tab5">
+            <ng-template ngbTabTitle>
+                <span style="text-transform: capitalize;">Capex</span>
+            </ng-template>
+            <ng-template ngbTabContent>
+                <div>
+                    <img src="./assets/img/prop-dcf-tab5.png" class="w-100" alt="dcf">
+                
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab id="tab6">
+            <ng-template ngbTabTitle>
+                <span style="text-transform: capitalize;">Discount Rate</span>
+            </ng-template>
+            <ng-template ngbTabContent>
+                <div>
+                    <img src="./assets/img/prop-dcf-tab6.png" class="w-100" alt="dcf">
+                
+                </div>
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
 </div>

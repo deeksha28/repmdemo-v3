@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { DataService } from '../../../../../shared/services/data.service'
 
 @Component({
   selector: 'app-dcf-portfolio',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DcfPortfolioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ds : DataService) { }
 
   ngOnInit(): void {
+  }
+
+  onTabChange(event) {
+    this.ds.dcfTabIdSubject.next(event.nextId)
   }
 
 }

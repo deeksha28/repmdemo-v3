@@ -1,4 +1,45 @@
-<div>
-    <img src="./assets/img/port-DCF.png" class="w-100" alt="dcf">
-
+<div class="tabContainer">
+    <ngb-tabset (tabChange)="onTabChange($event)">
+        <ngb-tab id="tab1">
+        <ng-template ngbTabTitle>
+            <span style="text-transform: capitalize;">Appraisal Parameter</span>
+        </ng-template>
+        <ng-template ngbTabContent>
+            <div>
+                <img src="./assets/img/port-dcf-tab1.png" class="w-100" alt="dcf">
+            
+            </div>
+        </ng-template>
+        </ngb-tab>
+        <ngb-tab id="tab2">
+            <ng-template ngbTabTitle>
+                <span style="text-transform: capitalize;">Market value Selection</span>
+            </ng-template>
+            <ng-template ngbTabContent>
+                <div>
+                    <img src="./assets/img/port-dcf-tab2.png" class="w-100" alt="dcf">
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab id="tab3">
+            <ng-template ngbTabTitle>
+                <span style="text-transform: capitalize;">DCF Compare</span>
+            </ng-template>
+            <ng-template ngbTabContent>
+                <div>
+                    <img src="./assets/img/port-dcf-tab3.png" class="w-100" alt="dcf">
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab id="tab4">
+            <ng-template ngbTabTitle>
+                <span style="text-transform: capitalize;">Rate Compare</span>
+            </ng-template>
+            <ng-template ngbTabContent>
+                <div>
+                    <img src="./assets/img/port-dcf-tab4.png" class="w-100" alt="dcf">
+                </div>
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
 </div>

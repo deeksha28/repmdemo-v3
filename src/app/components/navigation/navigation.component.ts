@@ -84,6 +84,7 @@ export class NavigationComponent implements OnInit {
       this.tabService.addTab(path,this.propertyId);
       path = path + this.propertyId;
     }
+    this.ds.dcfTabIdSubject.next('tab1');
     this.selectedView = selectedView;    
     this.router.navigate([path]);
   }
@@ -94,7 +95,6 @@ export class NavigationComponent implements OnInit {
 
   openTab(url: string) {
     this.tabService.addTab(url,(this.portfolioId+1));
-
     this.router.navigateByUrl(url+ (this.portfolioId+1));
   }
 }
