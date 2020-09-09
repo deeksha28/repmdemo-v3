@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  redirectingURL: "/repmdemo"
+  redirectingURL: "/repmdemo-v1"
 };
