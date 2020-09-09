@@ -66,7 +66,6 @@ export class NavigationComponent implements OnInit {
     this.ds.portfolioToggle.subscribe((value) => {
       this.viewPortfolio = value
     })
-    this.view = "portfolio"
   }
 
   ngOnInit(): void {
@@ -78,8 +77,10 @@ export class NavigationComponent implements OnInit {
       this.portfolioId = this.ds.getPortfolioId();
       this.tabService.addTab(path,this.portfolioId);
       path = path + this.portfolioId;
+      this.ds.viewSubject.next(level)
     } else if (level === 'property') {
       this.propertyId = this.ds.getPropertyId();
+      this.ds.viewSubject.next(level)
       this.tabService.addTab(path,this.propertyId);
       path = path + this.propertyId;
     }
