@@ -11,11 +11,11 @@ export class OverviewComponent implements OnInit {
   constructor(private ds: DataService) { }
 
   ngOnInit(): void {
-    this.view = "portfolio"
+    // this.view = "portfolio"
   }
 
   onChange(newValue) {
-    this.ds.viewSubject.next(this.view)
+    // this.ds.viewSubject.next(this.view)
   }
 
 }
