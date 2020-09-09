@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../shared/services/data.service';
 import { TabService } from '../../tab.service';
-import { Router, NavigationEnd   } from '@angular/router';
+import { Router, ActivatedRoute   } from '@angular/router';
 import { environment } from "../../../environments/environment";
 
 @Component({
@@ -17,13 +17,27 @@ export class LayoutComponent implements OnInit {
   tabs = [];
  
 
-  constructor(private ds: DataService,public tabService: TabService, private router : Router) { }
+  constructor(private ds: DataService,public tabService: TabService, private router : Router, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
     this.ds.portfolioToggle.subscribe((value) => {
       this.viewPortfolio = value
     })
     this.tabs = this.tabService.tabs;
+    console.log(this.router.url)
+   
+    // if(this.router.url!=null){
+    //   var path = this.router.url;
+    //   path = this.tabService.tabOptions.find(tab => path.includes(tab.path)).path;
+    //   var id;
+    //   console.log(path)
+    //   if(id!=null || id!=undefined)
+    //     this.tabService.addTab(path,id);
+    //   else
+    //     this.tabService.addTab(path);
+    //   this.router.navigate([this.router.url]);
+    // }
+      
   }
 
   toggleViewLabels() {
@@ -35,9 +49,14 @@ export class LayoutComponent implements OnInit {
   }
   closeTab(index: number, event: Event,url) {
     
+    var activeTabId = document.getElementsByClassName('nav-link active')[0].getAttribute('id');
+    var deleteTabId = this.tabs[index].tabId;
     this.tabService.deleteTab(index);
-    if(this.tabService.getTab().length == 0){
-      this.router.navigateByUrl('/')
+    if(this.tabService.getTab().length == 0)
+    this.router.navigate(['']);
+    
+    else if(activeTabId == deleteTabId){
+      this.router.navigateByUrl(this.tabs[0].url)
     }
     event.preventDefault();
     console.log(this.tabService.activeUrl);
