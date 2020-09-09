@@ -17,10 +17,14 @@ export class AppComponent implements OnInit {
   public svgFillColor = '#ffffff';
   currentLang = 'en';
   tab;
+  portal;
   constructor(private router: Router, private ds: DataService, private tabService: TabService) { 
     // this.selectedView = "overview"
     this.ds.tabValue.subscribe((value) => {
       this.tab = value
+    })
+    this.ds.portal.subscribe((value) => {
+      this.portal = value
     })
   }
   ngOnInit(): void {
