@@ -52,8 +52,10 @@ export class LayoutComponent implements OnInit {
     var activeTabId = document.getElementsByClassName('nav-link active')[0].getAttribute('id');
     var deleteTabId = this.tabs[index].tabId;
     this.tabService.deleteTab(index);
-    if(this.tabService.getTab().length == 0)
-    this.router.navigate(['']);
+    if(this.tabService.getTab().length == 0){
+      this.ds.tabValueSubject.next(null)
+      this.router.navigate(['']);
+    }
     
     else if(activeTabId == deleteTabId){
       this.router.navigateByUrl(this.tabs[0].url)
