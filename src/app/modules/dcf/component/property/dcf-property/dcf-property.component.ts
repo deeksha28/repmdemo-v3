@@ -9,7 +9,7 @@ import { DataService } from '../../../../../shared/services/data.service'
 })
 export class DcfPropertyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ds : DataService) { }
 
   ngOnInit(): void {
     //this.ds.dcfTabIdSubject.next('tab1')

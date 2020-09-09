@@ -20,6 +20,7 @@ export class LayoutComponent implements OnInit {
   constructor(private ds: DataService,public tabService: TabService, private router : Router, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.router.navigate(['/overview'])
     this.ds.portfolioToggle.subscribe((value) => {
       this.viewPortfolio = value
     })

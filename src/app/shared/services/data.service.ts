@@ -16,11 +16,11 @@ export class DataService {
   portfolioToggle = this.portfolioToggleSubject.asObservable();
   tabValueSubject = new BehaviorSubject<ITAB>(null);
   tabValue = this.tabValueSubject.asObservable();
-  
+  portalSubject = new BehaviorSubject<boolean>(true);
+  portal = this.portalSubject.asObservable();
+    
   dcfTabIdSubject = new BehaviorSubject<string>(null);
   dcfTabIdValue = this.dcfTabIdSubject.asObservable();
-  
-  
   public portfolioId = 0;
   public propertyId = 0;
 
