@@ -73,7 +73,7 @@ export class NavigationComponent implements OnInit {
   }
 
   public navigate(selectedView: string, level: string, path: string) {   
-    
+    this.ds.tabValueSubject.next(this.tabService.getTabOptionByPath(path))
     if (level === 'portfolio') {
       this.portfolioId = this.ds.getPortfolioId();
       this.tabService.addTab(path,this.portfolioId);
@@ -83,7 +83,7 @@ export class NavigationComponent implements OnInit {
       this.tabService.addTab(path,this.propertyId);
       path = path + this.propertyId;
     }
-    this.selectedView = selectedView;
+    this.selectedView = selectedView;    
     this.router.navigate([path]);
   }
 
@@ -93,6 +93,7 @@ export class NavigationComponent implements OnInit {
 
   openTab(url: string) {
     this.tabService.addTab(url,(this.portfolioId+1));
+
     this.router.navigateByUrl(url+ (this.portfolioId+1));
   }
 }

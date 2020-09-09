@@ -3,6 +3,7 @@ export interface ITAB {
     url: string;
     path: string;
     tabId:string;
+    actionBtn: string[];
  //   id:number;
 }
 

@@ -16,9 +16,12 @@ export class AppComponent {
   public svgHeight = 25;
   public svgFillColor = '#ffffff';
   currentLang = 'en';
-
-  constructor(private router: Router, private ds: DataService,private tabService: TabService) { 
+  tab;
+  constructor(private router: Router, private ds: DataService, private tabService: TabService) { 
     // this.selectedView = "overview"
+    this.ds.tabValue.subscribe((value) => {
+      this.tab = value
+    })
   }
 
   onLangChange(lang){
@@ -26,6 +29,7 @@ export class AppComponent {
   }
   public navigate(selectedView: string, level: string, path: string) {   
     // this.selectedView = selectedView;
+    this.ds.tabValueSubject.next(this.tabService.getTabOptionByPath(path))
     this.tabService.addTab(path);
     this.router.navigate([path]);
   }
@@ -33,5 +37,8 @@ export class AppComponent {
 
   public isCultureSelected(culture) {
     return culture === this.currentLang;
+  }
+
+  public action() {
   }
 }

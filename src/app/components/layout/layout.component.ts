@@ -43,6 +43,7 @@ export class LayoutComponent implements OnInit {
     console.log(this.tabService.activeUrl);
   }
   onTabChange(event) {
+    this.ds.tabValueSubject.next(this.tabs.find(tab=>tab.tabId == event.nextId))
     this.router.navigateByUrl(this.tabs.find(tab=>tab.tabId == event.nextId).url);
   }
 
