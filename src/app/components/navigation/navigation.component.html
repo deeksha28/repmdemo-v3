@@ -22,7 +22,7 @@
         (click)="navigate('profitandloss', 'portfolio', '/profitAndLoss/portfolio/')">
         <div [ngClass]="{ 'selected-view': selectedView === 'profitandloss' && selectedViewLevel === 'portfolio' }" class="svg-container">
           <app-svg-icons [key]="proftitnlossKey" [height]="svgHeight" [fillColor]="svgFillColorArr[5]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[5]}">&nbsp;&nbsp;Profit & loss {{selectedViewLevel}}{{selectedView}}</span>
+          <span  [ngStyle]="{'color': svgFillColorArr[5]}">&nbsp;&nbsp;Profit & loss</span>
         </div>
       </td>
     </tr>
