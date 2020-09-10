@@ -59,10 +59,15 @@ export class LayoutComponent implements OnInit {
     console.log(this.tabService.activeUrl);
   }
   onTabChange(event) {
-    var url = this.tabs.find(tab=>tab.tabId == event.nextId).url;  
+    var tab = this.tabs.find(tab=>tab.tabId == event.nextId);
+    var url = tab.url;  
+    var view = tab.name;
+    var level = tab.path.split('/')[2]
     this.setHeaderPropertyLabel(url)
     this.ds.tabValueSubject.next(this.tabs.find(tab=>tab.tabId == event.nextId))
     this.ds.dcfTabIdSubject.next('tab1')
+    this.ds.selectedViewSubject.next(view)
+    this.ds.selectedViewLevelSubject.next(level)
     this.router.navigateByUrl(url);
   }
 
