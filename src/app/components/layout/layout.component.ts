@@ -40,7 +40,7 @@ export class LayoutComponent implements OnInit {
   toggleViewPortfolio() {
     this.showPortfolio = !this.showPortfolio;
   }
-  closeTab(index: number, event: Event,url) {
+  closeTab(index: number, event: Event) {
     var activeTabId = document.getElementsByClassName('nav-link active')[0].getAttribute('id');
     var deleteTabId = this.tabs[index].tabId;
     this.tabService.deleteTab(index);
@@ -52,7 +52,9 @@ export class LayoutComponent implements OnInit {
     }
     else if(activeTabId == deleteTabId){
       this.router.navigateByUrl(this.tabs[0].url)
+      this.setHeaderPropertyLabel(this.tabs[0].url)
     }
+  
     event.preventDefault();
     console.log(this.tabService.activeUrl);
   }
