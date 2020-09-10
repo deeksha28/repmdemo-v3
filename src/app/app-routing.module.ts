@@ -77,7 +77,7 @@ const routes: Routes = [
           import("./modules/cockpit/cockpit.module").then((m) => m.CockpitModule),
       },
       {
-        path: "import",
+        path: "importdata",
         loadChildren: () =>
           import("./modules/import/import.module").then((m) => m.ImportModule),
       },
@@ -87,7 +87,7 @@ const routes: Routes = [
           import("./modules/language/language.module").then((m) => m.LanguageModule),
       },
       {
-        path: "dupProp",
+        path: "duplicateproperty",
         loadChildren: () =>
           import("./modules/duplicate-prop/duplicate-prop.module").then((m) => m.DuplicatePropModule),
       },
@@ -117,12 +117,12 @@ const routes: Routes = [
           import("./modules/process-stepper/process-stepper.module").then((m) => m.ProcessStepperModule),
       },
       {
-        path: "immoCockpit",
+        path: "immocockpit",
         loadChildren: () =>
           import("./modules/immo-cockpit/immo-cockpit.module").then((m) => m.ImmoCockpitModule),
       },
       {
-        path: "mapsPro",
+        path: "mapspro",
         loadChildren: () =>
           import("./modules/mapspro/mapspro.module").then((m) => m.MapsproModule),
       },

@@ -21,7 +21,13 @@ export class LayoutComponent implements OnInit {
     this.ds.portalSubject.next(false)   
     let url = this.activatedRoute.snapshot['_routerState'].url;
     let path = this.tabService.refreshURL(url);    
+    let level = url.split('/')[2];
+    let id = url.split('/')[3];
     this.ds.tabValueSubject.next(this.tabService.getTabOptionByPath(path))
+    if(level=='portfolio')
+      this.ds.setPortfolioId(id)
+    if(level=='property')
+      this.ds.setPropertyId(id)
   }
 
   ngOnInit(): void {

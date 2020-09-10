@@ -68,8 +68,8 @@
   <div class="collapse" id="collapseAnalysis">
   <table>
     <tr >
-      <td title="Cockpit" (click)="navigate('cockpit', 'portfolio', 'cockpit')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'cockpit' && selectedViewLevel === 'portfolio' }">
+      <td title="Cockpit" (click)="navigate('cockpit', 'portfolio', '/cockpit/portfolio/')">
+        <div class="svg-container">
           <app-svg-icons [key]="dashboardKey" [height]="svgHeight" [fillColor]="svgFillColorArr[7]"> </app-svg-icons>
           <span  [ngStyle]="{'color': svgFillColorArr[7]}">&nbsp;&nbsp;Cockpit</span>
         </div>
@@ -92,8 +92,8 @@
       </td>
     </tr>
     <tr > 
-      <td title="Language" (click)="navigate('language', 'portfolio', 'language')">
-        <div class="svg-container svg-lang" [ngClass]="{ 'selected-view': selectedView === 'language' && selectedViewLevel === 'portfolio'}">
+      <td title="Language" (click)="navigate('language', 'portfolio', '/language/portfolio/')">
+        <div class="svg-container svg-lang" [ngClass]="{ 'selected-view': selectedView === 'language' && selectedViewLevel === 'portfolio' }">
           <span><i class="fa fa-language" aria-hidden="true"></i></span>
           <span class="align-span" >&nbsp;&nbsp;Language</span>
         </div>
@@ -102,7 +102,7 @@
 
     <tr >
       <td title="Duplicate property"
-        (click)="navigate('cloneproperty', 'portfolio', 'dupProp')">
+        (click)="navigate('cloneproperty', 'portfolio', '/duplicateproperty/portfolio/')">
         <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'cloneproperty' && selectedViewLevel === 'portfolio' }">
           <app-svg-icons [key]="clonePropertyKey" [height]="svgHeight" [fillColor]="svgFillColorArr[11]"> </app-svg-icons>
           <span >&nbsp;&nbsp;Duplicate property</span>
@@ -112,8 +112,8 @@
 
     <tr > 
       <td title="Settings"
-        (click)="navigate('settings', 'portfolio', 'settings')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'settings' && selectedViewLevel === 'portfolio'}">
+        (click)="navigate('settings', 'portfolio', '/settings/portfolio/')">
+        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'settings' }">
           <i class="fa fa-cog iconSize23" aria-hidden="true"></i>
           <span class="align-span" >&nbsp;&nbsp;Settings</span>
         </div>
@@ -231,8 +231,8 @@
     <div class="collapse" id="collapseAnalysisProp">
       <table>
         <tr >
-          <td title="ImmoCockpit" (click)="navigate('immoCockpit', 'property', 'immoCockpit')">
-            <div class="svg-container">
+          <td title="ImmoCockpit" (click)="navigate('immoCockpit', 'property', '/immocockpit/property/')">
+            <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'rating' && selectedViewLevel === 'property' }">
               <app-svg-icons [key]="dashboardKey" [height]="svgHeight" [fillColor]="svgFillColorArr[7]"> </app-svg-icons>
               <span  [ngStyle]="{'color': svgFillColorArr[7]}">&nbsp;&nbsp;ImmoCockpit</span>
             </div>
@@ -240,8 +240,8 @@
         </tr>
       
         <tr >
-          <td title="IAZI MapsPro" (click)="navigate('mapsPro', 'property', 'mapsPro')">
-            <div class="svg-container">
+          <td title="IAZI MapsPro" (click)="navigate('mapsPro', 'property', '/mapspro/property/')">
+            <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'rating' && selectedViewLevel === 'property' }">
               <app-svg-icons [key]="mapKey" [height]="svgHeight" [fillColor]="svgFillColorArr[8]"></app-svg-icons>
               <span  [ngStyle]="{'color': svgFillColorArr[8]}">&nbsp;&nbsp;IAZI MapsPro</span>
             </div>

@@ -102,10 +102,13 @@ export class NavigationComponent implements OnInit {
       path = path + this.propertyId;
       this.ds.headerTypeSubject.next('property')
       this.ds.viewSubject.next('property')
-      var property = this.ds.bgvPortfolio.find(prop=>prop.id === this.propertyId.toString()).name;
-      if(property==undefined)property = this.ds.offeredPortfolio.find(prop=>prop.id === this.propertyId.toString()).name
-      if(property!=undefined) 
-      this.ds.headerSubject.next(this.propertyId + property)
+      var property = this.ds.bgvPortfolio.find(prop=>prop.id === this.propertyId.toString());
+      if(property==undefined)property = this.ds.offeredPortfolio.find(prop=>prop.id === this.propertyId.toString())
+      
+      if(property!=undefined)
+        this.ds.headerSubject.next(this.propertyId + property.name);
+      
+      
     }
     this.ds.dcfTabIdSubject.next('tab1');
     this.selectedView = selectedView;    

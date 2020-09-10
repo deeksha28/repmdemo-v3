@@ -6,6 +6,9 @@ const routes: Routes = [
   {
     path: "",
     component: MapsproComponent,
+    children: [
+      { path: 'property/:id', component: MapsproComponent },
+    ]
   },
 ];
 
