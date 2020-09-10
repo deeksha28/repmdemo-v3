@@ -1,4 +1,4 @@
-<div id="navbarId">
+<div id="navigationBar">
 <p class="groupHeader groupToggle" id="portfolio"><a data-toggle="collapse"  href="#collapsePortfolio" role="button" aria-expanded="false" aria-controls="collapseExample">Portfolio</a><span class="caret"></span></p>
 <div  class="collapse" id="collapsePortfolio">
   
@@ -134,8 +134,8 @@
     <table>
       <tr>
         <td title="Characteristics"
-          (click)="navigate('masterdata', 'property', '/characteristics/property/')">
-          <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'masterdata' && selectedViewLevel === 'property'}">
+          (click)="navigate('characteristics', 'property', '/characteristics/property/')">
+          <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'characteristics' && selectedViewLevel === 'property'}">
             <app-svg-icons [key]="masterdataKey" [height]="svgHeight" [fillColor]="svgFillColorArr[3]"> </app-svg-icons>
             <span  [ngStyle]="{'color': svgFillColorArr[3]}">&nbsp;&nbsp;Characteristics</span>
           </div>
