@@ -22,7 +22,7 @@ export class TabService {
     { name: 'qualicasa', path: '/qualicasa/property/' ,  tabId: '' ,url: '', actionBtn: ["Export Data", "New Building"]}, 
     { name: 'hedonic', path: '/hedonic/portfolio/' ,  tabId: '' ,url: '', actionBtn: ["Hedonic Appraisal"]}, 
     { name: 'hedonic', path: '/hedonic/property/' ,  tabId: '' ,url: '', actionBtn: ["Appraisal Report", "Appraise", "Appraise and Save", "Cancel"]},
-    { name: 'tasks',   path: '/tasks' ,  tabId: '' ,url: '', actionBtn: []},
+    { name: 'tasks',   path: '/tasks' ,  tabId: '' ,url: '', actionBtn: ["Create Task"]},
     { name: 'DCF',   path: '/dcf/portfolio/',  tabId: '' ,url: '', actionBtn: ["New Valuation"]},
     { name: 'DCF',   path: '/dcf/property/',  tabId: '',url: '', actionBtn: ["New Valuation", "Reports(DropDown)"] },
     { name: 'cockpit',   path: '/cockpit/portfolio/',  tabId: '' ,url: '', actionBtn: []},
