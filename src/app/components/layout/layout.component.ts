@@ -21,7 +21,13 @@ export class LayoutComponent implements OnInit {
     this.ds.portalSubject.next(false)   
     let url = this.activatedRoute.snapshot['_routerState'].url;
     let path = this.tabService.refreshURL(url);    
+    let level = url.split('/')[2];
+    let id = url.split('/')[3];
     this.ds.tabValueSubject.next(this.tabService.getTabOptionByPath(path))
+    if(level=='portfolio')
+      this.ds.setPortfolioId(id)
+    if(level=='property')
+      this.ds.setPropertyId(id)
   }
 
   ngOnInit(): void {
@@ -59,10 +65,15 @@ export class LayoutComponent implements OnInit {
     console.log(this.tabService.activeUrl);
   }
   onTabChange(event) {
-    var url = this.tabs.find(tab=>tab.tabId == event.nextId).url;  
+    var tab = this.tabs.find(tab=>tab.tabId == event.nextId);
+    var url = tab.url;  
+    var view = tab.name;
+    var level = tab.path.split('/')[2]
     this.setHeaderPropertyLabel(url)
     this.ds.tabValueSubject.next(this.tabs.find(tab=>tab.tabId == event.nextId))
     this.ds.dcfTabIdSubject.next('tab1')
+    this.ds.selectedViewSubject.next(view)
+    this.ds.selectedViewLevelSubject.next(level)
     this.router.navigateByUrl(url);
   }
 

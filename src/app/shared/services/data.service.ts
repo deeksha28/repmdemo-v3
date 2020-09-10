@@ -21,6 +21,13 @@ export class DataService {
     
   dcfTabIdSubject = new BehaviorSubject<string>(null);
   dcfTabIdValue = this.dcfTabIdSubject.asObservable();
+
+  selectedViewSubject = new BehaviorSubject<string>(null);
+  selectedView = this.selectedViewSubject.asObservable();
+
+  selectedViewLevelSubject = new BehaviorSubject<string>(null);
+  selectedViewLevel = this.selectedViewLevelSubject.asObservable();
+
   public portfolioId = 0;
   public propertyId = 0;
 
@@ -54,6 +61,7 @@ export class DataService {
     {'id': '9014','name': '-Seftigenstrasse 259,3084 Wabern', 'category' : '1','canton':'1','zipTown':'1'},
     {'id': '9017','name': '-Eggweg 13/13a,3065 Bolligen', 'category' : '1','canton':'1','zipTown':'1'},
   ]
+
   constructor() { }
 
 

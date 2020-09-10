@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: "",
     component: SettingsComponent,
+    children: [
+      { path: 'portfolio/:id', component: SettingsComponent },
+    ]
+    
   },
 ];
 

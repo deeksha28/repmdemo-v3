@@ -6,6 +6,9 @@ const routes: Routes = [
   {
     path: "",
     component: LanguageComponent,
+    children: [
+      { path: 'portfolio/:id', component: LanguageComponent },
+    ]
   },
 ];
 

@@ -32,7 +32,10 @@ export class NavigationComponent implements OnInit {
   public portfolioId = 0;
   propertyId = 0;
   public svgHeight = 25;
-  selectedView;
+  public selectedView;
+  public selectedViewLevel;
+  public selectedPortfolioView;
+  public selectedPropertyView;
   view;
   viewPortfolio;
   public svgFillColorArr = [
@@ -58,17 +61,27 @@ export class NavigationComponent implements OnInit {
   ];
   
   constructor(private router: Router, private ds: DataService,private tabService: TabService) { 
-    this.selectedView = "overview"
+    //this.selectedPortfolioView = "overview"
     this.ds.view.subscribe((value) => {
       this.view = value
     })
-
     this.ds.portfolioToggle.subscribe((value) => {
       this.viewPortfolio = value
     })
   }
 
   ngOnInit(): void {
+    this.ds.selectedView.subscribe((value) => {
+      if(value){
+        this.selectedView = value.toLowerCase();
+        
+      }
+    })
+    this.ds.selectedViewLevel.subscribe((value) => {
+      if(value){
+        this.selectedViewLevel = value.toLowerCase();
+      }
+    })
   }
 
   public navigate(selectedView: string, level: string, path: string) {   
@@ -82,20 +95,24 @@ export class NavigationComponent implements OnInit {
       this.ds.viewSubject.next('portfolio')
       this.ds.headerSubject.next(this.ds.portfolios[this.ds.getPortfolioId()]);
     }
-    else if (level === 'property') {
+    else if (level === 'property') {  
       this.propertyId = this.ds.getPropertyId();
       this.ds.viewSubject.next(level)
       this.tabService.addTab(path,this.propertyId);
       path = path + this.propertyId;
       this.ds.headerTypeSubject.next('property')
       this.ds.viewSubject.next('property')
-      var property = this.ds.bgvPortfolio.find(prop=>prop.id === this.propertyId.toString()).name;
-      if(property==undefined)property = this.ds.offeredPortfolio.find(prop=>prop.id === this.propertyId.toString()).name
-      if(property!=undefined) 
-      this.ds.headerSubject.next(this.propertyId + property)
+      var property = this.ds.bgvPortfolio.find(prop=>prop.id === this.propertyId.toString());
+      if(property==undefined)property = this.ds.offeredPortfolio.find(prop=>prop.id === this.propertyId.toString())
+      
+      if(property!=undefined)
+        this.ds.headerSubject.next(this.propertyId + property.name);
+      
+      
     }
     this.ds.dcfTabIdSubject.next('tab1');
     this.selectedView = selectedView;    
+    this.selectedViewLevel = level;
     this.router.navigate([path]);
   }
 

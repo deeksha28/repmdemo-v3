@@ -6,6 +6,9 @@ const routes: Routes = [
   {
     path: "",
     component: ImportComponent,
+    children: [
+      { path: 'portfolio/:id', component: ImportComponent },
+    ]
   },
 ];
 

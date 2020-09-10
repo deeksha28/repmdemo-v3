@@ -6,6 +6,9 @@ const routes: Routes = [
   {
     path: "",
     component: DuplicatePropComponent,
+    children: [
+      { path: 'portfolio/:id', component: DuplicatePropComponent },
+    ]
   },
 ];
 

@@ -25,7 +25,7 @@ export class TabService {
     { name: 'tasks',   path: '/tasks' ,  tabId: '' ,url: '', actionBtn: []},
     { name: 'DCF',   path: '/dcf/portfolio/',  tabId: '' ,url: '', actionBtn: ["New Valuation"]},
     { name: 'DCF',   path: '/dcf/property/',  tabId: '',url: '', actionBtn: ["New Valuation", "Reports(DropDown)"] },
-    { name: 'cockpit',   path: '/cockpit/portfolio',  tabId: '' ,url: '', actionBtn: []},
+    { name: 'cockpit',   path: '/cockpit/portfolio/',  tabId: '' ,url: '', actionBtn: []},
     { name: 'importData',   path: '/importdata/portfolio/',  tabId: '',url: '', actionBtn: [] },
     { name: 'language',   path: '/language/portfolio/',  tabId: '',url: '', actionBtn: [] },
     { name: 'duplicateProperty',   path: '/duplicateproperty/portfolio/',  tabId: '',url: '', actionBtn: [] },
