@@ -15,16 +15,18 @@ export class PortfolioComponent implements OnInit {
   portfolio;
   public showLabels = true;
   public showLess = true;
-  zipTown = 0;
-  canton = 0;
-  category = 0;
-  selectedRowId = 0;
+  public zipTown = 0;
+  public canton = 0;
+  public category = 0;
+  public status = 0;
+  public selectedRowId = 0;
   public selectedPortfolioId;
   portfolioId = 0;
   level = 4;
   properties : any;
   selectedView;
   filteredProperties : any;
+  showResetBtn = false;
   public portfolios;
   public selectedPortfolio;
   
@@ -38,7 +40,6 @@ export class PortfolioComponent implements OnInit {
     if(this.ds.getPortfolioId() != 1)
       this.properties = this.ds.bgvPortfolio;
     else {
-      console.log("ss")
       this.properties = this.ds.offeredPortfolio;
     }
     this.ds.header.subscribe((value) => {
@@ -69,9 +70,11 @@ export class PortfolioComponent implements OnInit {
   toggleViewLabels() {
     this.showLabels = !this.showLabels;
   }
+
   toggleShowLess() {
     this.showLess = !this.showLess;
   }
+
   choosePortfolio(event){
     if(event.target.value == 1)
       this.properties = this.ds.offeredPortfolio;
@@ -105,6 +108,7 @@ export class PortfolioComponent implements OnInit {
     this.ds.headerSubject.next(id + name)    
   }
 
+  
   assignCopy(){
     this.filteredProperties = Object.assign([], this.properties);
   }
@@ -117,22 +121,47 @@ export class PortfolioComponent implements OnInit {
       )
       isFiltered = true;
     }
-    if(parseInt(this.canton.toString().split(":")[0]) > 0){
-      this.filteredProperties = Object.assign([], this.filteredProperties).filter(
-        item => item.canton == this.canton.toString().split(":")[0]
-      )
+    if(this.status == 1 || this.status == 2){
+      if(isFiltered)
+        this.filteredProperties = Object.assign([], this.filteredProperties).filter(
+          item => item.status == this.status
+        )
+      else 
+        this.filteredProperties = Object.assign([], this.properties).filter(
+          item => item.status == this.status
+        )
       isFiltered = true;
     }
     if(parseInt(this.zipTown.toString().split(":")[0]) > 0){
-      this.filteredProperties = Object.assign([], this.filteredProperties).filter(
-        item => item.zipTown == this.zipTown.toString().split(":")[0]
-      )
+      if(isFiltered)
+        this.filteredProperties = Object.assign([], this.filteredProperties).filter(
+          item => item.zipTown == this.zipTown.toString().split(":")[0]
+        )
+      else 
+        this.filteredProperties = Object.assign([], this.properties).filter(
+          item => item.zipTown == this.zipTown.toString().split(":")[0]
+        )
       isFiltered = true;
     } 
     else if(!isFiltered)
       this.assignCopy();
   }
-  public navigate(selectedView: string, level: string, path: string) {  
-    this.tabService.addTab(path,this.ds.getPropertyId());
+
+  resetFilterItem(){
+    this.zipTown = 0;
+    this.category = 0;
+    this.status = 0;
+    this.filteredProperties = Object.assign([], this.properties);
+    this.showResetBtn = false;
+  }
+  toggleResetBtn(event){
+    
+    if((this.status == 0) && (this.zipTown.toString() == "0: null" || this.zipTown == 0) && (this.category.toString() == "0: null" || this.category == 0))
+      this.showResetBtn = false;
+    else
+      this.showResetBtn = true;
+  }
+  public navigate(selectedView: string, level: string, path: string) {   
+      this.ds.portfolioToggleSubject.next(!this.ds.portfolioToggleSubject.getValue())
   }
 }

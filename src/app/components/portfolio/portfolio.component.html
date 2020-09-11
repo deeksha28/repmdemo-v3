@@ -7,7 +7,7 @@
                 </span>
             </div>
             <div class="p-2 w-100">
-                <select *ngIf="showLabels" style="padding-left: 0" (change)="choosePortfolio($event)" class="form-control ng-pristine ng-valid ng-touched">
+                <select *ngIf="showLabels" style="padding-left: 0" (change)="choosePortfolio($event)" class="portfolioOption form-control ng-pristine ng-valid ng-touched">
                     <option [selected]="0 == selectedPortfolioId" value="0"> BGV Portfolio</option>
                     <option  [selected]="1 == selectedPortfolioId" value="1"> Offered Portfolio</option>
                 </select>
@@ -28,37 +28,39 @@
 
         <p *ngIf="!showLess&&showLabels" class="icon-p">
             <label>Zip/Town</label> 
-            <select [(ngModel)]="zipTown" id="sel1" class="form-control ng-pristine ng-valid ng-touched"><option _ngcontent-cax-c142="" value="0: null"></option><option _ngcontent-cax-c142="" value="1: 4102" class="ng-star-inserted"> 4102 Binningen</option><option _ngcontent-cax-c142="" value="2: 4103" class="ng-star-inserted"> 4103 Bottmingen</option><option _ngcontent-cax-c142="" value="3: 4104" class="ng-star-inserted"> 4104 Oberwil</option><option _ngcontent-cax-c142="" value="4: 4107" class="ng-star-inserted"> 4107 Ettingen</option><option _ngcontent-cax-c142="" value="5: 4123" class="ng-star-inserted"> 4123 Allschwil</option><option _ngcontent-cax-c142="" value="6: 4133" class="ng-star-inserted"> 4133 Pratteln</option><option _ngcontent-cax-c142="" value="7: 4142" class="ng-star-inserted"> 4142 Münchenstein</option><option _ngcontent-cax-c142="" value="8: 4147" class="ng-star-inserted"> 4147 Aesch</option><option _ngcontent-cax-c142="" value="9: 4153" class="ng-star-inserted"> 4153 Reinach</option><option _ngcontent-cax-c142="" value="10: 4225" class="ng-star-inserted"> 4225 Brislach</option><option _ngcontent-cax-c142="" value="11: 4410" class="ng-star-inserted"> 4410 Liestal</option><option _ngcontent-cax-c142="" value="12: 4414" class="ng-star-inserted"> 4414 Füllinsdorf</option><option _ngcontent-cax-c142="" value="13: 4417" class="ng-star-inserted"> 4417 Ziefen</option><option _ngcontent-cax-c142="" value="14: 4424" class="ng-star-inserted"> 4424 Arboldswil</option><option _ngcontent-cax-c142="" value="15: 4436" class="ng-star-inserted"> 4436 Oberdorf</option><option _ngcontent-cax-c142="" value="16: 4436" class="ng-star-inserted"> 4436 Oberdorf BL</option><option _ngcontent-cax-c142="" value="17: 4448" class="ng-star-inserted"> 4448 Läufelfingen</option><option _ngcontent-cax-c142="" value="18: 4450" class="ng-star-inserted"> 4450 Sissach</option><option _ngcontent-cax-c142="" value="19: 4460" class="ng-star-inserted"> 4460 Gelterkinden</option><option _ngcontent-cax-c142="" value="20: 8207" class="ng-star-inserted"> 8207 Schaffhausen</option><!----></select>
+            <select (change)="toggleResetBtn($event)" *ngIf="selectedPortfolio == portfolios[0]" [(ngModel)]="zipTown" id="sel1" class="form-control ng-pristine ng-valid ng-touched"><option  value="0: null"></option><option  value="1: 4102" class="ng-star-inserted"> 4102 Binningen</option><option  value="2: 4103" class="ng-star-inserted"> 4103 Bottmingen</option><option  value="3: 4104" class="ng-star-inserted"> 4104 Oberwil</option><option  value="4: 4107" class="ng-star-inserted"> 4107 Ettingen</option><option  value="5: 4123" class="ng-star-inserted"> 4123 Allschwil</option><option  value="6: 4133" class="ng-star-inserted"> 4133 Pratteln</option><option  value="7: 4142" class="ng-star-inserted"> 4142 Münchenstein</option><option  value="8: 4147" class="ng-star-inserted"> 4147 Aesch</option><option  value="9: 4153" class="ng-star-inserted"> 4153 Reinach</option><option  value="10: 4225" class="ng-star-inserted"> 4225 Brislach</option><option  value="11: 4410" class="ng-star-inserted"> 4410 Liestal</option><option  value="12: 4414" class="ng-star-inserted"> 4414 Füllinsdorf</option><option  value="13: 4417" class="ng-star-inserted"> 4417 Ziefen</option><option  value="14: 4424" class="ng-star-inserted"> 4424 Arboldswil</option><option  value="15: 4436" class="ng-star-inserted"> 4436 Oberdorf</option><option  value="16: 4436" class="ng-star-inserted"> 4436 Oberdorf BL</option><option  value="17: 4448" class="ng-star-inserted"> 4448 Läufelfingen</option><option  value="18: 4450" class="ng-star-inserted"> 4450 Sissach</option><option  value="19: 4460" class="ng-star-inserted"> 4460 Gelterkinden</option><option  value="20: 8207" class="ng-star-inserted"> 8207 Schaffhausen</option><!----></select>
+            <select (change)="toggleResetBtn($event)" *ngIf="selectedPortfolio == portfolios[1]" [(ngModel)]="zipTown" id="sel1" class="form-control ng-valid ng-touched ng-dirty"><option  value="0: null"></option><option  value="1: 3065" class="ng-star-inserted"> 3065 Bolligen</option><option  value="2: 3084" class="ng-star-inserted"> 3084 Wabern</option><option  value="3: 4147" class="ng-star-inserted"> 4147 Aesch</option><option  value="4: 4441" class="ng-star-inserted"> 4441 Thürnen</option><option  value="5: 4443" class="ng-star-inserted"> 4443 Wittinsburg</option><option  value="6: 4450" class="ng-star-inserted"> 4450 Sissach</option><option  value="7: 4900" class="ng-star-inserted"> 4900 Langenthal</option><option  value="8: 5210" class="ng-star-inserted"> 5210 Windisch</option><option  value="9: 5620" class="ng-star-inserted"> 5620 Bremgarten AG</option><option  value="10: 8207" class="ng-star-inserted"> 8207 Schaffhausen</option><option  value="11: 8370" class="ng-star-inserted"> 8370 Sirnach</option><option  value="12: 8580" class="ng-star-inserted"> 8580 Amriswil</option><option  value="13: 9000" class="ng-star-inserted"> 9000 St. Gallen</option><option  value="14: 9606" class="ng-star-inserted"> 9606 Bütschwil</option></select>
         </p>
-
-        <hr *ngIf="!showLess&&showLabels" class="seperator my-1"/>
 	
         <p *ngIf="!showLess&&showLabels" class="icon-p">
                 <label>Category</label>
-                <select [(ngModel)]="category" class="form-control ng-valid ng-touched ng-dirty"><option _ngcontent-cax-c142="" value="0: null"></option><option _ngcontent-cax-c142="" value="1" class="ng-star-inserted"> Mixed use property</option><option _ngcontent-cax-c142="" value="2" class="ng-star-inserted"> Residential property</option><!----></select>
+                <select (change)="toggleResetBtn($event)" [(ngModel)]="category" class="form-control ng-valid ng-touched ng-dirty"><option _ngcontent-cax-c142="" value="0: null"></option><option _ngcontent-cax-c142="" value="1" class="ng-star-inserted"> Mixed use property</option><option _ngcontent-cax-c142="" value="2" class="ng-star-inserted"> Residential property</option><!----></select>
         </p>
-
-        <hr *ngIf="!showLess&&showLabels" class="seperator my-1"/>
 
         <p *ngIf="!showLess&&showLabels" class="icon-p">
-            <select style="padding: 0;" *ngIf="showLabels" class="form-control ng-pristine ng-valid ng-touched">
-                <option>All Property</option>
+            <label>Active / inactive</label>
+            <select (change)="toggleResetBtn($event)" [(ngModel)]="status" style="padding: 0;" *ngIf="showLabels" class="form-control ng-pristine ng-valid ng-touched">
+                <option value="0">All Property</option>
+                <option value="1">Active</option>
+                <option value="2">Inactive</option>
             </select>
         </p>
-        <hr *ngIf="!showLess&&showLabels" class="seperator my-1"/>
         
         <div class="d-flex justify-content-between">
             <div class="icon-p w-50 my-auto">
-                <span *ngIf="showLess&&showLabels"><a href="javascript:;" (click)="toggleShowLess()">Show More</a></span>
-                <span *ngIf="!showLess&&showLabels"><a href="javascript:;" (click)="toggleShowLess()">Show Less</a></span>
+                <span *ngIf="showLess&&showLabels" title="show more"><a href="javascript:;" (click)="toggleShowLess()"><i class="fa fa-caret-down"></i></a></span>
+                <span *ngIf="!showLess&&showLabels" title="show less"><a href="javascript:;" (click)="toggleShowLess()"><i class="fa fa-caret-up"></i></a></span>
             </div>
             <div class="icon-p w-100">
-                <button style="float: right;background: #005684;color:#fff" class="btn" *ngIf="showLabels" (click)="filterItem()">
-                    <span><i class="fa fa-search" aria-hidden="true"></i></span>&nbsp;&nbsp;<span *ngIf="showLabels">Search</span>
+                <button class="btn search" *ngIf="showLabels" (click)="filterItem()" title="Search">
+                    <span><i class="fa fa-search" aria-hidden="true"></i></span><!-- &nbsp;&nbsp;<span *ngIf="showLabels">Search</span> -->
+                </button>
+                <button class="btn clear" *ngIf="showResetBtn" (click)="resetFilterItem()"  title="Clear">
+                    <span><i class="fa fa-times" aria-hidden="true"></i></span>
                 </button>
             </div>
         </div>
-        <hr class="seperator my-1 border-color"/>
+        <hr class="seperator my-1"/>
         <div class="icon-p">
             <p-table [value]="filteredProperties" [paginator]="true" [rows]="10" [showCurrentPageReport]="false" 
         [rowsPerPageOptions]="[10,20,30]">
@@ -79,7 +81,7 @@
             </ng-template>
             <ng-template pTemplate="emptymessage">
                 <tr>
-                    <td colspan="8" style="text-align:left">No task found.</td>
+                    <td colspan="8" style="text-align:left">No Data Available.</td>
                 </tr>
             </ng-template>
         </p-table>
