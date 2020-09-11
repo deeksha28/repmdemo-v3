@@ -24,6 +24,7 @@ export class PortfolioComponent implements OnInit {
   properties : any;
   selectedView;
   filteredProperties : any;
+  showResetBtn = false;
   public portfolios;
   public selectedPortfolio;
   
@@ -37,7 +38,6 @@ export class PortfolioComponent implements OnInit {
     if(this.ds.getPortfolioId() != 1)
       this.properties = this.ds.bgvPortfolio;
     else {
-      console.log("ss")
       this.properties = this.ds.offeredPortfolio;
     }
     this.ds.header.subscribe((value) => {
@@ -68,9 +68,11 @@ export class PortfolioComponent implements OnInit {
   toggleViewLabels() {
     this.showLabels = !this.showLabels;
   }
+
   toggleShowLess() {
     this.showLess = !this.showLess;
   }
+
   choosePortfolio(event){
     if(event.target.value == 1)
       this.properties = this.ds.offeredPortfolio;
@@ -104,6 +106,7 @@ export class PortfolioComponent implements OnInit {
     this.ds.headerSubject.next(id + name)
   }
 
+  
   assignCopy(){
     this.filteredProperties = Object.assign([], this.properties);
   }
@@ -116,20 +119,32 @@ export class PortfolioComponent implements OnInit {
       )
       isFiltered = true;
     }
-    if(parseInt(this.canton.toString().split(":")[0]) > 0){
-      this.filteredProperties = Object.assign([], this.filteredProperties).filter(
-        item => item.canton == this.canton.toString().split(":")[0]
-      )
-      isFiltered = true;
-    }
     if(parseInt(this.zipTown.toString().split(":")[0]) > 0){
-      this.filteredProperties = Object.assign([], this.filteredProperties).filter(
-        item => item.zipTown == this.zipTown.toString().split(":")[0]
-      )
+      if(isFiltered)
+        this.filteredProperties = Object.assign([], this.filteredProperties).filter(
+          item => item.zipTown == this.zipTown.toString().split(":")[0]
+        )
+      else 
+        this.filteredProperties = Object.assign([], this.properties).filter(
+          item => item.zipTown == this.zipTown.toString().split(":")[0]
+        )
       isFiltered = true;
     } 
     else if(!isFiltered)
       this.assignCopy();
+  }
+
+  resetFilterItem(){
+    this.zipTown = 0;
+    this.category = 0;
+    this.filteredProperties = Object.assign([], this.properties);
+  }
+  toggleResetBtn(event){
+    
+    if((this.zipTown.toString() == "0: null" || this.zipTown == 0) && (this.category.toString() == "0: null" || this.category == 0))
+      this.showResetBtn = false;
+    else
+      this.showResetBtn = true;
   }
   public navigate(selectedView: string, level: string, path: string) {   
       this.ds.portfolioToggleSubject.next(!this.ds.portfolioToggleSubject.getValue())
