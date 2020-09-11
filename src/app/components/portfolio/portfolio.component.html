@@ -38,8 +38,11 @@
         </p>
 
         <p *ngIf="!showLess&&showLabels" class="icon-p">
+            <label>Active / inactive</label>
             <select style="padding: 0;" *ngIf="showLabels" class="form-control ng-pristine ng-valid ng-touched">
-                <option>All Property</option>
+                <option value="0">All Property</option>
+                <option value="1">Active</option>
+                <option value="2">Inactive</option>
             </select>
         </p>
         

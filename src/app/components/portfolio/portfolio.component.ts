@@ -138,6 +138,7 @@ export class PortfolioComponent implements OnInit {
     this.zipTown = 0;
     this.category = 0;
     this.filteredProperties = Object.assign([], this.properties);
+    this.showResetBtn = false;
   }
   toggleResetBtn(event){
     
