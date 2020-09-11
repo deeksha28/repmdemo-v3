@@ -6,7 +6,7 @@ import { ITAB } from '../../itab';
   providedIn: 'root'
 })
 export class DataService {
-  viewSubject = new BehaviorSubject<string>("portfolio");
+  viewSubject = new BehaviorSubject<string>(null);
   view = this.viewSubject.asObservable();
   headerSubject = new BehaviorSubject<string>(null);
   header = this.headerSubject.asObservable();

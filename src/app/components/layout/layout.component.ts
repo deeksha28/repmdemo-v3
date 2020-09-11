@@ -24,10 +24,14 @@ export class LayoutComponent implements OnInit {
     let level = url.split('/')[2];
     let id = url.split('/')[3];
     this.ds.tabValueSubject.next(this.tabService.getTabOptionByPath(path))
-    if(level=='portfolio')
+    if(level=='portfolio'){
       this.ds.setPortfolioId(id)
-    if(level=='property')
+      // this.ds.viewSubject.next(level)
+    }
+    if(level=='property'){
       this.ds.setPropertyId(id)
+      // this.ds.viewSubject.next(level)
+    }
   }
 
   ngOnInit(): void {
@@ -84,7 +88,7 @@ export class LayoutComponent implements OnInit {
       if(url.split('/')[2]=='property'){
         var property;
         this.ds.headerTypeSubject.next('property')
-        this.ds.viewSubject.next('property')
+        // this.ds.viewSubject.next('property')
         property = this.ds.bgvPortfolio.find(prop=>prop.id == propertyId);
         this.ds.setPortfolioId(0);
         if(property==undefined){
@@ -96,13 +100,13 @@ export class LayoutComponent implements OnInit {
       else{
         this.ds.setPortfolioId(propertyId);
         this.ds.headerTypeSubject.next('portfolio')
-        this.ds.viewSubject.next('portfolio')
+        // this.ds.viewSubject.next('portfolio')
         this.ds.headerSubject.next(this.ds.portfolios[propertyId])
       }
     }
     else{
       this.ds.headerTypeSubject.next('portfolio')
-      this.ds.viewSubject.next('portfolio')
+      // this.ds.viewSubject.next('portfolio')
       this.ds.headerSubject.next(this.ds.portfolios[this.ds.getPortfolioId()])
     }   
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit, AfterContentChecked } from '@angular/core';
 import { SVGKEYS } from '../interfaces/shared.interface';
 import { DataService } from '../../services/data.service';
 import { Router } from '@angular/router';
@@ -40,6 +40,8 @@ export class PrevNextComponent implements OnInit {
   }
 
   showPrevNext() {
-    return this.ds.headerTypeSubject.getValue() == 'property';
+    // setTimeout(() => {
+      // return this.ds.headerTypeSubject.getValue() == 'property';
+    // }, 100)
   }
 }

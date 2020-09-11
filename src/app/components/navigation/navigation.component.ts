@@ -62,11 +62,18 @@ export class NavigationComponent implements OnInit {
   
   constructor(private router: Router, private ds: DataService,private tabService: TabService) { 
     //this.selectedPortfolioView = "overview"
-    this.ds.view.subscribe((value) => {
+    this.ds.headerType.subscribe((value) => {
       this.view = value
     })
     this.ds.portfolioToggle.subscribe((value) => {
       this.viewPortfolio = value
+    })
+    this.ds.view.subscribe((value) => {
+      if(value == 'property'){
+        this.navigate('characteristics', 'property', '/characteristics/property/')
+      }else if(value == 'portfolio') {
+        this.navigate('overview', '', '/overview')
+      }
     })
   }
 
@@ -90,18 +97,18 @@ export class NavigationComponent implements OnInit {
       this.portfolioId = this.ds.getPortfolioId();
       this.tabService.addTab(path,this.portfolioId);
       path = path + this.portfolioId;
-      this.ds.viewSubject.next(level)
+      // this.ds.viewSubject.next(level)
       this.ds.headerTypeSubject.next('portfolio')
-      this.ds.viewSubject.next('portfolio')
+      // this.ds.viewSubject.next('portfolio')
       this.ds.headerSubject.next(this.ds.portfolios[this.ds.getPortfolioId()]);
     }
     else if (level === 'property') {  
       this.propertyId = this.ds.getPropertyId();
-      this.ds.viewSubject.next(level)
+      // this.ds.viewSubject.next(level)
       this.tabService.addTab(path,this.propertyId);
       path = path + this.propertyId;
       this.ds.headerTypeSubject.next('property')
-      this.ds.viewSubject.next('property')
+      // this.ds.viewSubject.next('property')
       var property = this.ds.bgvPortfolio.find(prop=>prop.id === this.propertyId.toString());
       if(property==undefined)property = this.ds.offeredPortfolio.find(prop=>prop.id === this.propertyId.toString())
       
@@ -109,6 +116,9 @@ export class NavigationComponent implements OnInit {
         this.ds.headerSubject.next(this.propertyId + property.name);
       
       
+    }else {
+      this.tabService.addTab('/overview')
+      this.tabService.setActiveUrl('/overview')
     }
     this.ds.dcfTabIdSubject.next('tab1');
     this.selectedView = selectedView;    

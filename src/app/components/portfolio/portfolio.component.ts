@@ -3,6 +3,7 @@ import { DataService } from '../../shared/services/data.service';
 import { Router } from '@angular/router';
 import { Table } from 'primeng/table';
 import { isInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
+import { TabService } from 'src/app/tab.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -27,7 +28,7 @@ export class PortfolioComponent implements OnInit {
   public portfolios;
   public selectedPortfolio;
   
-  constructor(private router: Router,private ds: DataService) {     
+  constructor(private router: Router,private ds: DataService, private tabService: TabService) {     
   }
 
   ngOnInit(): void {
@@ -47,7 +48,7 @@ export class PortfolioComponent implements OnInit {
       }
       if(!(this.ds.headerTypeSubject.value == 'property')){
         this.ds.headerTypeSubject.next('portfolio')
-        this.ds.viewSubject.next('portfolio')
+        // this.ds..next('portfolio')
         this.level = 4;
       }    
     }) 
@@ -101,7 +102,7 @@ export class PortfolioComponent implements OnInit {
     this.ds.headerTypeSubject.next('property')
     this.ds.portfolioToggleSubject.next(!this.ds.portfolioToggleSubject.getValue())
     this.ds.viewSubject.next('property')
-    this.ds.headerSubject.next(id + name)
+    this.ds.headerSubject.next(id + name)    
   }
 
   assignCopy(){
@@ -131,7 +132,7 @@ export class PortfolioComponent implements OnInit {
     else if(!isFiltered)
       this.assignCopy();
   }
-  public navigate(selectedView: string, level: string, path: string) {   
-      this.ds.portfolioToggleSubject.next(!this.ds.portfolioToggleSubject.getValue())
+  public navigate(selectedView: string, level: string, path: string) {  
+    this.tabService.addTab(path,this.ds.getPropertyId());
   }
 }
