@@ -14,10 +14,11 @@ export class PortfolioComponent implements OnInit {
   portfolio;
   public showLabels = true;
   public showLess = true;
-  zipTown = 0;
-  canton = 0;
-  category = 0;
-  selectedRowId = 0;
+  public zipTown = 0;
+  public canton = 0;
+  public category = 0;
+  public status = 0;
+  public selectedRowId = 0;
   public selectedPortfolioId;
   portfolioId = 0;
   level = 4;
@@ -119,6 +120,17 @@ export class PortfolioComponent implements OnInit {
       )
       isFiltered = true;
     }
+    if(this.status == 1 || this.status == 2){
+      if(isFiltered)
+        this.filteredProperties = Object.assign([], this.filteredProperties).filter(
+          item => item.status == this.status
+        )
+      else 
+        this.filteredProperties = Object.assign([], this.properties).filter(
+          item => item.status == this.status
+        )
+      isFiltered = true;
+    }
     if(parseInt(this.zipTown.toString().split(":")[0]) > 0){
       if(isFiltered)
         this.filteredProperties = Object.assign([], this.filteredProperties).filter(
@@ -137,12 +149,13 @@ export class PortfolioComponent implements OnInit {
   resetFilterItem(){
     this.zipTown = 0;
     this.category = 0;
+    this.status = 0;
     this.filteredProperties = Object.assign([], this.properties);
     this.showResetBtn = false;
   }
   toggleResetBtn(event){
     
-    if((this.zipTown.toString() == "0: null" || this.zipTown == 0) && (this.category.toString() == "0: null" || this.category == 0))
+    if((this.status == 0) && (this.zipTown.toString() == "0: null" || this.zipTown == 0) && (this.category.toString() == "0: null" || this.category == 0))
       this.showResetBtn = false;
     else
       this.showResetBtn = true;

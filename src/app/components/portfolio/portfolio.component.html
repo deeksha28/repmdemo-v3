@@ -39,7 +39,7 @@
 
         <p *ngIf="!showLess&&showLabels" class="icon-p">
             <label>Active / inactive</label>
-            <select style="padding: 0;" *ngIf="showLabels" class="form-control ng-pristine ng-valid ng-touched">
+            <select (change)="toggleResetBtn($event)" [(ngModel)]="status" style="padding: 0;" *ngIf="showLabels" class="form-control ng-pristine ng-valid ng-touched">
                 <option value="0">All Property</option>
                 <option value="1">Active</option>
                 <option value="2">Inactive</option>
@@ -81,7 +81,7 @@
             </ng-template>
             <ng-template pTemplate="emptymessage">
                 <tr>
-                    <td colspan="8" style="text-align:left">No task found.</td>
+                    <td colspan="8" style="text-align:left">No Data Available.</td>
                 </tr>
             </ng-template>
         </p-table>
