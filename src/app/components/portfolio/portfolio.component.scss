@@ -59,13 +59,20 @@ table {
   margin-right: 5px;
 }
 #propertyTree p{
-  padding-left: 2px;
+  padding-left: 2px!important;
+  margin-bottom: 2px!important;
 }
 select {
   width: 100%;
-  border: none;
+  border: 1px solid #dedede;
   box-shadow: none;
+  border-radius: 5px;
   padding-top: 2px;
+  padding-bottom: 2px;  
+  margin-top: 5px;
+}
+select.portfolioOption{
+  border: none;
 }
 .flexItemNavigation {
   padding: 10px;
@@ -104,14 +111,23 @@ label {
 }
 .portfolio-icon{
     height: 14px;
+    margin-top: 8px!important;
 }
 .fa-home{
   font-size: 14px;
 }
-.fa-search{
-    color:#fff;
+.fa-caret-down, .fa-caret-up{
+  font-size: 22px;
 }
-
+.fa-search{
+  font-size: 18px;
+    color:#005684;
+}
+.clear, .search{
+  float: right!important;
+  font-size: 16px;
+   padding:2px 9px;
+}
 #selectedPortfolioLabel {
   padding: 8px;
   margin: 0 -12px;
