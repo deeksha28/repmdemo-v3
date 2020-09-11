@@ -50,6 +50,9 @@ table {
     color: #333;
   }
 }
+.icon-p {
+  padding: 0.7rem 0.5rem !important;
+}
 .alignCenter {
   text-align: center;
 }
@@ -60,11 +63,11 @@ table {
 }
 #propertyTree p{
   padding-left: 2px!important;
-  margin-bottom: 2px!important;
+  margin-bottom: 0px!important;
 }
 select {
   width: 100%;
-  border: 1px solid #dedede;
+  border: 1px solid #a9a9a9;
   box-shadow: none;
   border-radius: 5px;
   padding-top: 2px;
@@ -134,10 +137,3 @@ label {
   cursor: pointer;
 }
 
-.icon-p {
-  padding: 0.7rem 0.5rem !important;
-}
-
-.border-color {
-  border-color: black !important;
-}
