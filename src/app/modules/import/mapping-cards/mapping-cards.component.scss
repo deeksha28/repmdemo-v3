@@ -1,0 +1,15 @@
+// .card {
+//   border-left: 5px solid black;
+// }
+.borderless td,
+.borderless th {
+  border: none;
+}
+
+.fa {
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.fa:hover {
+//   box-shadow: 3px 3px 15px #828282;
+}

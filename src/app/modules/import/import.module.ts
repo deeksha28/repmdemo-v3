@@ -1,15 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import { ImportRoutingModule } from './import-routing.module';
-import { ImportComponent } from './import.component';
-
+import { ImportRoutingModule } from "./import-routing.module";
+import { ImportComponent } from "./import.component";
+import { MappingComponent } from "./mapping/mapping.component";
+import { TabsModule } from "ngx-bootstrap/tabs";
+import { PaginationModule } from "ngx-bootstrap/pagination";
+import { MappingCardsComponent } from "./mapping-cards/mapping-cards.component";
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 @NgModule({
-  declarations: [ImportComponent],
+  declarations: [ImportComponent, MappingComponent, MappingCardsComponent, FileUploadComponent],
   imports: [
     CommonModule,
-    ImportRoutingModule
-  ]
+    ImportRoutingModule,
+    TabsModule.forRoot(),
+    PaginationModule.forRoot(),
+  ],
 })
-export class ImportModule { }
+export class ImportModule {}

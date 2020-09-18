@@ -1,129 +1,338 @@
 <div class="appContainer d-flex flex-column">
-    <div class="container backwhite">
-        <nav id="mainSiteHeader" class="navbar navbar-expand-lg">
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    title="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand mr-1" id="LogoHome" href="{{redirectURL}}">
-                    <img id="topbar-logo" src="./assets/img/IAZI-logo-Blue.svg">
-                </a>
-                <a class="navbar-brand mr-1 pointer" id="overview" title="Overview" (click)="navigate('overview', '', '/overview')" *ngIf="!portal">
-                    <img class="p-2 topbar-menu" src="./assets/img/Overview.svg">
-                </a>
-                <a class="navbar-brand mr-1 pointer" id="tasks" title="Tasks" (click)="navigate('tasks', '', '/tasks')" *ngIf="!portal">
-                    <img class="p-2 topbar-menu" src="./assets/img/task list_1.svg">
-                </a>
-                <span class="portal-header" *ngIf="portal"> Portal </span>
-            </div>
-            
+  <div class="container backwhite">
+    <nav id="mainSiteHeader" class="navbar navbar-expand-lg">
+      <div class="navbar-header">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          title="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mr-1" id="LogoHome" href="{{ redirectURL }}">
+          <img id="topbar-logo" src="./assets/img/IAZI-logo-Blue.svg" />
+        </a>
+        <a
+          class="navbar-brand mr-1 pointer"
+          id="overview"
+          title="Overview"
+          (click)="navigate('overview', '', '/overview')"
+          *ngIf="!portal"
+        >
+          <img class="p-2 topbar-menu" src="./assets/img/Overview.svg" />
+        </a>
+        <a
+          class="navbar-brand mr-1 pointer"
+          id="tasks"
+          title="Tasks"
+          (click)="navigate('tasks', '', '/tasks')"
+          *ngIf="!portal"
+        >
+          <img class="p-2 topbar-menu" src="./assets/img/task list_1.svg" />
+        </a>
+        <span class="portal-header" *ngIf="portal"> Portal </span>
+      </div>
 
-            <div class="collapse navbar-collapse displayOptions row px-4">
-                <ul class="navbar-nav col" >
-                    <li *ngIf="!portal">
-                        <div class="main">
-                            <div class="mb-0">
-                                <div class="nav navbar-nav topbar-label" style="padding-left: 11px;">
-                                    <app-prev-next></app-prev-next>
-                                </div>
-                              </div>
-                        </div>
-                    </li>
-                </ul>
-    
-                <ul class="navbar-nav col">
-                    <li style="width: inherit;" *ngIf="!portal">
-                        <div class="main">
-                            <div class="form-group has-search mb-0">
-                                <span class="fa fa-search form-control-feedback"></span>
-                                <input type="text" class="form-control" placeholder="Search">
-                              </div>
-                        </div>
-                    </li>
-                </ul>
+      <div class="collapse navbar-collapse displayOptions row px-4">
+        <ul class="navbar-nav col">
+          <li *ngIf="!portal">
+            <div class="main">
+              <div class="mb-0">
+                <div
+                  class="nav navbar-nav topbar-label"
+                  style="padding-left: 11px"
+                >
+                  <app-prev-next></app-prev-next>
+                </div>
+              </div>
             </div>
-            <div class="" *ngIf="!portal">
-                <ul class="navbar-nav">                                           
-                    <li>
-                        <div class="btn-group" dropdown placement="bottom right" *ngIf="activeTabCopy">
-                            <button id="button-alignment" dropdownToggle type="button"
-                                    class="btn btn-primary btnmenu dropdown-toggle" aria-controls="dropdown-alignment">
-                              Action Button <span class="caret"></span>
-                            </button>
-                            <ul id="dropdown-alignment" *dropdownMenu class="dropdown-menu dropdown-menu-right"
-                                role="menu" aria-labelledby="button-alignment">
-                                <li role="menuitem" *ngFor="let action of activeTabCopy.actionBtn">
-                                  <a class="dropdown-item" (click)="action()">{{action}}</a>
-                                </li>
-                                <li role="menuitem" *ngIf="activeTabCopy.actionBtn.length == 0">
-                                    <a class="dropdown-item" (click)="action()">No Action Button</a>
-                                </li>                                                              
-                            </ul>
-                        </div>
-                        <div class="btn-group" dropdown placement="bottom right" [isDisabled]="!activeTabCopy" *ngIf="!activeTabCopy">
-                            <button id="button-alignment" dropdownToggle type="button"
-                                    class="btn btn-primary btnmenu dropdown-toggle" aria-controls="dropdown-alignment">
-                              Action Button <span class="caret"></span>
-                            </button>
-                            <ul id="dropdown-alignment" *dropdownMenu class="dropdown-menu dropdown-menu-right"
-                                role="menu" aria-labelledby="button-alignment">
-                                <li role="menuitem">
-                                    <a class="dropdown-item" (click)="action()">No Action Button</a>
-                                </li>                                                              
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav col">
+          <li style="width: inherit" *ngIf="!portal">
+            <div class="main">
+              <div class="form-group has-search mb-0">
+                <span class="fa fa-search form-control-feedback"></span>
+                <input type="text" class="form-control" placeholder="Search" />
+              </div>
             </div>
-            <div class="">
-                <ul class="navbar-nav">                                                             
-                    <li>
-                        <div class="btn-group" dropdown placement="bottom right" [insideClick]="true" container="body">
-                            <button id="button-nested" dropdownToggle type="button" class="btn btn-primary btnmenu dropdown-toggle"
-                                    aria-controls="dropdown-nested">
-                                    <i class="fa fa-cog iconSize18"></i>  <span class="caret"></span>
-                            </button>
-                            <ul id="dropdown-nested" *dropdownMenu class="dropdown-menu dropdown-menu-right"
-                                role="menu" aria-labelledby="button-nested">
-                                <li class="dropdown-header username">username@example.com </li>
-                                <li role="menuitem"><a class="dropdown-item pointer">Manage account</a></li>
-                                <li role="menuitem" dropdown triggers="mouseover" placement="top right">  
-                                    <div class="btn-group" dropdown>
-                                        <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-submenu dropdown-toggle"
-                                                aria-controls="dropdown-basic">
-                                                {{currentLang | uppercase}} <span class="caret"></span>
-                                        </button>
-                                        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right submenu"
-                                            role="menu" aria-labelledby="button-basic">
-                                            <li class="dropdown-header pointer">Change language</li>
-                                            <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('de')"
-                                                    tabindex="9">Deutsch
-                                                    <i [ngClass]="{ 'fa fa-check' : isCultureSelected('de') }"></i></a></li>
-                                            <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('fr')"
-                                                    tabindex="9">Français
-                                                    <i [ngClass]="{ 'fa fa-check' : isCultureSelected('fr') }"></i></a></li>
-                                            <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('it')"
-                                                    tabindex="9">Italian
-                                                    <i [ngClass]="{ 'fa fa-check' : isCultureSelected('it') }"></i></a></li>
-                                            <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('en')"
-                                                    tabindex="9">English
-                                                    <i [ngClass]="{ 'fa fa-check' : isCultureSelected('en') }"></i></a></li>
-                                            <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('sy')"
-                                                    tabindex="9">System
-                                                    <i [ngClass]="{ 'fa fa-check' : isCultureSelected('sy') }"></i></a></li>
-                                        </ul>
-                                      </div>  
-                                </li>
-                                <li role="menuitem"><a class="dropdown-item pointer">Sign out</a></li>
-                            </ul>
-                          </div>
-                    </li>
-                </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="" *ngIf="!portal">
+        <ul class="navbar-nav">
+          <li>
+            <div
+              class="btn-group"
+              dropdown
+              placement="bottom right"
+              *ngIf="activeTabCopy"
+            >
+              <button
+                id="button-alignment"
+                dropdownToggle
+                type="button"
+                class="btn btn-primary btnmenu dropdown-toggle"
+                aria-controls="dropdown-alignment"
+              >
+                Action Button <span class="caret"></span>
+              </button>
+              <ul
+                id="dropdown-alignment"
+                *dropdownMenu
+                class="dropdown-menu dropdown-menu-right"
+                role="menu"
+                aria-labelledby="button-alignment"
+              >
+                <li
+                  role="menuitem"
+                  *ngFor="let action of activeTabCopy.actionBtn"
+                >
+                  <a class="dropdown-item" (click)="action()">{{ action }}</a>
+                </li>
+                <li role="menuitem" *ngIf="activeTabCopy.actionBtn.length == 0">
+                  <a class="dropdown-item" (click)="action()"
+                    >No Action Button</a
+                  >
+                </li>
+              </ul>
             </div>
-        </nav>
-    </div>
-    <div class="flex-grow-1 view-container">
-        <router-outlet></router-outlet>
-    </div>
+
+            <div
+              class="btn-group"
+              dropdown
+              placement="bottom right"
+              [isDisabled]="!activeTabCopy"
+              *ngIf="!activeTabCopy"
+            >
+              <button
+                id="button-alignment"
+                dropdownToggle
+                type="button"
+                class="btn btn-primary btnmenu dropdown-toggle"
+                aria-controls="dropdown-alignment"
+              >
+                Action Button <span class="caret"></span>
+              </button>
+              <ul
+                id="dropdown-alignment"
+                *dropdownMenu
+                class="dropdown-menu dropdown-menu-right"
+                role="menu"
+                aria-labelledby="button-alignment"
+              >
+                <li role="menuitem">
+                  <a class="dropdown-item" (click)="action()"
+                    >No Action Button</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="">
+        <ul class="navbar-nav">
+          <li>
+            <div
+              class="btn-group"
+              dropdown
+              placement="bottom right"
+              [insideClick]="true"
+              container="body"
+            >
+              <button
+                *ngIf="bellNotificationService.isImporting"
+                id="button-nested"
+                dropdownToggle
+                type="button"
+                class="btn btn-primary btnmenu dropdown-toggle"
+                aria-controls="dropdown-nested"
+              >
+                <i class="fa fa-bell-o iconSize18"></i>
+                <i class="fa fa-check-circle-o check-on-bell" aria-hidden="true"></i>
+              </button>
+              <i
+                *ngIf="!bellNotificationService.isImporting"
+                class="fa fa-bell-slash-o iconSize18"
+              ></i>
+              <ul
+                id="dropdown-nested"
+                *dropdownMenu
+                class="dropdown-menu dropdown-menu-right"
+                role="menu"
+                aria-labelledby="button-nested"
+              >
+                <li class="dropdown-header">Internalize Started</li>
+                <li>
+                  <div class="dropdown-item">
+                    File 1.xlsx &nbsp;<i
+                      class="fa fa-check-circle-o"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  <div class="dropdown-item">
+                    File 2.xlsx &nbsp;<i
+                      class="fa fa-check-circle-o"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  <div class="dropdown-item">
+                    File 3.xlsx &nbsp;<i
+                      class="fa fa-check-circle-o"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                </li>
+                <li class="dropdown-header">Internalize Completed</li>
+                <li>
+                  <hr />
+                </li>
+                <li class="dropdown-header">Import Started..</li>
+                <li>
+                  <div class="dropdown-item">Logs....</div>
+                  <div class="dropdown-item">progress....</div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="">
+        <ul class="navbar-nav">
+          <li>
+            <div
+              class="btn-group"
+              dropdown
+              placement="bottom right"
+              [insideClick]="true"
+              container="body"
+            >
+              <button
+                id="button-nested"
+                dropdownToggle
+                type="button"
+                class="btn btn-primary btnmenu dropdown-toggle"
+                aria-controls="dropdown-nested"
+              >
+                <i class="fa fa-cog iconSize18"></i> <span class="caret"></span>
+              </button>
+              <ul
+                id="dropdown-nested"
+                *dropdownMenu
+                class="dropdown-menu dropdown-menu-right"
+                role="menu"
+                aria-labelledby="button-nested"
+              >
+                <li class="dropdown-header username">username@example.com</li>
+                <li role="menuitem">
+                  <a class="dropdown-item pointer">Manage account</a>
+                </li>
+                <li
+                  role="menuitem"
+                  dropdown
+                  triggers="mouseover"
+                  placement="top right"
+                >
+                  <div class="btn-group" dropdown>
+                    <button
+                      id="button-basic"
+                      dropdownToggle
+                      type="button"
+                      class="btn btn-primary dropdown-submenu dropdown-toggle"
+                      aria-controls="dropdown-basic"
+                    >
+                      {{ currentLang | uppercase }} <span class="caret"></span>
+                    </button>
+                    <ul
+                      id="dropdown-basic"
+                      *dropdownMenu
+                      class="dropdown-menu dropdown-menu-right submenu"
+                      role="menu"
+                      aria-labelledby="button-basic"
+                    >
+                      <li class="dropdown-header pointer">Change language</li>
+                      <li role="menuitem">
+                        <a
+                          class="dropdown-item pointer"
+                          (click)="onLangChange('de')"
+                          tabindex="9"
+                          >Deutsch
+                          <i
+                            [ngClass]="{
+                              'fa fa-check': isCultureSelected('de')
+                            }"
+                          ></i
+                        ></a>
+                      </li>
+                      <li role="menuitem">
+                        <a
+                          class="dropdown-item pointer"
+                          (click)="onLangChange('fr')"
+                          tabindex="9"
+                          >Français
+                          <i
+                            [ngClass]="{
+                              'fa fa-check': isCultureSelected('fr')
+                            }"
+                          ></i
+                        ></a>
+                      </li>
+                      <li role="menuitem">
+                        <a
+                          class="dropdown-item pointer"
+                          (click)="onLangChange('it')"
+                          tabindex="9"
+                          >Italian
+                          <i
+                            [ngClass]="{
+                              'fa fa-check': isCultureSelected('it')
+                            }"
+                          ></i
+                        ></a>
+                      </li>
+                      <li role="menuitem">
+                        <a
+                          class="dropdown-item pointer"
+                          (click)="onLangChange('en')"
+                          tabindex="9"
+                          >English
+                          <i
+                            [ngClass]="{
+                              'fa fa-check': isCultureSelected('en')
+                            }"
+                          ></i
+                        ></a>
+                      </li>
+                      <li role="menuitem">
+                        <a
+                          class="dropdown-item pointer"
+                          (click)="onLangChange('sy')"
+                          tabindex="9"
+                          >System
+                          <i
+                            [ngClass]="{
+                              'fa fa-check': isCultureSelected('sy')
+                            }"
+                          ></i
+                        ></a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li role="menuitem">
+                  <a class="dropdown-item pointer">Sign out</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="flex-grow-1 view-container">
+    <router-outlet></router-outlet>
+  </div>
 </div>

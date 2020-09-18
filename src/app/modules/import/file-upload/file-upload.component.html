@@ -1,0 +1,72 @@
+<div>
+  <div class="container-fluid d-flex justify-content-between">
+    <div>
+      <h2 class="mt-5">Mapping Name</h2>
+    </div>
+    <div>
+      <h2 class="mt-4">
+           <button
+                id="import"
+                dropdownToggle
+                type="button"
+                class="btn btn-primary "
+               
+                (click)="toggleBellIcon()"
+              >
+              Start Import
+              </button>
+      </h2>
+    </div>
+  </div>
+  <div class="file-uploader d-flex justify-content-center align-items-center">
+    <div class="row w-100">
+      <div class="col-6 d-flex justify-content-center">
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <td>
+                <div>
+                  <p class="file-name">File 1.xls</p>
+                  <p class="file-size">2.5 MB</p>
+                  <p class="file-status">File Uploaded Successfully</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div>
+                  <p class="file-name">File 2.xls</p>
+                  <p class="file-size">100 MB</p>
+                  <p class="file-status">File Uploaded Successfully</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div>
+                  <p class="file-name">File 3.xls</p>
+                  <p class="file-size">250 MB</p>
+                  <p class="file-status">File Uploaded Successfully</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-6">
+        <div>
+          <div
+            class="file-overlay d-flex justify-content-center align-items-center"
+          >
+            <div>
+              <i class="fa fa-folder-open" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h2>Select or Drop your files here</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,101 +1,103 @@
 //flex layout container
 .appContainer {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
-.view-container{
+.view-container {
   overflow: auto;
 }
 
-.container { 
-    padding-right: 0px !important; 
-    padding-left: 0px !important; 
-    margin-right: 0 !important; 
-    margin-left: 0 !important;
-    width: 100%!important; 
-    max-width: 100%;
-    
-    .navbar {
-        min-height: 41px;
+.container {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  width: 100% !important;
+  max-width: 100%;
 
-    }
+  .navbar {
+    min-height: 41px;
+  }
 }
 
 #topbarLabeldiv {
-    display: inline-block;
-    float: none;
-    // vertical-align: top;
+  display: inline-block;
+  float: none;
+  // vertical-align: top;
 }
 
-#LogoHome, #overview,#tasks {
-    padding-bottom: 0px;
-    padding-top: 0px;
-   /*  vertical-align: bottom; */
+#LogoHome,
+#overview,
+#tasks {
+  padding-bottom: 0px;
+  padding-top: 0px;
+  /*  vertical-align: bottom; */
 }
 
 #topbar-logo {
-    height: 38px;
-    border: 1px solid #fff;
-    width: 38px;
-    margin-right: 7px;
+  height: 38px;
+  border: 1px solid #fff;
+  width: 38px;
+  margin-right: 7px;
 }
 .topbar-menu {
-    height: 30px;
-    border: 1px solid #fff;
-    width: 30px;
+  height: 30px;
+  border: 1px solid #fff;
+  width: 30px;
 }
 
 .navbar-app-name a {
-    color: #fff!important;
-//     font-family: "Avenir LT W01_55 Roman1475520",Helvetica,Arial,sans-serif;
-    font-size: 14px;
+  color: #fff !important;
+  //     font-family: "Avenir LT W01_55 Roman1475520",Helvetica,Arial,sans-serif;
+  font-size: 14px;
 }
 
 .navbar .navbar-collapse {
-    text-align: center;
+  text-align: center;
 }
 
 #mainSiteHeader {
-    padding-bottom: 3px;
-    padding-top: 3px;
-    padding-left: 7px
+  padding-bottom: 3px;
+  padding-top: 3px;
+  padding-left: 7px;
 }
 
-.drop-header{
-	margin-right: 15px;
+.drop-header {
+  margin-right: 15px;
 
-	span , label {
-		cursor:pointer;		
-	}
+  span,
+  label {
+    cursor: pointer;
+  }
 }
 // .navbarText {
 //     padding-top: 8px;
 // }
 
 .navbar-brand {
-    height: auto!important;
+  height: auto !important;
 }
 
 .userNamePadding {
-    padding-right: 4px!important;
+  padding-right: 4px !important;
 }
 
 .next-previous {
-    margin-right: 20px;
+  margin-right: 20px;
 }
-.displayOptions{
-    display: contents;
+.displayOptions {
+  display: contents;
 }
 
 .navbar-nav {
-    flex-direction: inherit;
+  flex-direction: inherit;
 }
-.displayOptions ul li ul{
-    position: absolute;
+.displayOptions ul li ul {
+  position: absolute;
 }
-.navbar-header .navbar-toggler{
-    display: none;
+.navbar-header .navbar-toggler {
+  display: none;
 }
 
 // .main {
@@ -105,73 +107,85 @@
 /* Bootstrap 4 text input with search icon */
 
 .has-search .form-control {
-    padding-left: 2.375rem;
+  padding-left: 2.375rem;
 }
 
 .has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
 }
 
-.iconSize18{
-    font-size: 18px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 3px;
-    color: white;
+.iconSize18 {
+  font-size: 18px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 3px;
+  color: white;
 }
 
 .username {
-    font-size: 1.1rem !important;
+  font-size: 1.1rem !important;
 }
 
 .iconSearch {
-    color: white;
+  color: white;
 }
 
 .dropdown-submenu {
-    background: transparent !important;
-    border: transparent !important;
-    color: #005684 !important;
-    padding: 0 1.5rem !important;
+  background: transparent !important;
+  border: transparent !important;
+  color: #005684 !important;
+  padding: 0 1.5rem !important;
 }
 
 .btnmenu {
-    background: transparent !important;
-    border: transparent !important;
+  background: transparent !important;
+  border: transparent !important;
 }
 
-.btnmenu:active, .btnmenu:focus {
-    border: transparent !important;
-    // background: transparent !important;
-    // border: transparent !important;
+.btnmenu:active,
+.btnmenu:focus {
+  border: transparent !important;
+  // background: transparent !important;
+  // border: transparent !important;
 }
 
 .dropdown-submenu:focus {
-    border: transparent !important;
+  border: transparent !important;
 }
 
-button:focus {outline:0 !important;}
-
-
-.dropdown-menu{
-    overflow-y: inherit !important;
+button:focus {
+  outline: 0 !important;
 }
 
-.submenu{
-    right: 67px !important;
-    top: -22% !important;
+.dropdown-menu {
+  overflow-y: inherit !important;
+}
+
+.submenu {
+  right: 67px !important;
+  top: -22% !important;
 }
 
 .portal-header {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 1.5rem;
+}
+.fa-check-circle-o {
+  color: green;
+}
+.check-on-bell {
+  position: fixed;
+  right: 75px;
+  top: 20px;
+  background: #005684;
+  font-size: 1.5rem;
 }

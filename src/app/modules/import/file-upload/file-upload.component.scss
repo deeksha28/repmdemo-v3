@@ -1,0 +1,30 @@
+.file-overlay {
+  height: 50vh;
+  border: #005684 dashed 3px;
+  background-color: #00568409;
+  border-radius: 10px;
+}
+
+.fa-folder-open {
+  font-size: 7rem;
+}
+.file-uploader {
+  // height: 100vh;
+  height: calc(100vh - 180px);
+  overflow: hidden;
+}
+table tr {
+  height: 80px;
+
+  td {
+    .file-name {
+      font-size: 1.8rem;
+    }
+    .file-size {
+    color: gray;
+    }
+    .file-status {
+      color: green;
+    }
+  }
+}

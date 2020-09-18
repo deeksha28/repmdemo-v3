@@ -1,0 +1,81 @@
+<div class="">
+  <div class="row">
+    <div class="col-md-6 col-xl-4" *ngFor="let mapping of mappings">
+      <div
+        class="card shadow mt-5"
+        [ngStyle]="{ 'border-left': mapping.color }"
+      >
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div>
+              <h3 class="card-title font-weight-bold mr-auto">
+                {{ mapping.name }}
+              </h3>
+            </div>
+            <div>
+              <i
+                title="Upload File"
+                *ngIf="mapping.color == color.green"
+                class="fa fa-upload px-2"
+                aria-hidden="true"
+                (click)="navigateTo()"
+              ></i>
+              <i
+                title="Show Logs"
+                class="fa fa-info-circle px-2"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+
+          <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+          <div class="card-text">
+            <div class="row">
+              <div class="col-6">
+                <!--  -->
+                <p>Last Import</p>
+              </div>
+              <div class="col-6">
+                {{ mapping.lastImport }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <p>Number of records inserted</p>
+              </div>
+              <div class="col-6">
+                {{ mapping.recInserted }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <p>Number of records modified</p>
+              </div>
+              <div class="col-6">
+                {{ mapping.recModified }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <p>Next Import</p>
+              </div>
+              <div class="col-6">
+                {{ mapping.nextImport }}
+              </div>
+            </div>
+          </div>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+    <div class=" pt-5 d-flex justify-content-center">
+      <pagination
+        [totalItems]="mappings.length"
+        (pageChanged)="pageChanged($event)"
+      ></pagination>
+    </div>
+  
+</div>

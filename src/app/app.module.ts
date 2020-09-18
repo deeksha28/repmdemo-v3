@@ -26,7 +26,7 @@ import { PortalComponent } from './components/portal/portal.component';
     NavigationComponent,
     PrevNextComponent,
     PortfolioComponent,
-    PortalComponent
+    PortalComponent,
   ],
   imports: [
     BrowserModule,
