@@ -10,7 +10,7 @@ const routes: Routes = [
     component: ImportComponent,
     children: [
       { path: 'portfolio/:id', component: MappingComponent },
-      { path: 'portfolio/:id/upload', component: FileUploadComponent },
+      { path: 'portfolio/:id/upload/:mapId', component: FileUploadComponent },
     ]
   },
 ];

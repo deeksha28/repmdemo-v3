@@ -1,6 +1,6 @@
 <div class="">
   <div class="row">
-    <div class="col-md-6 col-xl-4" *ngFor="let mapping of mappings">
+    <div class="col-md-6 col-xl-4" *ngFor="let mapping of mappingResult">
       <div
         class="card shadow mt-5"
         [ngStyle]="{ 'border-left': mapping.color }"
@@ -18,7 +18,7 @@
                 *ngIf="mapping.color == color.green"
                 class="fa fa-upload px-2"
                 aria-hidden="true"
-                (click)="navigateTo()"
+                (click)="navigateTo(mapping.id)"
               ></i>
               <i
                 title="Show Logs"

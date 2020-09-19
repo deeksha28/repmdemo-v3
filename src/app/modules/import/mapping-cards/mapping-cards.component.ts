@@ -16,6 +16,7 @@ export class MappingCardsComponent implements OnInit {
 
   mappings = [
     {
+      id: 1,
       name: "Mapping 1",
       lastImport: "01 Sept 2020",
       recInserted: 10,
@@ -24,6 +25,7 @@ export class MappingCardsComponent implements OnInit {
       color: this.color.green,
     },
     {
+      id: 2,
       name: "Mapping 2",
       lastImport: "01 Sept 2020",
       recInserted: 10,
@@ -32,6 +34,7 @@ export class MappingCardsComponent implements OnInit {
       color: this.color.green,
     },
     {
+      id: 3,
       name: "Mapping 3",
       lastImport: "01 Sept 2020",
       recInserted: 10,
@@ -40,6 +43,7 @@ export class MappingCardsComponent implements OnInit {
       color: this.color.green,
     },
     {
+      id: 4,
       name: "Mapping 4",
       lastImport: "10 Aug 2020",
       recInserted: 6,
@@ -48,6 +52,7 @@ export class MappingCardsComponent implements OnInit {
       color: this.color.red,
     },
     {
+      id: 5,
       name: "Mapping 5",
       lastImport: "01 Sept 2020",
       recInserted: 10,
@@ -56,6 +61,7 @@ export class MappingCardsComponent implements OnInit {
       color: this.color.green,
     },
     {
+      id: 6,
       name: "Mapping 6",
       lastImport: "10 Aug 2020",
       recInserted: 6,
@@ -64,6 +70,7 @@ export class MappingCardsComponent implements OnInit {
       color: this.color.red,
     },
     {
+      id: 7,
       name: "Mapping 7",
       lastImport: "01 Sept 2020",
       recInserted: 10,
@@ -72,6 +79,7 @@ export class MappingCardsComponent implements OnInit {
       color: this.color.green,
     },
     {
+      id: 8,
       name: "Mapping 8",
       lastImport: "01 Sept 2020",
       recInserted: 10,
@@ -80,6 +88,7 @@ export class MappingCardsComponent implements OnInit {
       color: this.color.green,
     },
     {
+      id: 9,
       name: "Mapping 9",
       lastImport: "10 Aug 2020",
       recInserted: 6,
@@ -88,6 +97,7 @@ export class MappingCardsComponent implements OnInit {
       color: this.color.red,
     },
     {
+      id: 10,
       name: "Mapping 10",
       lastImport: "10 Aug 2020",
       recInserted: 6,
@@ -96,6 +106,7 @@ export class MappingCardsComponent implements OnInit {
       color: this.color.red,
     },
     {
+      id: 11,
       name: "Mapping 11",
       lastImport: "10 Aug 2020",
       recInserted: 6,
@@ -105,17 +116,24 @@ export class MappingCardsComponent implements OnInit {
     },
   ];
 
+  mappingResult = [];
+  first = 0;
+  limit = 9;
+
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
-
-  pageChanged(event: PageChangedEvent): void {
-    const startItem = (event.page - 1) * event.itemsPerPage;
-    const endItem = event.page * event.itemsPerPage;
-    this.returnedArray = this.mappings.slice(startItem, endItem);
+  ngOnInit(): void {
+    this.mappingResult = this.mappings.slice(this.first, this.first+this.limit)
   }
 
-  navigateTo() {
-    this.router.navigate(["/importdata/portfolio/0/upload"]);
+  pageChanged(event: PageChangedEvent): void {
+    console.log("event : ", event)
+    const startItem = (event.page - 1) * this.limit;
+    const endItem = event.page * this.limit;
+    this.mappingResult = this.mappings.slice(startItem, endItem);
+  }
+
+  navigateTo(id) {
+    this.router.navigate(["/importdata/portfolio/0/upload/"+id]);
   }
 }
