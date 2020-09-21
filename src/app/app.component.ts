@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   currentLang = "en";
   public activeTab;
   public activeTabCopy;
+  statusMessage =[]
   portal;
   constructor(
     private router: Router,
@@ -49,7 +50,12 @@ export class AppComponent implements OnInit {
       this.portal = value;
     });
   }
-  ngOnInit(): void {}
+
+  ngOnInit(): void {
+    this.bellNotificationService.status.subscribe(value=>{
+      this.statusMessage=value
+    })
+  }
 
   onLangChange(lang) {
     this.currentLang = lang;

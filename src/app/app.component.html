@@ -142,9 +142,10 @@
               placement="bottom right"
               [insideClick]="true"
               container="body"
+             
             >
               <button
-                *ngIf="bellNotificationService.isImporting"
+                *ngIf="bellNotificationService.isImporting || bellNotificationService.isImported"
                 id="button-nested"
                 dropdownToggle
                 type="button"
@@ -152,7 +153,14 @@
                 aria-controls="dropdown-nested"
               >
                 <i class="fa fa-bell-o iconSize18"></i>
-                <i class="fa fa-check-circle-o check-on-bell" aria-hidden="true"></i>
+                <i
+                  *ngIf="bellNotificationService.isImported"
+                  class="fa fa-check-circle-o check-on-bell"
+                  aria-hidden="true"
+                ></i>
+                <!-- <i class="fas fa-spinner fa-spin"></i> -->
+                <i  *ngIf="!bellNotificationService.isImported" class="fa fa-hourglass-half fa-spin" aria-hidden="true"></i>
+
               </button>
               <i
                 *ngIf="!bellNotificationService.isImporting"
@@ -164,8 +172,13 @@
                 class="dropdown-menu dropdown-menu-right"
                 role="menu"
                 aria-labelledby="button-nested"
+                 style="overflow-y: auto !important;"
               >
-                <li class="dropdown-header">Internalize Started</li>
+                <li class="dropdown-header" *ngFor="let status of statusMessage">
+                  {{ status }}
+                </li>
+
+                <!-- <li class="dropdown-header">Internalize Started</li>
                 <li>
                   <div class="dropdown-item">
                     File 1.xlsx &nbsp;<i
@@ -194,7 +207,7 @@
                 <li>
                   <div class="dropdown-item">Logs....</div>
                   <div class="dropdown-item">progress....</div>
-                </li>
+                </li> -->
               </ul>
             </div>
           </li>

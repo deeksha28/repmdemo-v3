@@ -12,12 +12,14 @@ export class FileUploadComponent implements OnInit {
   ngOnInit(): void {}
 
   toggleBellIcon(){
-    if (!this.bellNotificationService.isImporting) {
-      this.bellNotificationService.isImporting=true
-    }else{
-      this.bellNotificationService.isImporting = false;
 
-    }
+    this.bellNotificationService.importData(30000)
+    //   this.bellNotificationService.isImporting=true
+    // if (!this.bellNotificationService.isImporting) {
+    // }else{
+    //   this.bellNotificationService.isImporting = false;
+
+    // }
 
   }
 }
