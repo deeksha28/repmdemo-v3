@@ -17,6 +17,7 @@ import {PaginatorModule} from 'primeng/paginator';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PortalComponent } from './components/portal/portal.component';
+import { HttpClientModule } from "@angular/common/http"
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { PortalComponent } from './components/portal/portal.component';
     FormsModule,
     BrowserAnimationsModule,
     TooltipModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    HttpClientModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
