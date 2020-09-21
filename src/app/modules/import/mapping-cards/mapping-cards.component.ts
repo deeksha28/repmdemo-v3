@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { PageChangedEvent } from "ngx-bootstrap/pagination";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-mapping-cards",
@@ -120,7 +120,7 @@ export class MappingCardsComponent implements OnInit {
   first = 0;
   limit = 9;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private activatedRoute : ActivatedRoute) {}
 
   ngOnInit(): void {
     this.mappingResult = this.mappings.slice(this.first, this.first+this.limit)
@@ -134,6 +134,7 @@ export class MappingCardsComponent implements OnInit {
   }
 
   navigateTo(id) {
-    this.router.navigate(["/importdata/portfolio/0/upload/"+id]);
+    let url = this.activatedRoute.snapshot['_routerState'].url;
+    this.router.navigate([url+"/upload/"+id]);
   }
 }
