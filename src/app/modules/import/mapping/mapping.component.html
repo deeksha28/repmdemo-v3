@@ -1,19 +1,22 @@
 <div class="pt-3">
-  <tabset #dataLogTabs>
+  <tabset #dataLogTabs *ngIf="hide">
     <tab heading="Mapping Group X" id="tab1">
-      <app-mapping-cards></app-mapping-cards>
+      <app-mapping-cards (onViewLogs)="viewLogs($event)"></app-mapping-cards>
     </tab>
     <tab heading="Mapping Group Y">
-      <app-mapping-cards></app-mapping-cards>
+      <app-mapping-cards (onViewLogs)="viewLogs($event)"></app-mapping-cards>
     </tab>
     <tab heading="Mapping Group Z">
-      <app-mapping-cards></app-mapping-cards>
+      <app-mapping-cards (onViewLogs)="viewLogs($event)"></app-mapping-cards>
     </tab>
     <tab heading="Mapping Group A">
-      <app-mapping-cards></app-mapping-cards>
+      <app-mapping-cards (onViewLogs)="viewLogs($event)"></app-mapping-cards>
     </tab>
     <tab heading="Mapping Group B">
-      <app-mapping-cards></app-mapping-cards>
+      <app-mapping-cards (onViewLogs)="viewLogs($event)"></app-mapping-cards>
     </tab>
   </tabset>
+  <div *ngIf="!hide">
+    <img src="./assets/img/import.png" class="w-100" alt="cockpit">
+  </div>
 </div>

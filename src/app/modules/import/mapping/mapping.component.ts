@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mapping.component.scss']
 })
 export class MappingComponent implements OnInit {
+  hide: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  viewLogs(event) {
+    this.hide = true;
   }
 
 }

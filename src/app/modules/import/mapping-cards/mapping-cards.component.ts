@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output } from "@angular/core";
 import { PageChangedEvent } from "ngx-bootstrap/pagination";
 import { ActivatedRoute, Router } from "@angular/router";
+import { EventEmitter } from "events";
 
 @Component({
   selector: "app-mapping-cards",
@@ -8,6 +9,7 @@ import { ActivatedRoute, Router } from "@angular/router";
   styleUrls: ["./mapping-cards.component.scss"],
 })
 export class MappingCardsComponent implements OnInit {
+  @Output() public onViewLogs = new EventEmitter<any>();
   color = {
     red: "6px solid red",
     green: "6px solid green",
@@ -136,5 +138,9 @@ export class MappingCardsComponent implements OnInit {
   navigateTo(id) {
     let url = this.activatedRoute.snapshot['_routerState'].url;
     this.router.navigate([url+"/upload/"+id]);
+  }
+
+  viewLog(id) {
+    this.onViewLogs.emit(id);
   }
 }
