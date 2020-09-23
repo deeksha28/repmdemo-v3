@@ -1,7 +1,6 @@
-import { Component, OnInit, Output } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { PageChangedEvent } from "ngx-bootstrap/pagination";
 import { ActivatedRoute, Router } from "@angular/router";
-import { EventEmitter } from "events";
 
 @Component({
   selector: "app-mapping-cards",

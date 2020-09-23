@@ -17,4 +17,8 @@ export class MappingComponent implements OnInit {
     this.hide = true;
   }
 
+  back(){
+    this.hide = false;
+  }
+
 }

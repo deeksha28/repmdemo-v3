@@ -1,5 +1,5 @@
 <div class="pt-3">
-  <tabset #dataLogTabs *ngIf="hide">
+  <tabset #dataLogTabs *ngIf="!hide">
     <tab heading="Mapping Group X" id="tab1">
       <app-mapping-cards (onViewLogs)="viewLogs($event)"></app-mapping-cards>
     </tab>
@@ -16,7 +16,8 @@
       <app-mapping-cards (onViewLogs)="viewLogs($event)"></app-mapping-cards>
     </tab>
   </tabset>
-  <div *ngIf="!hide">
-    <img src="./assets/img/import.png" class="w-100" alt="cockpit">
+  <div *ngIf="hide">
+    <button class="btn btn-sm btn-primary" (click)="back()">Back</button>
+    <img src="./assets/img/import1.png" class="w-100" alt="cockpit">
   </div>
 </div>
