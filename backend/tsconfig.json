@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "lib": [
+         "es5",
+         "es6"
+      ],
+      "target": "es5",
+    "module": "commonjs",
+    "outDir": "./dist",
+    // "strict": true,
+    "noUnusedLocals": false,
+    "noImplicitAny": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true
+  },
+  "include": ["src/**/*","orm/src/**/*"],
+  "exclude": ["node_modules", "**/*.test.ts"]
+}
